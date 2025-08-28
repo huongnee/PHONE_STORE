@@ -1,0 +1,71 @@
+﻿@model PagedResult<BrandDto>
+@{
+    ViewData["Title"] = "Brands";
+    var q = Context.Request.Query["q"].ToString();
+    var totalPages = (int)Math.Ceiling((double)Model.Total / Model.PageSize);
+}
+
+<h1 class="mb-3">Brands</h1>
+
+<form method="get" class="row g-2 mb-3">
+    <div class="col-auto">
+        <input name="q" value="@q" class="form-control" placeholder="Search name or slug..." />
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-primary">Search</button>
+    </div>
+    <div class="col-auto ms-auto">
+        <a asp-area="Admin" asp-controller="Brands" asp-action="Create" class="btn btn-success">+ New Brand</a>
+    </div>
+</form>
+
+<table class="table table-striped align-middle">
+    <thead>
+        <tr>
+            <th style="width:80px">ID</th>
+            <th>Name</th>
+            <th>Slug</th>
+            <th style="width:120px">Active</th>
+            <th style="width:180px"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var b in Model.Items)
+        {
+            <tr>
+                <td>@b.Id</td>
+                <td>@b.Name</td>
+                <td>@b.Slug</td>
+                <td>@(b.IsActive ? "Yes" : "No")</td>
+                <td class="text-end">
+                    <a asp-area="Admin" asp-controller="Brands" asp-action="Edit" asp-route-id="@b.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                    <form asp-area="Admin" asp-controller="Brands" asp-action="Delete" asp-route-id="@b.Id"
+                          method="post" class="d-inline"
+                          onsubmit="return confirm('Delete this brand?');">
+                        <button class="btn btn-sm btn-outline-danger" type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (totalPages > 1)
+{
+    <nav>
+        <ul class="pagination">
+            <li class="page-item @(Model.Page <= 1 ? "disabled" : null)">
+                <a class="page-link" asp-action="Index" asp-route-q="@q" asp-route-page="@(Model.Page - 1)">Prev</a>
+            </li>
+            @for (var i = 1; i <= totalPages; i++)
+            {
+                <li class="page-item @(i == Model.Page ? "active" : null)">
+                    <a class="page-link" asp-action="Index" asp-route-q="@q" asp-route-page="@i">@i</a>
+                </li>
+            }
+            <li class="page-item @(Model.Page >= totalPages ? "disabled" : null)">
+                <a class="page-link" asp-action="Index" asp-route-q="@q" asp-route-page="@(Model.Page + 1)">Next</a>
+            </li>
+        </ul>
+    </nav>
+}

@@ -1,0 +1,36 @@
+﻿@model BrandFormVm
+@{
+    ViewData["Title"] = "Create Brand";
+}
+
+<h1 class="mb-3">Create Brand</h1>
+
+<form asp-action="Create" method="post" class="card p-3">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Slug" class="form-label"></label>
+        <input asp-for="Slug" class="form-control" placeholder="(để trống sẽ tự sinh từ Name)" />
+        <div class="form-text">Để trống: hệ thống sẽ tự sinh slug từ Name.</div>
+    </div>
+
+    <div class="form-check mb-3">
+        <input asp-for="IsActive" class="form-check-input" />
+        <label asp-for="IsActive" class="form-check-label"></label>
+    </div>
+
+    <div class="d-flex gap-2">
+        <button class="btn btn-primary" type="submit">Create</button>
+        <a asp-area="Admin" asp-controller="Brands" asp-action="Index" class="btn btn-secondary">Back</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
+}

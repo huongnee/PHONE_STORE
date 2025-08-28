@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Infrastructure\bin\Debug\net8.0\PHONE_STORE.Infrastructure.deps.json
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Infrastructure\bin\Debug\net8.0\PHONE_STORE.Infrastructure.dll
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Infrastructure\bin\Debug\net8.0\PHONE_STORE.Infrastructure.pdb
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Infrastructure\obj\Debug\net8.0\PHONE_STORE.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Infrastructure\obj\Debug\net8.0\PHONE_STORE.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Infrastructure\obj\Debug\net8.0\PHONE_STORE.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Infrastructure\obj\Debug\net8.0\PHONE_STORE.Infrastructure.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Infrastructure\obj\Debug\net8.0\PHONE_STORE.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Infrastructure\obj\Debug\net8.0\PHONE_STORE.Infrastructure.dll
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Infrastructure\obj\Debug\net8.0\refint\PHONE_STORE.Infrastructure.dll
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Infrastructure\obj\Debug\net8.0\PHONE_STORE.Infrastructure.pdb
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Infrastructure\obj\Debug\net8.0\ref\PHONE_STORE.Infrastructure.dll
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Infrastructure\bin\Debug\net8.0\PHONE_STORE.Application.dll
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Infrastructure\bin\Debug\net8.0\PHONE_STORE.Application.pdb
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Infrastructure\obj\Debug\net8.0\PHONE_ST.866913C1.Up2Date

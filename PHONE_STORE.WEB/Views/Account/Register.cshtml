@@ -1,0 +1,77 @@
+﻿@model PHONE_STORE.WEB.Models.RegisterRequest
+@{
+    ViewData["Title"] = "Đăng ký";
+    Layout = "_Layout";
+}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-6">
+            <div class="card shadow-sm border-0 rounded-3">
+                <div class="card-body p-4 p-md-5">
+                    <h3 class="mb-3 text-center">Tạo tài khoản</h3>
+
+                    @if (TempData["msg"] != null)
+                    {
+                        <div class="alert alert-success">@TempData["msg"]</div>
+                    }
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            @Html.ValidationSummary(excludePropertyErrors: true)
+                        </div>
+                    }
+
+                    <form method="post" asp-antiforgery="true" novalidate>
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">Email</label>
+                            <input asp-for="Email" class="form-control" autocomplete="email" />
+                            <span class="text-danger" asp-validation-for="Email"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Phone" class="form-label">Số điện thoại</label>
+                            <input asp-for="Phone" class="form-control" autocomplete="tel" />
+                            <span class="text-danger" asp-validation-for="Phone"></span>
+                        </div>
+
+                        <div class="mb-3 position-relative">
+                            <label asp-for="Password" class="form-label">Mật khẩu</label>
+                            <div class="input-group">
+                                <input asp-for="Password" type="password" class="form-control" id="pwdReg" autocomplete="new-password" />
+                                <button class="btn btn-outline-secondary" type="button" id="btnTogglePwdReg">Hiện</button>
+                            </div>
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="FullName" class="form-label">Họ tên</label>
+                            <input asp-for="FullName" class="form-control" autocomplete="name" />
+                            <span class="text-danger" asp-validation-for="FullName"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Tạo tài khoản</button>
+
+                        <div class="text-center mt-3">
+                            <a asp-controller="Account" asp-action="Login">Đã có tài khoản? Đăng nhập</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        (() => {
+            const btn = document.getElementById('btnTogglePwdReg');
+            const input = document.getElementById('pwdReg');
+            btn?.addEventListener('click', () => {
+                const isPwd = input.type === 'password';
+                input.type = isPwd ? 'text' : 'password';
+                btn.textContent = isPwd ? 'Ẩn' : 'Hiện';
+            });
+        })();
+    </script>
+}

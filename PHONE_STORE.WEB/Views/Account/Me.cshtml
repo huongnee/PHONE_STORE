@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Me";
+}
+<h2>Me</h2>
+<p><b>UserId:</b> @ViewBag.UserId</p>
+<p><b>Email:</b> @ViewBag.Email</p>
+<p><b>Roles:</b> @ViewBag.Roles</p>
+<h3>Raw JSON</h3>
+<pre>@Html.Raw(ViewBag.Json)</pre>

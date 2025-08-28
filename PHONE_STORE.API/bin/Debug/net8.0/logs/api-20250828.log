@@ -1,0 +1,719 @@
+2025-08-28 08:57:21.073 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-28 08:57:21.530 +07:00 [INF] Now listening on: https://localhost:7277
+2025-08-28 08:57:21.531 +07:00 [INF] Now listening on: http://localhost:5209
+2025-08-28 08:57:21.621 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-28 08:57:21.622 +07:00 [INF] Hosting environment: Development
+2025-08-28 08:57:21.622 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-08-28 08:57:22.884 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-08-28 08:57:23.105 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 233.5687ms
+2025-08-28 08:57:23.116 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-28 08:57:23.120 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-08-28 08:57:23.123 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 6.7365ms
+2025-08-28 08:57:23.184 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 64.5103ms
+2025-08-28 08:57:23.258 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-08-28 08:57:23.277 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.6973ms
+2025-08-28 08:58:05.043 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/register - application/json; charset=utf-8 null
+2025-08-28 08:58:05.117 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Register (PHONE_STORE.API)'
+2025-08-28 08:58:05.159 +07:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(RegisterRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 08:58:07.928 +07:00 [INF] Executed DbCommand (201ms) [Parameters=[:em_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "USER_ACCOUNTS" "u"
+WHERE "u"."EMAIL" = :em_0
+2025-08-28 08:58:08.022 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[:ph_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "USER_ACCOUNTS" "u"
+WHERE "u"."PHONE" = :ph_0
+2025-08-28 08:58:08.706 +07:00 [INF] Executed DbCommand (42ms) [Parameters=[:p0='?' (DbType = DateTime), :p1='?' (Size = 450), :p2='?' (Size = 2000), :p3='?' (Size = 450), :p4='?' (Size = 2000), :cur0='?' (Direction = Output) (DbType = Object)], CommandType='"Text"', CommandTimeout='0']
+DECLARE
+
+TYPE "rUSER_ACCOUNTS_0" IS RECORD
+(
+"ID" NUMBER(19)
+);
+TYPE "tUSER_ACCOUNTS_0" IS TABLE OF "rUSER_ACCOUNTS_0";
+"lUSER_ACCOUNTS_0" "tUSER_ACCOUNTS_0";
+
+BEGIN
+
+"lUSER_ACCOUNTS_0" := "tUSER_ACCOUNTS_0"();
+"lUSER_ACCOUNTS_0".extend(1);
+INSERT INTO "USER_ACCOUNTS" ("CREATED_AT", "EMAIL", "PASSWORD_HASH", "PHONE", "STATUS")
+VALUES (:p0, :p1, :p2, :p3, :p4)
+RETURNING "ID" INTO "lUSER_ACCOUNTS_0"(1)."ID";
+OPEN :cur0 FOR SELECT "lUSER_ACCOUNTS_0"(1)."ID" FROM DUAL;
+
+END;
+2025-08-28 08:58:08.802 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[:roleCode_0='?' (Size = 2000)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."ID"
+FROM "ROLES" "r"
+WHERE "r"."CODE" = :roleCode_0
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 08:58:08.806 +07:00 [INF] Register success [81]
+2025-08-28 08:58:08.817 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-28 08:58:08.829 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Register (PHONE_STORE.API) in 3661.6334ms
+2025-08-28 08:58:08.832 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Register (PHONE_STORE.API)'
+2025-08-28 08:58:08.849 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/register - 200 null application/json; charset=utf-8 3808.2968ms
+2025-08-28 08:58:32.745 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/login - application/json; charset=utf-8 null
+2025-08-28 08:58:32.760 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 08:58:32.768 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LoginRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 08:58:32.929 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[:uname_0='?' (Size = 450), :username_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID", "u"."CREATED_AT", "u"."EMAIL", "u"."PASSWORD_HASH", "u"."PHONE", "u"."STATUS"
+FROM "USER_ACCOUNTS" "u"
+WHERE (("u"."EMAIL" = :uname_0) OR ("u"."PHONE" = :username_1))
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 08:58:33.535 +07:00 [INF] Executed DbCommand (49ms) [Parameters=[:userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."CODE"
+FROM "USER_ROLES" "u"
+INNER JOIN "ROLES" "r" ON "u"."ROLE_ID" = "r"."ID"
+WHERE "u"."USER_ID" = :userId_0
+2025-08-28 08:58:33.627 +07:00 [INF] Login success [81]
+2025-08-28 08:58:33.640 +07:00 [INF] Executing OkObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.AuthResponseDto'.
+2025-08-28 08:58:33.647 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API) in 876.4757ms
+2025-08-28 08:58:33.650 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 08:58:33.653 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 908.0319ms
+2025-08-28 08:58:35.726 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/logout - application/json; charset=utf-8 null
+2025-08-28 08:58:35.813 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 08:58:35.819 +07:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(RefreshRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 08:58:35.845 +07:00 [INF] Logout: revoked RT
+2025-08-28 08:58:35.846 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-28 08:58:35.848 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API) in 27.4127ms
+2025-08-28 08:58:35.849 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 08:58:35.850 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/logout - 200 null application/json; charset=utf-8 123.925ms
+2025-08-28 08:58:53.219 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/forgot-password - application/json; charset=utf-8 null
+2025-08-28 08:58:53.223 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.ForgotPassword (PHONE_STORE.API)'
+2025-08-28 08:58:53.226 +07:00 [INF] Route matched with {action = "ForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgotPassword(ForgotPasswordRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 08:58:53.277 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[:uname_0='?' (Size = 450), :username_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID" "Id", "u"."EMAIL" "Email", "u"."PHONE" "Phone", "u"."STATUS" "Status", "u"."CREATED_AT" "CreatedAt"
+FROM "USER_ACCOUNTS" "u"
+WHERE (("u"."EMAIL" = :uname_0) OR ("u"."PHONE" = :username_1))
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 08:58:56.840 +07:00 [INF] SMTP sent to 21111065130@hunre.edu.vn | Mã đặt lại mật khẩu
+2025-08-28 08:58:56.845 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-28 08:58:56.847 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.ForgotPassword (PHONE_STORE.API) in 3619.6689ms
+2025-08-28 08:58:56.850 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.ForgotPassword (PHONE_STORE.API)'
+2025-08-28 08:58:56.851 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/forgot-password - 200 null application/json; charset=utf-8 3632.1287ms
+2025-08-28 09:00:52.192 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/reset-password - application/json; charset=utf-8 null
+2025-08-28 09:00:52.195 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.ResetPassword (PHONE_STORE.API)'
+2025-08-28 09:00:52.199 +07:00 [INF] Route matched with {action = "ResetPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ResetPassword(ResetPasswordRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 09:00:52.218 +07:00 [INF] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-28 09:00:52.220 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.ResetPassword (PHONE_STORE.API) in 20.0429ms
+2025-08-28 09:00:52.222 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.ResetPassword (PHONE_STORE.API)'
+2025-08-28 09:00:52.223 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/reset-password - 400 null application/json; charset=utf-8 31.3441ms
+2025-08-28 09:01:00.649 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/reset-password - application/json; charset=utf-8 null
+2025-08-28 09:01:00.652 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.ResetPassword (PHONE_STORE.API)'
+2025-08-28 09:01:00.653 +07:00 [INF] Route matched with {action = "ResetPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ResetPassword(ResetPasswordRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 09:01:00.671 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[:uname_0='?' (Size = 450), :username_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID", "u"."CREATED_AT", "u"."EMAIL", "u"."PASSWORD_HASH", "u"."PHONE", "u"."STATUS"
+FROM "USER_ACCOUNTS" "u"
+WHERE (("u"."EMAIL" = :uname_0) OR ("u"."PHONE" = :username_1))
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 09:01:00.875 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[:userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID", "u"."CREATED_AT", "u"."EMAIL", "u"."PASSWORD_HASH", "u"."PHONE", "u"."STATUS"
+FROM "USER_ACCOUNTS" "u"
+WHERE "u"."ID" = :userId_0
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 09:01:00.896 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[:p1='?' (DbType = Int64), :p0='?' (Size = 2000), :cur0='?' (Direction = Output) (DbType = Object)], CommandType='"Text"', CommandTimeout='0']
+DECLARE
+
+v_RowCount INTEGER;
+
+BEGIN
+
+UPDATE "USER_ACCOUNTS" SET "PASSWORD_HASH" = :p0
+WHERE "ID" = :p1;
+v_RowCount := SQL%ROWCOUNT;
+OPEN :cur0 FOR SELECT v_RowCount FROM DUAL;
+
+END;
+2025-08-28 09:01:00.905 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-28 09:01:00.907 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.ResetPassword (PHONE_STORE.API) in 250.5433ms
+2025-08-28 09:01:00.908 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.ResetPassword (PHONE_STORE.API)'
+2025-08-28 09:01:00.909 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/reset-password - 200 null application/json; charset=utf-8 259.8584ms
+2025-08-28 09:01:12.881 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/login - application/json; charset=utf-8 null
+2025-08-28 09:01:12.883 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 09:01:12.884 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LoginRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 09:01:12.896 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[:uname_0='?' (Size = 450), :username_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID", "u"."CREATED_AT", "u"."EMAIL", "u"."PASSWORD_HASH", "u"."PHONE", "u"."STATUS"
+FROM "USER_ACCOUNTS" "u"
+WHERE (("u"."EMAIL" = :uname_0) OR ("u"."PHONE" = :username_1))
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 09:01:13.086 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[:userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."CODE"
+FROM "USER_ROLES" "u"
+INNER JOIN "ROLES" "r" ON "u"."ROLE_ID" = "r"."ID"
+WHERE "u"."USER_ID" = :userId_0
+2025-08-28 09:01:13.091 +07:00 [INF] Login success [81]
+2025-08-28 09:01:13.093 +07:00 [INF] Executing OkObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.AuthResponseDto'.
+2025-08-28 09:01:13.094 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API) in 207.7313ms
+2025-08-28 09:01:13.095 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 09:01:13.096 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 215.5516ms
+2025-08-28 09:01:40.102 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-28 09:01:40.364 +07:00 [INF] Now listening on: https://localhost:7277
+2025-08-28 09:01:40.366 +07:00 [INF] Now listening on: http://localhost:5209
+2025-08-28 09:01:40.461 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-28 09:01:40.462 +07:00 [INF] Hosting environment: Development
+2025-08-28 09:01:40.463 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-08-28 09:01:41.267 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-08-28 09:01:41.456 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-08-28 09:01:41.459 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-28 09:01:41.462 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 200.447ms
+2025-08-28 09:01:41.476 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 16.679ms
+2025-08-28 09:01:41.506 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 50.7166ms
+2025-08-28 09:01:41.596 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-08-28 09:01:41.624 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 28.8196ms
+2025-08-28 09:02:11.629 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/logout - application/json; charset=utf-8 null
+2025-08-28 09:02:11.744 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 09:02:11.791 +07:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(RefreshRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 09:02:12.217 +07:00 [INF] Logout: revoked RT
+2025-08-28 09:02:12.235 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-28 09:02:12.250 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API) in 454.3116ms
+2025-08-28 09:02:12.253 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 09:02:12.255 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/logout - 200 null application/json; charset=utf-8 627.5605ms
+2025-08-28 09:02:30.689 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/login - application/json; charset=utf-8 null
+2025-08-28 09:02:30.701 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 09:02:30.707 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LoginRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 09:02:32.423 +07:00 [INF] Executed DbCommand (167ms) [Parameters=[:uname_0='?' (Size = 450), :username_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID", "u"."CREATED_AT", "u"."EMAIL", "u"."PASSWORD_HASH", "u"."PHONE", "u"."STATUS"
+FROM "USER_ACCOUNTS" "u"
+WHERE (("u"."EMAIL" = :uname_0) OR ("u"."PHONE" = :username_1))
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 09:02:33.177 +07:00 [INF] Executed DbCommand (46ms) [Parameters=[:userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."CODE"
+FROM "USER_ROLES" "u"
+INNER JOIN "ROLES" "r" ON "u"."ROLE_ID" = "r"."ID"
+WHERE "u"."USER_ID" = :userId_0
+2025-08-28 09:02:33.213 +07:00 [INF] Login success [81]
+2025-08-28 09:02:33.221 +07:00 [INF] Executing OkObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.AuthResponseDto'.
+2025-08-28 09:02:33.225 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API) in 2517.3336ms
+2025-08-28 09:02:33.228 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 09:02:33.235 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 2545.8024ms
+2025-08-28 09:06:03.730 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/logout - application/json; charset=utf-8 null
+2025-08-28 09:06:03.734 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 09:06:03.735 +07:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(RefreshRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 09:06:03.743 +07:00 [INF] Logout: revoked RT
+2025-08-28 09:06:03.744 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-28 09:06:03.745 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API) in 8.2919ms
+2025-08-28 09:06:03.746 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 09:06:03.746 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/logout - 200 null application/json; charset=utf-8 16.634ms
+2025-08-28 09:32:25.268 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-28 09:32:25.487 +07:00 [INF] Now listening on: https://localhost:7277
+2025-08-28 09:32:25.488 +07:00 [INF] Now listening on: http://localhost:5209
+2025-08-28 09:32:25.658 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-28 09:32:25.661 +07:00 [INF] Hosting environment: Development
+2025-08-28 09:32:25.662 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-08-28 09:32:26.285 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-08-28 09:32:26.549 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 271.7706ms
+2025-08-28 09:32:26.557 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-28 09:32:26.558 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-08-28 09:32:26.568 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 11.6961ms
+2025-08-28 09:32:26.621 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 64.1279ms
+2025-08-28 09:32:26.687 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-08-28 09:32:26.709 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 22.0462ms
+2025-08-28 10:20:15.915 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/login - application/json; charset=utf-8 null
+2025-08-28 10:20:16.002 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 10:20:16.044 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LoginRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 10:20:18.616 +07:00 [INF] Executed DbCommand (172ms) [Parameters=[:uname_0='?' (Size = 450), :username_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID", "u"."CREATED_AT", "u"."EMAIL", "u"."PASSWORD_HASH", "u"."PHONE", "u"."STATUS"
+FROM "USER_ACCOUNTS" "u"
+WHERE (("u"."EMAIL" = :uname_0) OR ("u"."PHONE" = :username_1))
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 10:20:19.335 +07:00 [INF] Executed DbCommand (27ms) [Parameters=[:userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."CODE"
+FROM "USER_ROLES" "u"
+INNER JOIN "ROLES" "r" ON "u"."ROLE_ID" = "r"."ID"
+WHERE "u"."USER_ID" = :userId_0
+2025-08-28 10:20:19.385 +07:00 [INF] Login success [81]
+2025-08-28 10:20:19.397 +07:00 [INF] Executing OkObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.AuthResponseDto'.
+2025-08-28 10:20:19.406 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API) in 3354.9951ms
+2025-08-28 10:20:19.407 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 10:20:19.414 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 3500.7393ms
+2025-08-28 10:21:03.373 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/logout - application/json; charset=utf-8 null
+2025-08-28 10:21:03.431 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 10:21:03.439 +07:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(RefreshRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 10:21:03.455 +07:00 [INF] Logout: revoked RT
+2025-08-28 10:21:03.456 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-28 10:21:03.463 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API) in 22.1087ms
+2025-08-28 10:21:03.467 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 10:21:03.469 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/logout - 200 null application/json; charset=utf-8 95.732ms
+2025-08-28 10:21:17.166 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/forgot-password - application/json; charset=utf-8 null
+2025-08-28 10:21:17.171 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.ForgotPassword (PHONE_STORE.API)'
+2025-08-28 10:21:17.177 +07:00 [INF] Route matched with {action = "ForgotPassword", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ForgotPassword(ForgotPasswordRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 10:21:17.305 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[:uname_0='?' (Size = 450), :username_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID" "Id", "u"."EMAIL" "Email", "u"."PHONE" "Phone", "u"."STATUS" "Status", "u"."CREATED_AT" "CreatedAt"
+FROM "USER_ACCOUNTS" "u"
+WHERE (("u"."EMAIL" = :uname_0) OR ("u"."PHONE" = :username_1))
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 10:21:21.169 +07:00 [INF] SMTP sent to 21111065130@hunre.edu.vn | Mã đặt lại mật khẩu
+2025-08-28 10:21:21.173 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-28 10:21:21.178 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.ForgotPassword (PHONE_STORE.API) in 3998.2503ms
+2025-08-28 10:21:21.179 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.ForgotPassword (PHONE_STORE.API)'
+2025-08-28 10:21:21.181 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/forgot-password - 200 null application/json; charset=utf-8 4014.3758ms
+2025-08-28 14:19:56.276 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-28 14:19:56.589 +07:00 [INF] Now listening on: https://localhost:7277
+2025-08-28 14:19:56.590 +07:00 [INF] Now listening on: http://localhost:5209
+2025-08-28 14:19:56.675 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-28 14:19:56.676 +07:00 [INF] Hosting environment: Development
+2025-08-28 14:19:56.677 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-08-28 14:19:58.253 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-08-28 14:19:58.815 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 576.84ms
+2025-08-28 14:19:58.832 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-08-28 14:19:58.832 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-28 14:19:58.850 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 19.1037ms
+2025-08-28 14:19:59.032 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 200.384ms
+2025-08-28 14:19:59.087 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-08-28 14:19:59.151 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 65.1693ms
+2025-08-28 14:20:24.636 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/register - application/json; charset=utf-8 null
+2025-08-28 14:20:24.691 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Register (PHONE_STORE.API)'
+2025-08-28 14:20:24.726 +07:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(RegisterRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 14:20:27.043 +07:00 [INF] Executed DbCommand (218ms) [Parameters=[:em_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "USER_ACCOUNTS" "u"
+WHERE "u"."EMAIL" = :em_0
+2025-08-28 14:20:27.141 +07:00 [INF] Executed DbCommand (17ms) [Parameters=[:ph_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "USER_ACCOUNTS" "u"
+WHERE "u"."PHONE" = :ph_0
+2025-08-28 14:20:27.954 +07:00 [INF] Executed DbCommand (65ms) [Parameters=[:p0='?' (DbType = DateTime), :p1='?' (Size = 450), :p2='?' (Size = 2000), :p3='?' (Size = 450), :p4='?' (Size = 2000), :cur0='?' (Direction = Output) (DbType = Object)], CommandType='"Text"', CommandTimeout='0']
+DECLARE
+
+TYPE "rUSER_ACCOUNTS_0" IS RECORD
+(
+"ID" NUMBER(19)
+);
+TYPE "tUSER_ACCOUNTS_0" IS TABLE OF "rUSER_ACCOUNTS_0";
+"lUSER_ACCOUNTS_0" "tUSER_ACCOUNTS_0";
+
+BEGIN
+
+"lUSER_ACCOUNTS_0" := "tUSER_ACCOUNTS_0"();
+"lUSER_ACCOUNTS_0".extend(1);
+INSERT INTO "USER_ACCOUNTS" ("CREATED_AT", "EMAIL", "PASSWORD_HASH", "PHONE", "STATUS")
+VALUES (:p0, :p1, :p2, :p3, :p4)
+RETURNING "ID" INTO "lUSER_ACCOUNTS_0"(1)."ID";
+OPEN :cur0 FOR SELECT "lUSER_ACCOUNTS_0"(1)."ID" FROM DUAL;
+
+END;
+2025-08-28 14:20:28.073 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[:code_0='?' (Size = 2000)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."ID"
+FROM "ROLES" "r"
+WHERE UPPER("r"."CODE") = :code_0
+FETCH FIRST 2 ROWS ONLY
+2025-08-28 14:20:28.147 +07:00 [INF] Executed DbCommand (36ms) [Parameters=[:p0='?' (DbType = Int64), :p1='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+DECLARE
+
+
+BEGIN
+
+INSERT INTO "USER_ROLES" ("ROLE_ID", "USER_ID")
+VALUES (:p0, :p1);
+
+END;
+2025-08-28 14:20:28.152 +07:00 [INF] Register success [101]
+2025-08-28 14:20:28.167 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-28 14:20:28.182 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Register (PHONE_STORE.API) in 3450.2152ms
+2025-08-28 14:20:28.184 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Register (PHONE_STORE.API)'
+2025-08-28 14:20:28.198 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/register - 200 null application/json; charset=utf-8 3562.4992ms
+2025-08-28 15:27:46.081 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-28 15:27:46.367 +07:00 [INF] Now listening on: https://localhost:7277
+2025-08-28 15:27:46.369 +07:00 [INF] Now listening on: http://localhost:5209
+2025-08-28 15:27:46.453 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-28 15:27:46.454 +07:00 [INF] Hosting environment: Development
+2025-08-28 15:27:46.455 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-08-28 15:27:47.183 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-08-28 15:27:47.580 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 408.7001ms
+2025-08-28 15:27:47.586 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-28 15:27:47.586 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-08-28 15:27:47.602 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 16.1086ms
+2025-08-28 15:27:47.647 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 60.8436ms
+2025-08-28 15:27:47.712 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-08-28 15:27:47.746 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 33.8362ms
+2025-08-28 15:32:20.967 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-28 15:32:21.238 +07:00 [INF] Now listening on: https://localhost:7277
+2025-08-28 15:32:21.239 +07:00 [INF] Now listening on: http://localhost:5209
+2025-08-28 15:32:21.334 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-28 15:32:21.342 +07:00 [INF] Hosting environment: Development
+2025-08-28 15:32:21.343 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-08-28 15:32:21.719 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-08-28 15:32:21.880 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-28 15:32:21.882 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-08-28 15:32:21.889 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 176.1698ms
+2025-08-28 15:32:21.897 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 17.3223ms
+2025-08-28 15:32:21.923 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 40.7424ms
+2025-08-28 15:32:22.031 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-08-28 15:32:22.064 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 33.035ms
+2025-08-28 15:35:01.709 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-28 15:35:01.977 +07:00 [INF] Now listening on: https://localhost:7277
+2025-08-28 15:35:01.978 +07:00 [INF] Now listening on: http://localhost:5209
+2025-08-28 15:35:02.165 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-28 15:35:02.166 +07:00 [INF] Hosting environment: Development
+2025-08-28 15:35:02.167 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-08-28 15:35:02.641 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-08-28 15:35:02.993 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 361.2272ms
+2025-08-28 15:35:03.006 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-28 15:35:03.008 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-08-28 15:35:03.014 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 7.2302ms
+2025-08-28 15:35:03.043 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.7535ms
+2025-08-28 15:35:03.225 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-08-28 15:35:03.246 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.8681ms
+2025-08-28 15:37:06.487 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-28 15:37:06.814 +07:00 [INF] Now listening on: https://localhost:7277
+2025-08-28 15:37:06.815 +07:00 [INF] Now listening on: http://localhost:5209
+2025-08-28 15:37:06.915 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-28 15:37:06.916 +07:00 [INF] Hosting environment: Development
+2025-08-28 15:37:06.917 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-08-28 15:37:07.598 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-08-28 15:37:07.792 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 203.6102ms
+2025-08-28 15:37:07.798 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-28 15:37:07.799 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-08-28 15:37:07.810 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 12.2043ms
+2025-08-28 15:37:07.856 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 57.145ms
+2025-08-28 15:37:07.919 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-08-28 15:37:07.944 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 25.6808ms
+2025-08-28 15:37:28.631 +07:00 [INF] Request starting HTTP/2 POST https://localhost:7277/api/Auth/login - application/json 61
+2025-08-28 15:37:28.639 +07:00 [INF] CORS policy execution failed.
+2025-08-28 15:37:28.641 +07:00 [INF] Request origin https://localhost:7277 does not have permission to access the resource.
+2025-08-28 15:37:28.704 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 15:37:28.738 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LoginRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 15:37:31.328 +07:00 [INF] Executed DbCommand (212ms) [Parameters=[:uname_0='?' (Size = 450), :username_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID", "u"."CREATED_AT", "u"."EMAIL", "u"."PASSWORD_HASH", "u"."PHONE", "u"."STATUS"
+FROM "USER_ACCOUNTS" "u"
+WHERE (("u"."EMAIL" = :uname_0) OR ("u"."PHONE" = :username_1))
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 15:37:31.993 +07:00 [INF] Executed DbCommand (51ms) [Parameters=[:userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."CODE"
+FROM "USER_ROLES" "u"
+INNER JOIN "ROLES" "r" ON "u"."ROLE_ID" = "r"."ID"
+WHERE "u"."USER_ID" = :userId_0
+2025-08-28 15:37:32.085 +07:00 [INF] Login success [21]
+2025-08-28 15:37:32.108 +07:00 [INF] Executing OkObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.AuthResponseDto'.
+2025-08-28 15:37:32.118 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API) in 3374.069ms
+2025-08-28 15:37:32.119 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 15:37:32.128 +07:00 [INF] Request finished HTTP/2 POST https://localhost:7277/api/Auth/login - 200 null application/json; charset=utf-8 3497.3795ms
+2025-08-28 15:44:12.524 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-28 15:44:12.788 +07:00 [INF] Now listening on: https://localhost:7277
+2025-08-28 15:44:12.789 +07:00 [INF] Now listening on: http://localhost:5209
+2025-08-28 15:44:12.886 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-28 15:44:12.887 +07:00 [INF] Hosting environment: Development
+2025-08-28 15:44:12.887 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-08-28 15:44:13.535 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-08-28 15:44:13.885 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 359.3668ms
+2025-08-28 15:44:13.901 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-28 15:44:13.905 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-08-28 15:44:13.909 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 7.9183ms
+2025-08-28 15:44:13.946 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.4334ms
+2025-08-28 15:44:14.084 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-08-28 15:44:14.143 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 58.5356ms
+2025-08-28 15:44:22.117 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/login - application/json; charset=utf-8 null
+2025-08-28 15:44:22.184 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 15:44:22.229 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LoginRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 15:44:24.480 +07:00 [INF] Executed DbCommand (160ms) [Parameters=[:uname_0='?' (Size = 450), :username_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID", "u"."CREATED_AT", "u"."EMAIL", "u"."PASSWORD_HASH", "u"."PHONE", "u"."STATUS"
+FROM "USER_ACCOUNTS" "u"
+WHERE (("u"."EMAIL" = :uname_0) OR ("u"."PHONE" = :username_1))
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 15:44:25.323 +07:00 [INF] Executed DbCommand (33ms) [Parameters=[:userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."CODE"
+FROM "USER_ROLES" "u"
+INNER JOIN "ROLES" "r" ON "u"."ROLE_ID" = "r"."ID"
+WHERE "u"."USER_ID" = :userId_0
+2025-08-28 15:44:25.428 +07:00 [INF] Login success [81]
+2025-08-28 15:44:25.450 +07:00 [INF] Executing OkObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.AuthResponseDto'.
+2025-08-28 15:44:25.477 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API) in 3238.33ms
+2025-08-28 15:44:25.481 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 15:44:25.494 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 3378.8814ms
+2025-08-28 15:53:35.852 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-28 15:53:36.184 +07:00 [INF] Now listening on: https://localhost:7277
+2025-08-28 15:53:36.185 +07:00 [INF] Now listening on: http://localhost:5209
+2025-08-28 15:53:36.281 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-28 15:53:36.282 +07:00 [INF] Hosting environment: Development
+2025-08-28 15:53:36.283 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-08-28 15:53:36.877 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-08-28 15:53:37.332 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 462.8341ms
+2025-08-28 15:53:37.466 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-28 15:53:37.471 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-08-28 15:53:37.481 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 14.9453ms
+2025-08-28 15:53:37.520 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 49.5173ms
+2025-08-28 15:53:37.737 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-08-28 15:53:37.760 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.1442ms
+2025-08-28 15:54:24.695 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/brands?q=&page=1&pageSize=20 - null null
+2025-08-28 15:54:24.873 +07:00 [INF] Executing endpoint 'BrandsController.Search (PHONE_STORE.API)'
+2025-08-28 15:54:24.914 +07:00 [INF] Route matched with {action = "Search", controller = "Brands"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.BrandDto]] Search(System.String, Int32, Int32, System.Threading.CancellationToken) on controller BrandsController (PHONE_STORE.API).
+2025-08-28 15:54:26.702 +07:00 [INF] Executed DbCommand (127ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."BRANDS" "b"
+2025-08-28 15:54:26.904 +07:00 [INF] Executed DbCommand (68ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "b"."ID", "b"."NAME", "b"."SLUG", "b"."IS_ACTIVE"
+FROM "HEHE"."BRANDS" "b"
+ORDER BY "b"."NAME"
+OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+2025-08-28 15:54:26.919 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.BrandDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-28 15:54:26.934 +07:00 [INF] Executed action BrandsController.Search (PHONE_STORE.API) in 2014.5603ms
+2025-08-28 15:54:26.936 +07:00 [INF] Executed endpoint 'BrandsController.Search (PHONE_STORE.API)'
+2025-08-28 15:54:26.947 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/brands?q=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 2253.0716ms
+2025-08-28 15:54:34.398 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/brands/1 - null null
+2025-08-28 15:54:34.404 +07:00 [INF] Executing endpoint 'BrandsController.Get (PHONE_STORE.API)'
+2025-08-28 15:54:34.408 +07:00 [INF] Route matched with {action = "Get", controller = "Brands"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.BrandDto] Get(Int64, System.Threading.CancellationToken) on controller BrandsController (PHONE_STORE.API).
+2025-08-28 15:54:34.514 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[:id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "b"."ID", "b"."NAME", "b"."SLUG", "b"."IS_ACTIVE"
+FROM "HEHE"."BRANDS" "b"
+WHERE "b"."ID" = :id_0
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 15:54:34.517 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.BrandDto'.
+2025-08-28 15:54:34.518 +07:00 [INF] Executed action BrandsController.Get (PHONE_STORE.API) in 108.812ms
+2025-08-28 15:54:34.519 +07:00 [INF] Executed endpoint 'BrandsController.Get (PHONE_STORE.API)'
+2025-08-28 15:54:34.520 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/brands/1 - 200 null application/json; charset=utf-8 121.8377ms
+2025-08-28 15:54:36.407 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/brands?q=&page=1&pageSize=20 - null null
+2025-08-28 15:54:36.413 +07:00 [INF] Executing endpoint 'BrandsController.Search (PHONE_STORE.API)'
+2025-08-28 15:54:36.414 +07:00 [INF] Route matched with {action = "Search", controller = "Brands"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.BrandDto]] Search(System.String, Int32, Int32, System.Threading.CancellationToken) on controller BrandsController (PHONE_STORE.API).
+2025-08-28 15:54:36.435 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."BRANDS" "b"
+2025-08-28 15:54:36.458 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "b"."ID", "b"."NAME", "b"."SLUG", "b"."IS_ACTIVE"
+FROM "HEHE"."BRANDS" "b"
+ORDER BY "b"."NAME"
+OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+2025-08-28 15:54:36.462 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.BrandDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-28 15:54:36.464 +07:00 [INF] Executed action BrandsController.Search (PHONE_STORE.API) in 49.4618ms
+2025-08-28 15:54:36.467 +07:00 [INF] Executed endpoint 'BrandsController.Search (PHONE_STORE.API)'
+2025-08-28 15:54:36.469 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/brands?q=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 61.4128ms
+2025-08-28 15:54:39.968 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/brands?q=&page=1&pageSize=20 - null null
+2025-08-28 15:54:39.971 +07:00 [INF] Executing endpoint 'BrandsController.Search (PHONE_STORE.API)'
+2025-08-28 15:54:39.972 +07:00 [INF] Route matched with {action = "Search", controller = "Brands"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.BrandDto]] Search(System.String, Int32, Int32, System.Threading.CancellationToken) on controller BrandsController (PHONE_STORE.API).
+2025-08-28 15:54:39.977 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."BRANDS" "b"
+2025-08-28 15:54:39.982 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "b"."ID", "b"."NAME", "b"."SLUG", "b"."IS_ACTIVE"
+FROM "HEHE"."BRANDS" "b"
+ORDER BY "b"."NAME"
+OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+2025-08-28 15:54:39.985 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.BrandDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-28 15:54:39.986 +07:00 [INF] Executed action BrandsController.Search (PHONE_STORE.API) in 12.3999ms
+2025-08-28 15:54:39.986 +07:00 [INF] Executed endpoint 'BrandsController.Search (PHONE_STORE.API)'
+2025-08-28 15:54:39.987 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/brands?q=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 19.1692ms
+2025-08-28 15:55:17.259 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/brands?q=&page=1&pageSize=20 - null null
+2025-08-28 15:55:17.264 +07:00 [INF] Executing endpoint 'BrandsController.Search (PHONE_STORE.API)'
+2025-08-28 15:55:17.265 +07:00 [INF] Route matched with {action = "Search", controller = "Brands"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.BrandDto]] Search(System.String, Int32, Int32, System.Threading.CancellationToken) on controller BrandsController (PHONE_STORE.API).
+2025-08-28 15:55:17.272 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."BRANDS" "b"
+2025-08-28 15:55:17.280 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "b"."ID", "b"."NAME", "b"."SLUG", "b"."IS_ACTIVE"
+FROM "HEHE"."BRANDS" "b"
+ORDER BY "b"."NAME"
+OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+2025-08-28 15:55:17.282 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.BrandDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-28 15:55:17.283 +07:00 [INF] Executed action BrandsController.Search (PHONE_STORE.API) in 17.1231ms
+2025-08-28 15:55:17.284 +07:00 [INF] Executed endpoint 'BrandsController.Search (PHONE_STORE.API)'
+2025-08-28 15:55:17.284 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/brands?q=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 25.217ms
+2025-08-28 15:56:17.209 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/logout - application/json; charset=utf-8 null
+2025-08-28 15:56:17.212 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 15:56:17.217 +07:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(RefreshRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 15:56:17.474 +07:00 [INF] Logout: revoked RT
+2025-08-28 15:56:17.476 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-28 15:56:17.480 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API) in 258.5357ms
+2025-08-28 15:56:17.481 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 15:56:17.482 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/logout - 200 null application/json; charset=utf-8 273.0281ms
+2025-08-28 15:56:35.300 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/login - application/json; charset=utf-8 null
+2025-08-28 15:56:35.308 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 15:56:35.312 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LoginRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 15:56:35.397 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[:uname_0='?' (Size = 450), :username_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID", "u"."CREATED_AT", "u"."EMAIL", "u"."PASSWORD_HASH", "u"."PHONE", "u"."STATUS"
+FROM "USER_ACCOUNTS" "u"
+WHERE (("u"."EMAIL" = :uname_0) OR ("u"."PHONE" = :username_1))
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 15:56:35.982 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[:userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."CODE"
+FROM "USER_ROLES" "u"
+INNER JOIN "ROLES" "r" ON "u"."ROLE_ID" = "r"."ID"
+WHERE "u"."USER_ID" = :userId_0
+2025-08-28 15:56:36.008 +07:00 [INF] Login success [21]
+2025-08-28 15:56:36.015 +07:00 [INF] Executing OkObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.AuthResponseDto'.
+2025-08-28 15:56:36.018 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API) in 705.6401ms
+2025-08-28 15:56:36.019 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 15:56:36.023 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 723.2846ms
+2025-08-28 15:56:42.946 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/logout - application/json; charset=utf-8 null
+2025-08-28 15:56:42.948 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 15:56:42.949 +07:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(RefreshRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 15:56:42.958 +07:00 [INF] Logout: revoked RT
+2025-08-28 15:56:42.959 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-28 15:56:42.960 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API) in 8.3301ms
+2025-08-28 15:56:42.960 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 15:56:42.961 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/logout - 200 null application/json; charset=utf-8 15.5355ms
+2025-08-28 15:56:53.325 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/login - application/json; charset=utf-8 null
+2025-08-28 15:56:53.328 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 15:56:53.328 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LoginRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 15:56:53.339 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[:uname_0='?' (Size = 450), :username_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID", "u"."CREATED_AT", "u"."EMAIL", "u"."PASSWORD_HASH", "u"."PHONE", "u"."STATUS"
+FROM "USER_ACCOUNTS" "u"
+WHERE (("u"."EMAIL" = :uname_0) OR ("u"."PHONE" = :username_1))
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 15:56:53.577 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[:userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."CODE"
+FROM "USER_ROLES" "u"
+INNER JOIN "ROLES" "r" ON "u"."ROLE_ID" = "r"."ID"
+WHERE "u"."USER_ID" = :userId_0
+2025-08-28 15:56:53.581 +07:00 [INF] Login success [81]
+2025-08-28 15:56:53.583 +07:00 [INF] Executing OkObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.AuthResponseDto'.
+2025-08-28 15:56:53.584 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API) in 254.4816ms
+2025-08-28 15:56:53.585 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 15:56:53.586 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 260.5929ms
+2025-08-28 15:56:56.107 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/logout - application/json; charset=utf-8 null
+2025-08-28 15:56:56.111 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 15:56:56.111 +07:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(RefreshRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 15:56:56.114 +07:00 [INF] Logout: revoked RT
+2025-08-28 15:56:56.115 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-28 15:56:56.117 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API) in 4.66ms
+2025-08-28 15:56:56.118 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 15:56:56.119 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/logout - 200 null application/json; charset=utf-8 11.191ms
+2025-08-28 15:57:04.730 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/login - application/json; charset=utf-8 null
+2025-08-28 15:57:04.733 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 15:57:04.735 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LoginRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 15:57:04.746 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[:uname_0='?' (Size = 450), :username_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID", "u"."CREATED_AT", "u"."EMAIL", "u"."PASSWORD_HASH", "u"."PHONE", "u"."STATUS"
+FROM "USER_ACCOUNTS" "u"
+WHERE (("u"."EMAIL" = :uname_0) OR ("u"."PHONE" = :username_1))
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 15:57:05.019 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[:userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."CODE"
+FROM "USER_ROLES" "u"
+INNER JOIN "ROLES" "r" ON "u"."ROLE_ID" = "r"."ID"
+WHERE "u"."USER_ID" = :userId_0
+2025-08-28 15:57:05.024 +07:00 [INF] Login success [81]
+2025-08-28 15:57:05.026 +07:00 [INF] Executing OkObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.AuthResponseDto'.
+2025-08-28 15:57:05.027 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API) in 289.9213ms
+2025-08-28 15:57:05.028 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 15:57:05.029 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 299.1754ms
+2025-08-28 15:57:08.219 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/brands?q=&page=1&pageSize=20 - null null
+2025-08-28 15:57:08.222 +07:00 [INF] Executing endpoint 'BrandsController.Search (PHONE_STORE.API)'
+2025-08-28 15:57:08.223 +07:00 [INF] Route matched with {action = "Search", controller = "Brands"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.BrandDto]] Search(System.String, Int32, Int32, System.Threading.CancellationToken) on controller BrandsController (PHONE_STORE.API).
+2025-08-28 15:57:08.228 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."BRANDS" "b"
+2025-08-28 15:57:08.236 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "b"."ID", "b"."NAME", "b"."SLUG", "b"."IS_ACTIVE"
+FROM "HEHE"."BRANDS" "b"
+ORDER BY "b"."NAME"
+OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+2025-08-28 15:57:08.238 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.BrandDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-28 15:57:08.239 +07:00 [INF] Executed action BrandsController.Search (PHONE_STORE.API) in 14.7832ms
+2025-08-28 15:57:08.240 +07:00 [INF] Executed endpoint 'BrandsController.Search (PHONE_STORE.API)'
+2025-08-28 15:57:08.241 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/brands?q=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 22.57ms
+2025-08-28 15:58:02.230 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-28 15:58:02.463 +07:00 [INF] Now listening on: https://localhost:7277
+2025-08-28 15:58:02.464 +07:00 [INF] Now listening on: http://localhost:5209
+2025-08-28 15:58:02.550 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-28 15:58:02.551 +07:00 [INF] Hosting environment: Development
+2025-08-28 15:58:02.552 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-08-28 15:58:03.063 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-08-28 15:58:03.255 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 204.7478ms
+2025-08-28 15:58:03.275 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-28 15:58:03.275 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-08-28 15:58:03.283 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 7.9474ms
+2025-08-28 15:58:03.319 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 44.2589ms
+2025-08-28 15:58:03.370 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-08-28 15:58:03.392 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 22.2281ms
+2025-08-28 15:58:11.811 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/logout - application/json; charset=utf-8 null
+2025-08-28 15:58:12.007 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 15:58:12.055 +07:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(RefreshRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 15:58:12.655 +07:00 [INF] Logout: revoked RT
+2025-08-28 15:58:12.671 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-28 15:58:12.691 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API) in 631.5145ms
+2025-08-28 15:58:12.693 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 15:58:12.698 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/logout - 200 null application/json; charset=utf-8 889.0951ms
+2025-08-28 15:58:42.774 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-28 15:58:42.994 +07:00 [INF] Now listening on: https://localhost:7277
+2025-08-28 15:58:42.996 +07:00 [INF] Now listening on: http://localhost:5209
+2025-08-28 15:58:43.088 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-28 15:58:43.089 +07:00 [INF] Hosting environment: Development
+2025-08-28 15:58:43.090 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-08-28 15:58:43.357 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-08-28 15:58:43.764 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 415.049ms
+2025-08-28 15:58:43.775 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-28 15:58:43.808 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 32.9424ms
+2025-08-28 15:58:43.862 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-08-28 15:58:43.923 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 60.5959ms
+2025-08-28 15:58:44.089 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-08-28 15:58:44.108 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.3717ms
+2025-08-28 16:02:20.769 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-28 16:02:21.032 +07:00 [INF] Now listening on: https://localhost:7277
+2025-08-28 16:02:21.033 +07:00 [INF] Now listening on: http://localhost:5209
+2025-08-28 16:02:21.118 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-28 16:02:21.119 +07:00 [INF] Hosting environment: Development
+2025-08-28 16:02:21.119 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-08-28 16:02:21.897 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-08-28 16:02:22.088 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 202.4828ms
+2025-08-28 16:02:22.094 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-08-28 16:02:22.094 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-28 16:02:22.110 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 16.1658ms
+2025-08-28 16:02:22.134 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.6347ms
+2025-08-28 16:02:22.204 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-08-28 16:02:22.231 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 27.6699ms
+2025-08-28 16:02:35.845 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/login - application/json; charset=utf-8 null
+2025-08-28 16:02:35.892 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 16:02:35.942 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LoginRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 16:02:38.072 +07:00 [INF] Executed DbCommand (158ms) [Parameters=[:uname_0='?' (Size = 450), :username_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID", "u"."CREATED_AT", "u"."EMAIL", "u"."PASSWORD_HASH", "u"."PHONE", "u"."STATUS"
+FROM "USER_ACCOUNTS" "u"
+WHERE (("u"."EMAIL" = :uname_0) OR ("u"."PHONE" = :username_1))
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 16:02:38.734 +07:00 [INF] Executed DbCommand (35ms) [Parameters=[:userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."CODE"
+FROM "USER_ROLES" "u"
+INNER JOIN "ROLES" "r" ON "u"."ROLE_ID" = "r"."ID"
+WHERE "u"."USER_ID" = :userId_0
+2025-08-28 16:02:38.829 +07:00 [INF] Login success [21]
+2025-08-28 16:02:38.858 +07:00 [INF] Executing OkObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.AuthResponseDto'.
+2025-08-28 16:02:38.872 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API) in 2923.1029ms
+2025-08-28 16:02:38.874 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 16:02:38.882 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 3037.5202ms
+2025-08-28 16:02:41.640 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/logout - application/json; charset=utf-8 null
+2025-08-28 16:02:41.688 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 16:02:41.697 +07:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(RefreshRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 16:02:41.711 +07:00 [INF] Logout: revoked RT
+2025-08-28 16:02:41.713 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-28 16:02:41.719 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API) in 19.4958ms
+2025-08-28 16:02:41.722 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 16:02:41.723 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/logout - 200 null application/json; charset=utf-8 82.9178ms
+2025-08-28 16:02:47.487 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/login - application/json; charset=utf-8 null
+2025-08-28 16:02:47.490 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 16:02:47.491 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LoginRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 16:02:47.558 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[:uname_0='?' (Size = 450), :username_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID", "u"."CREATED_AT", "u"."EMAIL", "u"."PASSWORD_HASH", "u"."PHONE", "u"."STATUS"
+FROM "USER_ACCOUNTS" "u"
+WHERE (("u"."EMAIL" = :uname_0) OR ("u"."PHONE" = :username_1))
+FETCH FIRST 1 ROWS ONLY
+2025-08-28 16:02:47.964 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[:userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."CODE"
+FROM "USER_ROLES" "u"
+INNER JOIN "ROLES" "r" ON "u"."ROLE_ID" = "r"."ID"
+WHERE "u"."USER_ID" = :userId_0
+2025-08-28 16:02:47.967 +07:00 [INF] Login success [81]
+2025-08-28 16:02:47.968 +07:00 [INF] Executing OkObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.AuthResponseDto'.
+2025-08-28 16:02:47.969 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API) in 477.3837ms
+2025-08-28 16:02:47.971 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-08-28 16:02:47.972 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 485.998ms
+2025-08-28 16:02:52.048 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/brands?q=&page=1&pageSize=20 - null null
+2025-08-28 16:02:52.057 +07:00 [INF] Executing endpoint 'BrandsController.Search (PHONE_STORE.API)'
+2025-08-28 16:02:52.061 +07:00 [INF] Route matched with {action = "Search", controller = "Brands"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.BrandDto]] Search(System.String, Int32, Int32, System.Threading.CancellationToken) on controller BrandsController (PHONE_STORE.API).
+2025-08-28 16:02:52.138 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."BRANDS" "b"
+2025-08-28 16:02:52.169 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "b"."ID", "b"."NAME", "b"."SLUG", "b"."IS_ACTIVE"
+FROM "HEHE"."BRANDS" "b"
+ORDER BY "b"."NAME"
+OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+2025-08-28 16:02:52.174 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.BrandDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-28 16:02:52.178 +07:00 [INF] Executed action BrandsController.Search (PHONE_STORE.API) in 115.8821ms
+2025-08-28 16:02:52.179 +07:00 [INF] Executed endpoint 'BrandsController.Search (PHONE_STORE.API)'
+2025-08-28 16:02:52.180 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/brands?q=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 131.2924ms
+2025-08-28 16:02:54.748 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/logout - application/json; charset=utf-8 null
+2025-08-28 16:02:54.750 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 16:02:54.751 +07:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout(RefreshRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-08-28 16:02:54.753 +07:00 [INF] Logout: revoked RT
+2025-08-28 16:02:54.754 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-28 16:02:54.756 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API) in 4.4044ms
+2025-08-28 16:02:54.757 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Logout (PHONE_STORE.API)'
+2025-08-28 16:02:54.757 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/logout - 200 null application/json; charset=utf-8 9.1965ms

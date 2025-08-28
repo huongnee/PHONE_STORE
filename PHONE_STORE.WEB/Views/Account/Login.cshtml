@@ -1,0 +1,70 @@
+﻿@model PHONE_STORE.WEB.Models.LoginRequest
+@{
+    ViewData["Title"] = "Đăng nhập";
+    Layout = "_Layout";
+}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+            <div class="card shadow-sm border-0 rounded-3">
+                <div class="card-body p-4 p-md-5">
+                    <h3 class="mb-3 text-center">Đăng nhập</h3>
+
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            @Html.ValidationSummary(excludePropertyErrors: true)
+                        </div>
+                    }
+
+                    <form method="post" asp-antiforgery="true" novalidate>
+                        <div class="mb-3">
+                            <label asp-for="Username" class="form-label">Email hoặc SĐT</label>
+                            <input asp-for="Username" class="form-control" autocomplete="username" />
+                            <span class="text-danger" asp-validation-for="Username"></span>
+                        </div>
+
+                        <div class="mb-3 position-relative">
+                            <label asp-for="Password" class="form-label">Mật khẩu</label>
+                            <div class="input-group">
+                                <input asp-for="Password" type="password" class="form-control" autocomplete="current-password" id="pwdInput" />
+                                <button class="btn btn-outline-secondary" type="button" id="btnTogglePwd">Hiện</button>
+                            </div>
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="form-check">
+                                <input asp-for="RememberMe" class="form-check-input" id="rememberMeChk" />
+                                <label class="form-check-label" for="rememberMeChk">Ghi nhớ đăng nhập</label>
+                            </div>
+                            <a asp-controller="Account" asp-action="ForgotPassword" class="small">Quên mật khẩu?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+
+                        <div class="text-center mt-3">
+                            <span class="text-muted">Chưa có tài khoản?</span>
+                            <a asp-controller="Account" asp-action="Register">Đăng ký</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        (() => {
+            const btn = document.getElementById('btnTogglePwd');
+            const input = document.getElementById('pwdInput');
+            btn?.addEventListener('click', () => {
+                const isPwd = input.type === 'password';
+                input.type = isPwd ? 'text' : 'password';
+                btn.textContent = isPwd ? 'Ẩn' : 'Hiện';
+            });
+        })();
+    </script>
+}

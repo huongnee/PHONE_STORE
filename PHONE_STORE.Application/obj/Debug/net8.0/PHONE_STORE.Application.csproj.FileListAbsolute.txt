@@ -1,0 +1,12 @@
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Application\bin\Debug\net8.0\PHONE_STORE.Application.deps.json
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Application\bin\Debug\net8.0\PHONE_STORE.Application.dll
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Application\bin\Debug\net8.0\PHONE_STORE.Application.pdb
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Application\obj\Debug\net8.0\PHONE_STORE.Application.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Application\obj\Debug\net8.0\PHONE_STORE.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Application\obj\Debug\net8.0\PHONE_STORE.Application.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Application\obj\Debug\net8.0\PHONE_STORE.Application.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Application\obj\Debug\net8.0\PHONE_STORE.Application.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Application\obj\Debug\net8.0\PHONE_STORE.Application.dll
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Application\obj\Debug\net8.0\refint\PHONE_STORE.Application.dll
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Application\obj\Debug\net8.0\PHONE_STORE.Application.pdb
+C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.Application\obj\Debug\net8.0\ref\PHONE_STORE.Application.dll
