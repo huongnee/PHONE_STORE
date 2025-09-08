@@ -1,0 +1,95 @@
+﻿@model List<PHONE_STORE.Application.Dtos.ImageDto>
+@{
+    var productId = (long)ViewBag.ProductId; ViewData["Title"] = "Product Images";
+}
+<h2>Images of Product #@productId</h2>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<form method="post" asp-area="Admin" asp-controller="Images" asp-action="AddToProduct" class="row g-3 mb-3" id="imgForm">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="ProductId" value="@productId" />
+    <input type="hidden" name="ImageUrl" id="ImageUrl" />
+
+    <div class="col-md-4">
+        <input type="file" id="fileInput" accept="image/*" class="form-control" />
+        <div class="form-text">Chọn ảnh để upload, hệ thống tự điền URL.</div>
+    </div>
+    <div class="col-md-2">
+        <input name="AltText" class="form-control" placeholder="Alt text" />
+    </div>
+    <div class="col-md-1">
+        <input name="SortOrder" type="number" class="form-control" value="0" />
+    </div>
+    <div class="col-md-1 form-check">
+        <input name="IsPrimary" class="form-check-input" type="checkbox" id="isPrimary" />
+        <label class="form-check-label" for="isPrimary">Primary</label>
+    </div>
+    <div class="col-md-2">
+        <img id="preview" style="max-height:60px; display:none" />
+    </div>
+    <div class="col-md-2">
+        <button id="btnAdd" class="btn btn-primary" disabled>Add</button>
+    </div>
+</form>
+
+<table class="table table-bordered align-middle">
+    <thead><tr><th>Preview</th><th>Alt</th><th>Primary</th><th>Order</th><th style="width:120px"></th></tr></thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td><img src="@i.ImageUrl" alt="@i.AltText" style="max-height:80px" /></td>
+                <td>@i.AltText</td>
+                <td>@(i.IsPrimary ? "Yes" : "No")</td>
+                <td>@i.SortOrder</td>
+                <td>
+                    <form method="post" asp-area="Admin" asp-controller="Images" asp-action="Delete" asp-route-id="@i.Id" asp-route-productId="@productId">
+                        @Html.AntiForgeryToken()
+                        <button class="btn btn-sm btn-danger" onclick="return confirm('Delete?')">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const imgUrl = document.getElementById('ImageUrl');
+        const preview = document.getElementById('preview');
+        const btnAdd = document.getElementById('btnAdd');
+
+        fileInput.addEventListener('change', async (e) => {
+            const f = e.target.files?.[0];
+            if (!f) return;
+            btnAdd.disabled = true;
+            const fd = new FormData();
+            fd.append('file', f);
+
+            try {
+                const res = await fetch('/Admin/Uploads/Image', {
+                    method: 'POST',
+                    body: fd,
+                    credentials: 'include'
+                });
+                if (!res.ok) {
+                    const t = await res.text();
+                    alert('Upload thất bại: ' + t);
+                    return;
+                }
+                const data = await res.json();
+                imgUrl.value = data.url;
+                preview.src = data.url;
+                preview.style.display = 'inline';
+                btnAdd.disabled = false;
+            } catch (err) {
+                alert('Lỗi upload: ' + err);
+            }
+        });
+    </script>
+}

@@ -7,26 +7,17 @@ namespace PHONE_STORE.WEB.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        public HomeController(ILogger<HomeController> logger) => _logger = logger;
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+        [HttpGet]
+        public IActionResult Index() => RedirectToAction("Index", "Catalog"); // chuy?n th?ng sang trang shop
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        public IActionResult Privacy() => View();
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+            => View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
 }
+

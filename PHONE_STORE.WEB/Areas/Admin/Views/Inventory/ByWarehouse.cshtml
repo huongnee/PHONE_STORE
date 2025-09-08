@@ -1,0 +1,47 @@
+﻿@model List<PHONE_STORE.Application.Dtos.InventoryDto>
+@{
+    ViewData["Title"] = "Inventory by Warehouse";
+    var whs = ViewBag.WarehouseOptions as List<PHONE_STORE.Application.Dtos.WarehouseOptionDto> ?? new();
+    var wid = (long?)ViewBag.WarehouseId ?? 0;
+}
+<h1>Inventory by Warehouse</h1>
+
+<form method="get" class="row g-2 mb-3">
+    <div class="col-auto">
+        <label class="col-form-label">Warehouse</label>
+    </div>
+    <div class="col-auto">
+        <select name="warehouseId" class="form-select">
+            <option value="">-- Chọn kho --</option>
+            @foreach (var o in whs)
+            {
+                <option value="@o.Id" selected="@(o.Id == wid)">@o.Label</option>
+            }
+        </select>
+    </div>
+    <div class="col-auto"><button class="btn btn-primary">View</button></div>
+</form>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">Chọn kho để xem tồn.</div>
+}
+else
+{
+    <table class="table table-bordered align-middle">
+        <thead>
+            <tr><th>Variant</th><th>On hand</th><th>Reserved</th><th>Updated</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var r in Model)
+            {
+                <tr>
+                    <td>@r.VariantId</td>
+                    <td>@r.QtyOnHand</td>
+                    <td>@r.QtyReserved</td>
+                    <td>@r.UpdatedAt.ToLocalTime()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

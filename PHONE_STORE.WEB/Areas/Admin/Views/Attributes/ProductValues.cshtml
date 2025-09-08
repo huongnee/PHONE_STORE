@@ -1,0 +1,70 @@
+﻿@model List<PHONE_STORE.WEB.Areas.Admin.Controllers.AttributesController.ProductAttrValueDto>
+@using PHONE_STORE.Application.Dtos
+@{
+    var productId = (long)ViewBag.ProductId;
+    var all = (List<AttributeDto>)ViewBag.AllAttributes;
+    ViewData["Title"] = "Product attributes";
+}
+<h2>Attributes of Product #@productId</h2>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<form method="post" asp-area="Admin" asp-controller="Attributes" asp-action="UpsertValue" class="row g-3 mb-3">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="productId" value="@productId" />
+    <div class="col-md-3">
+        <label class="form-label">Attribute</label>
+        <select name="attributeId" class="form-select" id="attrSelect" onchange="onAttrChanged()">
+            @foreach (var a in all)
+            {
+                <option value="@a.Id" data-type="@a.DataType">@a.Name (@a.DataType)</option>
+            }
+        </select>
+    </div>
+    <input type="hidden" name="dataType" id="dataType" value="@all.FirstOrDefault()?.DataType" />
+    <div class="col-md-3" id="v-text"><label class="form-label">Text</label><input name="textValue" class="form-control" /></div>
+    <div class="col-md-3 d-none" id="v-int"><label class="form-label">Int</label><input name="intValue" class="form-control" type="number" /></div>
+    <div class="col-md-3 d-none" id="v-dec"><label class="form-label">Decimal</label><input name="decValue" class="form-control" type="number" step="0.01" /></div>
+    <div class="col-md-3 d-none" id="v-bool">
+        <label class="form-label">Boolean</label>
+        <select name="boolValue" class="form-select"><option value="">(null)</option><option value="true">True</option><option value="false">False</option></select>
+    </div>
+    <div class="col-md-2 align-self-end"><button class="btn btn-primary">Save/Update</button></div>
+</form>
+
+<table class="table table-bordered align-middle">
+    <thead><tr><th>Attribute</th><th>Value</th></tr></thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.Attr.Name (@r.Attr.DataType)</td>
+                <td>@(r.Value ?? "(null)")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        function onAttrChanged(){
+          const sel = document.getElementById('attrSelect');
+          const type = sel.options[sel.selectedIndex].dataset.type || 'TEXT';
+          document.getElementById('dataType').value = type;
+
+          document.getElementById('v-text').classList.add('d-none');
+          document.getElementById('v-int').classList.add('d-none');
+          document.getElementById('v-dec').classList.add('d-none');
+          document.getElementById('v-bool').classList.add('d-none');
+
+          if(type==='INT') document.getElementById('v-int').classList.remove('d-none');
+          else if(type==='DECIMAL') document.getElementById('v-dec').classList.remove('d-none');
+          else if(type==='BOOL') document.getElementById('v-bool').classList.remove('d-none');
+          else document.getElementById('v-text').classList.remove('d-none');
+        }
+        onAttrChanged();
+    </script>
+}

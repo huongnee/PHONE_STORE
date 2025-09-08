@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PHONE_STORE.Application.Dtos;
 using PHONE_STORE.Application.Interfaces;
 
@@ -17,19 +18,32 @@ public class BrandsController : ControllerBase
 
     [HttpGet("{id:long}")]
     public Task<BrandDto?> Get(long id, CancellationToken ct) => _repo.GetAsync(id, ct);
+    [HttpGet("options")]
+    public Task<List<IdNameDto>> Options(CancellationToken ct)
+    => _repo.GetOptionsAsync(ct);
 
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] BrandCreateDto dto, CancellationToken ct)
     {
-        var id = await _repo.CreateAsync(dto, ct);
-        return CreatedAtAction(nameof(Get), new { id }, new { id });
+        try
+        {
+            var id = await _repo.CreateAsync(dto, ct);
+            return CreatedAtAction(nameof(Get), new { id }, new { id });
+        }
+        catch (InvalidOperationException ex) { return BadRequest(new { message = ex.Message }); }
+        catch (DbUpdateException ex) { return BadRequest(new { message = ex.InnerException?.Message ?? ex.Message }); }
     }
 
     [HttpPut("{id:long}")]
     public async Task<IActionResult> Update(long id, [FromBody] BrandUpdateDto dto, CancellationToken ct)
     {
-        var ok = await _repo.UpdateAsync(id, dto, ct);
-        return ok ? NoContent() : NotFound();
+        try
+        {
+            var ok = await _repo.UpdateAsync(id, dto, ct);
+            return ok ? NoContent() : NotFound();
+        }
+        catch (InvalidOperationException ex) { return BadRequest(new { message = ex.Message }); }
+        catch (DbUpdateException ex) { return BadRequest(new { message = ex.InnerException?.Message ?? ex.Message }); }
     }
 
     [HttpDelete("{id:long}")]

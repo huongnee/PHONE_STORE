@@ -8,4 +8,6 @@ public interface IBrandRepository
     Task<bool> UpdateAsync(long id, BrandUpdateDto dto, CancellationToken ct);
     Task<bool> DeleteAsync(long id, CancellationToken ct);
     Task<bool> SlugExistsAsync(string slug, long? exceptId, CancellationToken ct);
+    Task<List<IdNameDto>> GetOptionsAsync(CancellationToken ct);
+
 }

@@ -1,20 +1,20 @@
-using System.Text;
-using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Serilog;
-using StackExchange.Redis;
-
 using PHONE_STORE.API.Auth;                     // TokenService, LoginLockService
-using PHONE_STORE.Application.Interfaces;       // IAuthService, ITokenService, IRefreshStore, IOtpStore, IEmailSender, IBrandRepository, IUserService, IUserRepository
+using PHONE_STORE.Application.Interfaces;       // IAuthService, ITokenService, IRefreshStore, IOtpStore, IEmailSender, ...
 using PHONE_STORE.Application.Options;          // JwtOptions
 using PHONE_STORE.Application.Services;         // AuthService, UserService
 using PHONE_STORE.Infrastructure.Auth;          // RedisRefreshStore, RedisOtpStore
 using PHONE_STORE.Infrastructure.Data;          // PhoneDbContext
-using PHONE_STORE.Infrastructure.Repositories;  // UserRepository, BrandRepository
 using PHONE_STORE.Infrastructure.Email;         // SmtpEmailSender
+using PHONE_STORE.Infrastructure.Repositories;  // UserRepository, BrandRepository, CategoryRepository, ProductRepository, VariantRepository, ImageRepository, AttributeRepository, PriceRepository
+using PHONE_STORE.Infrastructure.Services;
+using Serilog;
+using StackExchange.Redis;
+using System.Text;
+using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -80,10 +80,27 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddSingleton<ITokenService, TokenService>(); // stateless
 
-// Brands
+// ========= Repositories =========
 builder.Services.AddScoped<IBrandRepository, BrandRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IVariantRepository, VariantRepository>();
+builder.Services.AddScoped<IImageRepository, ImageRepository>();
+builder.Services.AddScoped<IAttributeRepository, AttributeRepository>();
+builder.Services.AddScoped<IPriceRepository, PriceRepository>();
 
-// ================== Redis ==================
+// using PHONE_STORE.Application.Interfaces;
+// using PHONE_STORE.Infrastructure.Repositories;
+// using PHONE_STORE.Infrastructure.Services;
+
+builder.Services.AddScoped<IWarehouseRepository, WarehouseRepository>();
+builder.Services.AddScoped<IInventoryRepository, InventoryRepository>();
+builder.Services.AddScoped<IStockService, StockService>();
+
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+
+// ================== Redis & Email/OTP/Refresh ==================
 builder.Services.AddStackExchangeRedisCache(o =>
 {
     o.Configuration = builder.Configuration["Redis:Configuration"];
@@ -92,12 +109,16 @@ builder.Services.AddStackExchangeRedisCache(o =>
 builder.Services.AddSingleton<IConnectionMultiplexer>(_ =>
     ConnectionMultiplexer.Connect(builder.Configuration["Redis:Configuration"]));
 
-// Refresh token / login lock / OTP / Email
 builder.Services.AddScoped<IRefreshStore, RedisRefreshStore>();
 builder.Services.AddScoped<LoginLockService>();
 builder.Services.AddScoped<IOtpStore, RedisOtpStore>();
+
 builder.Services.Configure<SmtpOptions>(builder.Configuration.GetSection("Email:Smtp"));
 builder.Services.AddScoped<IEmailSender, SmtpEmailSender>();
+
+builder.Services.AddScoped<ICartRepository, CartRepository>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+
 
 // ================== CORS ==================
 var allowed = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>() ?? Array.Empty<string>();
@@ -124,19 +145,32 @@ builder.Services.AddRateLimiter(o =>
 
 var app = builder.Build();
 
-// ================== Pipeline ==================
+// Log request t? b?n vi?t — ?? ngay sau Build là ?n
+app.Use(async (ctx, next) =>
+{
+    var sid = ctx.Request.Headers["X-Session-Id"].FirstOrDefault() ?? ctx.Request.Cookies["sid"];
+    var sub = ctx.User?.FindFirst("sub")?.Value;
+    ctx.RequestServices.GetRequiredService<ILoggerFactory>()
+        .CreateLogger("ReqLog")
+        .LogInformation("REQ {Method} {Path} sid={Sid} sub={Sub}",
+            ctx.Request.Method, ctx.Request.Path, sid, sub);
+    await next();
+});
+
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+else
+{
+    app.UseExceptionHandler(); // ??t trong else cho production
 }
 
 app.UseHttpsRedirection();
 app.UseCors("Mvc");
 app.UseRateLimiter();
-
-// Tr? ProblemDetails cho l?i
-app.UseExceptionHandler();
 
 app.UseAuthentication();
 app.UseAuthorization();
@@ -144,3 +178,52 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+//var app = builder.Build();
+
+//builder.Logging.ClearProviders();
+//builder.Logging.AddConsole();                 // log ra console
+//builder.Logging.AddDebug();
+
+//builder.Services.AddDbContext<PhoneDbContext>(opt =>
+//{
+//    // ... c?u hình DbContext c?a b?n
+//    opt.EnableSensitiveDataLogging();         // ?? ch? b?t môi tr??ng dev
+//    opt.EnableDetailedErrors();
+//});
+
+//// middleware log nhanh
+//app.Use(async (ctx, next) =>
+//{
+//    var sid = ctx.Request.Headers["X-Session-Id"].FirstOrDefault() ?? ctx.Request.Cookies["sid"];
+//    var sub = ctx.User?.FindFirst("sub")?.Value;
+//    ctx.RequestServices.GetRequiredService<ILoggerFactory>()
+//        .CreateLogger("ReqLog")
+//        .LogInformation("REQ {Method} {Path} sid={Sid} sub={Sub}",
+//            ctx.Request.Method, ctx.Request.Path, sid, sub);
+//    await next();
+//});
+
+
+//// ================== Pipeline ==================
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseDeveloperExceptionPage();
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
+
+//app.UseHttpsRedirection();
+//app.UseCors("Mvc");
+//app.UseRateLimiter();
+
+//// Tr? ProblemDetails cho l?i
+//app.UseExceptionHandler();
+
+//app.UseAuthentication();
+//app.UseAuthorization();
+
+//app.MapControllers();
+
+//app.Run();

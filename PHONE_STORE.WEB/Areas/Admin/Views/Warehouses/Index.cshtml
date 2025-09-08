@@ -1,0 +1,33 @@
+﻿@* PHONE_STORE.WEB/Areas/Admin/Views/Warehouses/Index.cshtml *@
+@model List<PHONE_STORE.Application.Dtos.WarehouseDto>
+@{
+    ViewData["Title"] = "Warehouses";
+}
+<h1 class="mb-3">Warehouses</h1>
+<p><a class="btn btn-primary" asp-area="Admin" asp-controller="Warehouses" asp-action="Create">Create</a></p>
+
+<table class="table table-bordered align-middle">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Status</th>
+            <th style="width:120px"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var w in Model)
+        {
+            <tr>
+                <td>@w.Code</td>
+                <td>@w.Name</td>
+                <td>@($"{w.AddressLine}, {w.District}, {w.Province}")</td>
+                <td>@(w.IsActive ? "Active" : "Inactive")</td>
+                <td>
+                    <a class="btn btn-sm btn-outline-secondary" asp-area="Admin" asp-controller="Warehouses" asp-action="Edit" asp-route-id="@w.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

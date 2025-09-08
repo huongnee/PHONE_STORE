@@ -23,18 +23,28 @@ public class TokenService : ITokenService
 
         var claims = new List<Claim>
         {
+            // Chuẩn OpenID
             new(JwtRegisteredClaimNames.Sub, userId.ToString()),
-            new(ClaimTypes.NameIdentifier, userId.ToString())
+            // Dự phòng cho middleware/lib khác
+            new(ClaimTypes.NameIdentifier, userId.ToString()),
+            new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString("N")),
+            new(JwtRegisteredClaimNames.Iat, DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString())
         };
-        if (!string.IsNullOrEmpty(email))
-            claims.Add(new(JwtRegisteredClaimNames.Email, email));
 
-        claims.AddRange(roles.Select(r => new Claim(ClaimTypes.Role, r)));
+        if (!string.IsNullOrEmpty(email))
+        {
+            claims.Add(new(JwtRegisteredClaimNames.Email, email));
+            claims.Add(new(ClaimTypes.Name, email));
+        }
+
+        if (roles != null)
+            claims.AddRange(roles.Select(r => new Claim(ClaimTypes.Role, r)));
 
         var jwt = new JwtSecurityToken(
             issuer: _opt.Issuer,
             audience: _opt.Audience,
             claims: claims,
+            notBefore: DateTime.UtcNow,
             expires: DateTime.UtcNow.AddMinutes(_opt.AccessTokenMinutes),
             signingCredentials: creds
         );

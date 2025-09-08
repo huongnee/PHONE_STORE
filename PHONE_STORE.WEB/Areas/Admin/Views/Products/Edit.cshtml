@@ -1,0 +1,11 @@
+﻿@model PHONE_STORE.WEB.Models.ProductFormVm
+@{
+    ViewData["Title"] = "Edit product";
+}
+<h1>Edit product</h1>
+
+<form asp-area="Admin" asp-controller="Products" asp-action="Edit" asp-route-id="@Model.Id" method="post">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    @await Html.PartialAsync("_Form", Model)
+</form>

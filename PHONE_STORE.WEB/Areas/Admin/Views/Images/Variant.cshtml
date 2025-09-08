@@ -1,0 +1,41 @@
+﻿@model List<PHONE_STORE.Application.Dtos.ImageDto>
+@{
+    var variantId = (long)ViewBag.VariantId; ViewData["Title"] = "Variant Images";
+}
+<h2>Images of Variant #@variantId</h2>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<form method="post" asp-area="Admin" asp-controller="Images" asp-action="AddToVariant" class="row g-3 mb-3">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="VariantId" value="@variantId" />
+    <div class="col-md-6"><input name="ImageUrl" class="form-control" placeholder="Image URL" required /></div>
+    <div class="col-md-3"><input name="AltText" class="form-control" placeholder="Alt text" /></div>
+    <div class="col-md-1"><input name="SortOrder" type="number" class="form-control" value="0" /></div>
+    <div class="col-md-1 form-check"><input name="IsPrimary" class="form-check-input" type="checkbox" /><label class="form-check-label">Primary</label></div>
+    <div class="col-md-1"><button class="btn btn-primary">Add</button></div>
+</form>
+
+<table class="table table-bordered align-middle">
+    <thead><tr><th>Preview</th><th>Alt</th><th>Primary</th><th>Order</th><th style="width:120px"></th></tr></thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td><img src="@i.ImageUrl" alt="@i.AltText" style="max-height:80px" /></td>
+                <td>@i.AltText</td>
+                <td>@(i.IsPrimary ? "Yes" : "No")</td>
+                <td>@i.SortOrder</td>
+                <td>
+                    <form method="post" asp-area="Admin" asp-controller="Images" asp-action="Delete" asp-route-id="@i.Id" asp-route-variantId="@variantId">
+                        @Html.AntiForgeryToken()
+                        <button class="btn btn-sm btn-danger" onclick="return confirm('Delete?')">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

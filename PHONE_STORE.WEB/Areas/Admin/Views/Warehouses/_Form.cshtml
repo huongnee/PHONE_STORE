@@ -1,0 +1,30 @@
+﻿@* PHONE_STORE.WEB/Areas/Admin/Views/Warehouses/_Form.cshtml *@
+@model PHONE_STORE.WEB.Models.WarehouseFormVm
+<div class="row g-3">
+    <div class="col-md-3">
+        <label asp-for="Code" class="form-label"></label>
+        <input asp-for="Code" class="form-control" />
+        <span asp-validation-for="Code" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="col-md-3 form-check mt-4">
+        <input asp-for="IsActive" class="form-check-input" />
+        <label asp-for="IsActive" class="form-check-label"></label>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="AddressLine" class="form-label"></label>
+        <input asp-for="AddressLine" class="form-control" />
+    </div>
+    <div class="col-md-3">
+        <label asp-for="District" class="form-label"></label>
+        <input asp-for="District" class="form-control" />
+    </div>
+    <div class="col-md-3">
+        <label asp-for="Province" class="form-label"></label>
+        <input asp-for="Province" class="form-control" />
+    </div>
+</div>

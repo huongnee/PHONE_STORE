@@ -1,0 +1,72 @@
+﻿@model PHONE_STORE.Application.Dtos.OrderDetailDto
+@{
+    ViewData["Title"] = "Order " + Model.Code;
+}
+<h1>Order @Model.Code</h1>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card mb-3">
+      <div class="card-header">Summary</div>
+      <div class="card-body">
+        <div><strong>Status:</strong> <span class="badge bg-info">@Model.Status</span></div>
+        <div><strong>CustomerId:</strong> @Model.CustomerId</div>
+        <div><strong>Ship Addr Id:</strong> @Model.ShippingAddressId</div>
+        <div><strong>Placed:</strong> @Model.PlacedAt.ToLocalTime()</div>
+        <div><strong>Updated:</strong> @Model.UpdatedAt?.ToLocalTime()</div>
+        <hr />
+        <div class="d-flex justify-content-between"><span>Subtotal</span><span>@string.Format("{0:N0} ₫", Model.Subtotal)</span></div>
+        <div class="d-flex justify-content-between"><span>Discount</span><span>@string.Format("{0:N0} ₫", Model.DiscountTotal)</span></div>
+        <div class="d-flex justify-content-between"><span>Tax</span><span>@string.Format("{0:N0} ₫", Model.TaxTotal)</span></div>
+        <div class="d-flex justify-content-between"><span>Shipping</span><span>@string.Format("{0:N0} ₫", Model.ShippingFee)</span></div>
+        <hr />
+        <div class="d-flex justify-content-between fw-bold"><span>Grand Total</span><span>@string.Format("{0:N0} ₫", Model.GrandTotal)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card mb-3">
+      <div class="card-header">Actions</div>
+      <div class="card-body">
+        <form asp-action="MarkPaid" method="post" class="d-inline">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="id" value="@Model.Id" />
+            <button class="btn btn-outline-success me-2" @(Model.Status=="PAID"?"disabled":null)>Mark Paid</button>
+        </form>
+        <form asp-action="Ship" method="post" class="d-inline">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="id" value="@Model.Id" />
+            <button class="btn btn-outline-primary me-2" @(Model.Status=="SHIPPED"?"disabled":null)>Mark Shipped</button>
+        </form>
+        <form asp-action="Cancel" method="post" class="d-inline">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="id" value="@Model.Id" />
+            <button class="btn btn-outline-danger" @(Model.Status=="CANCELLED"?"disabled":null)
+                    onclick="return confirm('Cancel this order?');">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">Items</div>
+  <div class="card-body p-0">
+    <table class="table mb-0">
+        <thead><tr><th>Product</th><th>SKU</th><th class="text-end">Price</th><th class="text-end">Qty</th><th class="text-end">Line</th></tr></thead>
+        <tbody>
+        @foreach (var i in Model.Items)
+        {
+            <tr>
+                <td>@i.ProductName</td>
+                <td>@i.Sku</td>
+                <td class="text-end">@string.Format("{0:N0} ₫", i.UnitPrice)</td>
+                <td class="text-end">@i.Quantity</td>
+                <td class="text-end fw-semibold">@string.Format("{0:N0} ₫", i.LineTotal)</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+  </div>
+</div>

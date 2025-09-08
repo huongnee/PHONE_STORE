@@ -1,0 +1,57 @@
+﻿@model List<PHONE_STORE.Application.Dtos.AddressDto>
+@{
+    var cus = (PHONE_STORE.Application.Dtos.CustomerDto)ViewBag.Customer;
+    ViewData["Title"] = "Addresses";
+}
+<h1>Addresses of @cus.FullName (@cus.Id)</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="AddAddress" asp-route-id="@cus.Id">Add Address</a>
+    <a class="btn btn-link" asp-action="Index">Back to Customers</a>
+</p>
+
+<table class="table table-bordered align-middle">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Recipient</th>
+            <th>Phone</th>
+            <th>Line1</th>
+            <th>Province</th>
+            <th style="width:260px"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.AddressType</td>
+                <td>@(a.IsDefault ? "Yes" : "No")</td>
+                <td>@a.Recipient</td>
+                <td>@a.Phone</td>
+                <td>@a.Line1</td>
+                <td>@a.Province</td>
+                <td>
+                    <a class="btn btn-sm btn-outline-secondary"
+                       asp-action="EditAddress" asp-route-id="@a.CustomerId" asp-route-addressId="@a.Id">Edit</a>
+
+                    <form asp-action="SetDefault" method="post" class="d-inline">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="id" value="@a.CustomerId" />
+                        <input type="hidden" name="addressId" value="@a.Id" />
+                        <input type="hidden" name="type" value="@a.AddressType" />
+                        <button class="btn btn-sm btn-outline-primary" @(a.IsDefault ? "disabled" : "")>Set default</button>
+                    </form>
+
+                    <form asp-action="DeleteAddress" method="post" class="d-inline" onsubmit="return confirm('Delete?')">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="id" value="@a.CustomerId" />
+                        <input type="hidden" name="addressId" value="@a.Id" />
+                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

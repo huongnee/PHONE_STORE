@@ -1,0 +1,61 @@
+﻿@model PHONE_STORE.Application.Dtos.CartDto?
+@{
+    ViewData["Title"] = "Giỏ hàng";
+    var cart = Model;
+}
+<h1>Giỏ hàng</h1>
+
+@if (cart == null || cart.Items.Count == 0)
+{
+    <div class="alert alert-info">Giỏ của bạn đang trống. <a href="@Url.Action("Index", "Catalog")">Tiếp tục mua sắm</a>.</div>
+}
+else
+{
+    <table class="table align-middle">
+        <thead><tr><th>SKU/Variant</th><th class="text-end">Đơn giá</th><th style="width:140px">SL</th><th class="text-end">Thành tiền</th><th></th></tr></thead>
+        <tbody>
+            @foreach (var i in cart.Items)
+            {
+                <tr>
+                    <td>@i.Sku @if(!string.IsNullOrWhiteSpace(i.Color)){
+                    <span class="text-muted">- @i.Color</span>
+                }
+     @if (i.StorageGb.HasValue)
+    {
+                    <span class="text-muted">- @i.StorageGb GB</span>
+                }
+    </td>
+                <td class="text-end">@string.Format("{0:N0} ₫", i.UnitPrice)</td>
+                <td>
+                    <form asp-action="Update" method="post" class="d-flex gap-2">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="itemId" value="@i.Id" />
+                        <input type="number" name="qty" value="@i.Quantity" min="0" class="form-control form-control-sm" />
+                        <button class="btn btn-sm btn-outline-primary">Cập nhật</button>
+                    </form>
+                </td>
+                <td class="text-end fw-semibold">@string.Format("{0:N0} ₫", i.LineTotal)</td>
+                <td class="text-end">
+                    <form asp-action="Remove" method="post">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="itemId" value="@i.Id" />
+                        <button class="btn btn-sm btn-outline-danger">Xoá</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="3" class="text-end">Tạm tính</th>
+            <th class="text-end">@string.Format("{0:N0} ₫", cart.Subtotal)</th>
+            <th></th>
+        </tr>
+    </tfoot>
+</table>
+
+<div class="text-end">
+    <a class="btn btn-secondary" href="@Url.Action("Index", "Catalog")">Tiếp tục mua sắm</a>
+    <a class="btn btn-primary" href="@Url.Action("Index", "Checkout")">Thanh toán</a>
+</div>
+}

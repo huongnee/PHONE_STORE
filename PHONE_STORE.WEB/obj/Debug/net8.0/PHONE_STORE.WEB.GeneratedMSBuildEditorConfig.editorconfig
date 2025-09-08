@@ -20,6 +20,22 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Attributes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXR0cmlidXRlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Attributes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXR0cmlidXRlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Attributes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXR0cmlidXRlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Attributes/ProductValues.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQXR0cmlidXRlc1xQcm9kdWN0VmFsdWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Brands/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -32,8 +48,144 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQnJhbmRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Categories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Categories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Categories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Customers/AddAddress.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VzdG9tZXJzXEFkZEFkZHJlc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Customers/Addresses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VzdG9tZXJzXEFkZHJlc3Nlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Customers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VzdG9tZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Customers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VzdG9tZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Customers/EditAddress.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VzdG9tZXJzXEVkaXRBZGRyZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Customers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VzdG9tZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/DeviceUnits/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGV2aWNlVW5pdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/DeviceUnits/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGV2aWNlVW5pdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Images/Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW1hZ2VzXFByb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Images/Variant.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW1hZ2VzXFZhcmlhbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Inventory/ByVariant.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW52ZW50b3J5XEJ5VmFyaWFudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Inventory/ByWarehouse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW52ZW50b3J5XEJ5V2FyZWhvdXNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Inventory/Move.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW52ZW50b3J5XE1vdmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Orders/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Orders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Prices/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJpY2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Prices/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJpY2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Prices/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJpY2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Prices/_Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJpY2VzXF9Gb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Products/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Products/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Products/_Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdHNcX0Zvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Variants/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVmFyaWFudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Variants/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVmFyaWFudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Variants/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVmFyaWFudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Variants/_Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVmFyaWFudHNcX0Zvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Warehouses/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcV2FyZWhvdXNlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Warehouses/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcV2FyZWhvdXNlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Warehouses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcV2FyZWhvdXNlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/Warehouses/_Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcV2FyZWhvdXNlc1xfRm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Areas/Admin/Views/_ViewImports.cshtml]
@@ -66,6 +218,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Views/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Views/Catalog/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Views/Catalog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Views/Checkout/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Views/Checkout/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcU3VjY2Vzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Administrator/Desktop/TongHopKienThuc/CSharp/PHONE_STORE/PHONE_STORE.WEB/Views/Home/Index.cshtml]

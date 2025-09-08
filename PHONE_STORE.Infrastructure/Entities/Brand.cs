@@ -7,4 +7,6 @@ public class Brand
     public string Slug { get; set; } = "";
     public bool IsActive { get; set; } = true;
     public DateTime CreatedAt { get; set; }
+    public ICollection<Product> Products { get; set; } = new List<Product>();
+
 }

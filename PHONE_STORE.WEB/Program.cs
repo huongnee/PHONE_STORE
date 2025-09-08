@@ -2,26 +2,29 @@
 using Serilog;
 using PHONE_STORE.WEB.Infrastructure; // JwtCookieHandler, AutoRefreshHandler
 
-var logger = new LoggerConfiguration()
+// ===== Serilog bootstrap (để bắt log ngay từ đầu) =====
+Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
     .Enrich.FromLogContext()
     .WriteTo.Console()
     .WriteTo.File("logs/web-.log", rollingInterval: RollingInterval.Day, retainedFileCountLimit: 7)
     .CreateLogger();
 
-Log.Logger = logger;
-
 try
 {
     var builder = WebApplication.CreateBuilder(args);
 
+    // Serilog tích hợp vào hosting
     builder.Host.UseSerilog((ctx, lc) =>
-        lc.ReadFrom.Configuration(ctx.Configuration)
+        lc.MinimumLevel.Information()
           .Enrich.FromLogContext()
-          .Enrich.WithProperty("Service", "PhoneStore.Web"));
+          .Enrich.WithProperty("Service", "PhoneStore.Web")
+          .WriteTo.Console()
+          .WriteTo.File("logs/web-.log", rollingInterval: RollingInterval.Day, retainedFileCountLimit: 7));
 
     builder.Services.AddControllersWithViews();
 
+    // ===== Cookie auth cho MVC =====
     builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
         .AddCookie(o =>
         {
@@ -32,39 +35,65 @@ try
             o.Cookie.Name = "ps_auth";
             o.Cookie.HttpOnly = true;
             o.Cookie.SameSite = SameSiteMode.Lax;
-            o.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+            o.Cookie.SecurePolicy = builder.Environment.IsDevelopment()
+                ? CookieSecurePolicy.SameAsRequest
+                : CookieSecurePolicy.Always;
         });
-
     builder.Services.AddAuthorization();
 
-    // ===== HttpClient & Handlers =====
-    var apiBase = builder.Configuration["ApiBaseUrl"] ?? "https://localhost:7277";
+    // ===== HttpClient (WEB -> API) =====
+    var apiBase =
+        builder.Configuration["Api:BaseUrl"]
+        ?? builder.Configuration["ApiBaseUrl"]
+        ?? "https://localhost:7277";
 
     builder.Services.AddHttpContextAccessor();
-    builder.Services.AddTransient<JwtCookieHandler>();    // gắn Bearer từ cookie "access_token"
-    builder.Services.AddTransient<AutoRefreshHandler>();  // bắt 401 -> gọi /api/auth/refresh
+    builder.Services.AddTransient<JwtCookieHandler>();
+    builder.Services.AddTransient<AutoRefreshHandler>();
 
-    // Client KHÔNG auth (AutoRefreshHandler dùng để gọi /refresh)
+    // Client có JWT & tự refresh khi 401
+    builder.Services.AddHttpClient("api", c =>
+    {
+        c.BaseAddress = new Uri(apiBase.TrimEnd('/') + "/");
+    })
+    .AddHttpMessageHandler<JwtCookieHandler>()
+    .AddHttpMessageHandler<AutoRefreshHandler>();
+
+    // Client không auth (dùng cho /auth/login, /auth/refresh, …)
     builder.Services.AddHttpClient("ApiNoAuth", c =>
     {
         c.BaseAddress = new Uri(apiBase.TrimEnd('/') + "/");
     });
 
-    // Client CHÍNH cho toàn bộ Web -> API (tên: "api")
-    builder.Services.AddHttpClient("api", c =>
-    {
-        c.BaseAddress = new Uri(apiBase.TrimEnd('/') + "/");
-    })
-    .AddHttpMessageHandler<AutoRefreshHandler>()  // ngoài
-    .AddHttpMessageHandler<JwtCookieHandler>();   // trong
-
     var app = builder.Build();
+
+    // Cấp 'sid' cho khách (để API nhận diện giỏ hàng guest theo session)
+    app.Use(async (ctx, next) =>
+    {
+        if (!ctx.Request.Cookies.TryGetValue("sid", out var sid) || string.IsNullOrWhiteSpace(sid))
+        {
+            sid = Guid.NewGuid().ToString("N");
+            var isDev = ctx.RequestServices.GetRequiredService<IWebHostEnvironment>().IsDevelopment();
+            ctx.Response.Cookies.Append("sid", sid, new CookieOptions
+            {
+                HttpOnly = false,               // cho JS đọc nếu cần
+                Secure = !isDev,                // prod: true
+                SameSite = SameSiteMode.Lax,
+                IsEssential = true,
+                Path = "/",
+                Expires = DateTimeOffset.UtcNow.AddDays(30)
+            });
+        }
+        await next();
+    });
 
     if (!app.Environment.IsDevelopment())
     {
         app.UseExceptionHandler("/Home/Error");
         app.UseHsts();
     }
+
+    app.UseSerilogRequestLogging(); // log mỗi request của WEB
 
     app.UseHttpsRedirection();
     app.UseStaticFiles();
@@ -74,12 +103,14 @@ try
     app.UseAuthentication();
     app.UseAuthorization();
 
-    app.UseSerilogRequestLogging();
-
-    // Areas trước, default sau
     app.MapControllerRoute(
         name: "areas",
         pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+    app.MapControllerRoute(
+        name: "product_slug",
+        pattern: "p/{slug}",
+        defaults: new { controller = "Catalog", action = "Details" });
 
     app.MapControllerRoute(
         name: "default",

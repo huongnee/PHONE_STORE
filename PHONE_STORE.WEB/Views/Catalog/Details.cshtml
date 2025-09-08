@@ -1,0 +1,53 @@
+﻿@model PHONE_STORE.WEB.Models.Shop.ProductDetailVm
+@{
+    ViewData["Title"] = Model.Name;
+    long? firstVariant = Model.Variants.FirstOrDefault()?.Id;
+}
+<div class="row">
+    <div class="col-md-6">
+        <div id="carousel" class="mb-3">
+            @foreach (var img in Model.Images)
+            {
+                <img class="img-fluid mb-2" src="@img.Url" alt="@img.Alt" />
+            }
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h1>@Model.Name</h1>
+        <p class="text-muted">@Model.Description</p>
+
+        <form asp-controller="Cart" asp-action="Add" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="returnUrl" value="/p/@Model.Slug" />
+
+            <div class="mb-3">
+                <label class="form-label">Chọn phiên bản</label>
+                <div class="d-flex flex-column gap-1">
+                    @foreach (var v in Model.Variants)
+                    {
+                        <label class="border rounded p-2">
+                            <input type="radio" name="variantId" value="@v.Id" @(v.Id == firstVariant ? "checked" : "") />
+                            <strong>@v.Sku</strong>
+                            @if (!string.IsNullOrWhiteSpace(v.Color))
+                            {
+                                <span class="text-muted">- @v.Color</span>
+                            }
+                            @if (v.StorageGb.HasValue)
+                            {
+                                <span class="text-muted">- @v.StorageGb GB</span>
+                            }
+                            <span class="float-end fw-semibold">@string.Format("{0:N0} ₫", v.Price)</span>
+                        </label>
+                    }
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Số lượng</label>
+                <input type="number" class="form-control" name="qty" value="1" min="1" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Thêm vào giỏ</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+﻿@model List<PHONE_STORE.Application.Dtos.AttributeDto>
+@{
+    ViewData["Title"] = "Attributes";
+}
+<h2>Attributes</h2>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<p><a class="btn btn-primary" asp-area="Admin" asp-controller="Attributes" asp-action="Create">Create</a></p>
+
+<table class="table table-bordered align-middle">
+    <thead><tr><th>Code</th><th>Name</th><th>Type</th><th style="width:140px"></th></tr></thead>
+    <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.Code</td>
+                <td>@a.Name</td>
+                <td>@a.DataType</td>
+                <td>
+                    <a class="btn btn-sm btn-secondary" asp-area="Admin" asp-controller="Attributes" asp-action="Edit" asp-route-id="@a.Id">Edit</a>
+                    <form method="post" asp-area="Admin" asp-controller="Attributes" asp-action="Delete" asp-route-id="@a.Id" class="d-inline">
+                        @Html.AntiForgeryToken()
+                        <button class="btn btn-sm btn-danger" onclick="return confirm('Delete?')">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

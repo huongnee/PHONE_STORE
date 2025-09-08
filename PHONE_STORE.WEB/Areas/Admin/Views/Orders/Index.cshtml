@@ -1,0 +1,50 @@
+﻿@model List<PHONE_STORE.Application.Dtos.OrderListItemDto>
+@{
+    ViewData["Title"] = "Orders";
+    var q = ViewBag.Q as string;
+    var status = ViewBag.Status as string;
+}
+<h1>Orders</h1>
+
+<form method="get" class="row g-2 mb-3">
+    <div class="col-auto"><input name="q" value="@q" class="form-control" placeholder="Mã đơn / email / phone" /></div>
+    <div class="col-auto">
+        <select name="status" class="form-select">
+            <option value="">-- All status --</option>
+            @foreach (var s in new[]{ "PENDING","CONFIRMED","PAID","PACKED","SHIPPED","COMPLETED","CANCELLED"})
+                    {
+                        if (s == status)
+                        {
+                            <option value="@s" selected>@s</option>
+                        }
+                        else
+                        {
+                            <option value="@s">@s</option>
+                        }
+                    }
+        </select>
+    </div>
+    <div class="col-auto"><button class="btn btn-primary">Filter</button></div>
+</form>
+
+<table class="table table-hover align-middle">
+    <thead>
+        <tr><th>Code</th><th>Status</th><th>Customer</th>
+            <th class="text-end">Total</th><th>Placed</th><th></th></tr>
+    </thead>
+    <tbody>
+        @foreach (var o in Model)
+        {
+            <tr>
+                <td>@o.Code</td>
+                <td><span class="badge bg-secondary">@o.Status</span></td>
+                <td>@o.CustomerEmail</td>
+                <td class="text-end">@string.Format("{0:N0} ₫", o.GrandTotal)</td>
+                <td>@o.PlacedAt.ToLocalTime()</td>
+                <td class="text-end">
+                    <a class="btn btn-sm btn-outline-primary" asp-action="Details" asp-route-id="@o.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

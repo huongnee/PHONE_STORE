@@ -1,0 +1,11 @@
+﻿@model PHONE_STORE.WEB.Models.VariantFormVm
+@{
+    ViewData["Title"] = "Create variant";
+}
+<h2>Create Variant</h2>
+<form method="post" asp-area="Admin" asp-controller="Variants" asp-action="Create">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="ProductId" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    @await Html.PartialAsync("_Form", Model)
+</form>

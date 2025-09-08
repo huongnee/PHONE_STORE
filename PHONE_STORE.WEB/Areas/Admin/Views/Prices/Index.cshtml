@@ -1,0 +1,47 @@
+﻿@model List<PHONE_STORE.Application.Dtos.PriceDto>
+@{
+    ViewData["Title"] = "Prices";
+    var variantId = (long)ViewBag.VariantId;
+    var productId = (long)ViewBag.ProductId;
+}
+<h2>Prices of Variant #@variantId</h2>
+
+<p>
+    <a class="btn btn-primary"
+       asp-area="Admin" asp-controller="Prices" asp-action="Create"
+       asp-route-variantId="@variantId" asp-route-productId="@productId">Add Price</a>
+
+    <a class="btn btn-secondary"
+       asp-area="Admin" asp-controller="Variants" asp-action="Index"
+       asp-route-productId="@productId">Back</a>
+</p>
+
+<table class="table table-bordered align-middle">
+    <thead>
+        <tr><th>List</th><th>Sale</th><th>Currency</th><th>Starts</th><th>Ends</th><th style="width:160px"></th></tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.ListPrice</td>
+                <td>@p.SalePrice</td>
+                <td>@p.Currency</td>
+                <td>@p.StartsAt</td>
+                <td>@p.EndsAt</td>
+                <td>
+                    <a class="btn btn-sm btn-secondary"
+                       asp-area="Admin" asp-controller="Prices" asp-action="Edit"
+                       asp-route-id="@p.Id" asp-route-variantId="@variantId" asp-route-productId="@productId">Edit</a>
+
+                    <form method="post" class="d-inline"
+                          asp-area="Admin" asp-controller="Prices" asp-action="Delete"
+                          asp-route-id="@p.Id" asp-route-variantId="@variantId" asp-route-productId="@productId">
+                        @Html.AntiForgeryToken()
+                        <button class="btn btn-sm btn-danger" onclick="return confirm('Delete?')">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

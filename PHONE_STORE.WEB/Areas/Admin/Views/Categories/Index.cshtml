@@ -1,0 +1,54 @@
+﻿@model PagedResult<CategoryDto>
+@{
+    ViewData["Title"] = "Categories";
+    var q = Context.Request.Query["q"].ToString();
+}
+
+<h1 class="mb-3">Categories</h1>
+
+<form method="get" class="row g-2 mb-3">
+    <div class="col-auto">
+        <input name="q" value="@q" class="form-control" placeholder="Search name or slug..." />
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-primary">Search</button>
+    </div>
+    <div class="col-auto ms-auto">
+        <a asp-area="Admin" asp-controller="Categories" asp-action="Create" class="btn btn-success">+ New Category</a>
+    </div>
+</form>
+
+<table class="table table-striped align-middle">
+    <thead>
+        <tr>
+            <th style="width:80px">ID</th>
+            <th>Name</th>
+            <th>Slug</th>
+            <th>Parent</th>
+            <th>Sort</th>
+            <th style="width:120px">Active</th>
+            <th style="width:180px"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model.Items)
+        {
+            <tr>
+                <td>@c.Id</td>
+                <td>@c.Name</td>
+                <td>@c.Slug</td>
+                <td>@(c.ParentId?.ToString() ?? "-")</td>
+                <td>@c.SortOrder</td>
+                <td>@(c.IsActive ? "Yes" : "No")</td>
+                <td class="text-end">
+                    <a asp-area="Admin" asp-controller="Categories" asp-action="Edit" asp-route-id="@c.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                    <form asp-area="Admin" asp-controller="Categories" asp-action="Delete" asp-route-id="@c.Id"
+                          method="post" class="d-inline" onsubmit="return confirm('Delete this category?');">
+                        @Html.AntiForgeryToken()
+                        <button class="btn btn-sm btn-outline-danger" type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

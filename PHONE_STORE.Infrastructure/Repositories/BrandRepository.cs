@@ -4,6 +4,7 @@ using PHONE_STORE.Application.Interfaces;
 using PHONE_STORE.Infrastructure.Data;
 using PHONE_STORE.Infrastructure.Entities;
 using System.Text.RegularExpressions;
+using Microsoft.EntityFrameworkCore;
 
 public class BrandRepository : IBrandRepository
 {
@@ -79,9 +80,16 @@ public class BrandRepository : IBrandRepository
         return true;
     }
 
-    public Task<bool> SlugExistsAsync(string slug, long? exceptId, CancellationToken ct)
-        => _db.Brands.AnyAsync(b => b.Slug.ToLower() == slug.ToLower()
-                                 && (exceptId == null || b.Id != exceptId.Value), ct);
+    public async Task<bool> SlugExistsAsync(string slug, long? exceptId, CancellationToken ct)
+    {
+        var q = _db.Brands.AsNoTracking()
+                          .Where(b => b.Slug.ToLower() == slug.ToLower());
+        if (exceptId.HasValue)
+            q = q.Where(b => b.Id != exceptId.Value);
+
+        var count = await q.CountAsync(ct);   // -> SELECT COUNT(*) ...
+        return count > 0;                     // so sánh ở C#
+    }
 
     private static string MakeSlug(string s)
     {
@@ -91,4 +99,10 @@ public class BrandRepository : IBrandRepository
         slug = Regex.Replace(slug, "-{2,}", "-").Trim('-');
         return slug;
     }
+
+    public Task<List<IdNameDto>> GetOptionsAsync(CancellationToken ct)
+        => _db.Brands.AsNoTracking()
+            .OrderBy(b => b.Name)
+            .Select(b => new IdNameDto(b.Id, b.Name))
+            .ToListAsync(ct);
 }

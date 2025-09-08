@@ -1,0 +1,77 @@
+﻿@model PHONE_STORE.WEB.Models.AddressFormVm
+@{
+    ViewData["Title"] = "Edit Address";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="CustomerId" />
+
+    <div class="row g-3">
+        <div class="col-md-3">
+            <label class="form-label">Label</label>
+            <input asp-for="Label" class="form-control" />
+            <span asp-validation-for="Label" class="text-danger"></span>
+        </div>
+        <div class="col-md-3">
+            <label class="form-label">Recipient</label>
+            <input asp-for="Recipient" class="form-control" />
+            <span asp-validation-for="Recipient" class="text-danger"></span>
+        </div>
+        <div class="col-md-3">
+            <label class="form-label">Phone</label>
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+        <div class="col-md-3">
+            <label class="form-label">Address Type</label>
+            <select asp-for="AddressType" class="form-select">
+                <option>SHIPPING</option>
+                <option>BILLING</option>
+            </select>
+            <span asp-validation-for="AddressType" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-12">
+            <label class="form-label">Line 1</label>
+            <input asp-for="Line1" class="form-control" />
+            <span asp-validation-for="Line1" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Ward</label>
+            <input asp-for="Ward" class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">District</label>
+            <input asp-for="District" class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">Province</label>
+            <input asp-for="Province" class="form-control" />
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label">Postal Code</label>
+            <input asp-for="PostalCode" class="form-control" />
+        </div>
+
+        <div class="col-md-3 form-check mt-4">
+            <input asp-for="IsDefault" class="form-check-input" />
+            <label asp-for="IsDefault" class="form-check-label">Is default</label>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <button class="btn btn-primary">Save</button>
+        <a class="btn btn-link" asp-action="Addresses" asp-route-id="@Model.CustomerId">Back</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

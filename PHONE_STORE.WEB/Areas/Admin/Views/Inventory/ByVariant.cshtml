@@ -1,0 +1,44 @@
+﻿@model List<PHONE_STORE.Application.Dtos.InventoryDto>
+@{
+    ViewData["Title"] = "Inventory by Variant";
+    var vid = (long?)ViewBag.VariantId ?? 0;
+    var dict = ViewBag.WarehouseDict as Dictionary<long, string> ?? new();
+}
+<h1>Inventory by Variant</h1>
+
+<form method="get" class="row g-2 mb-3">
+    <div class="col-auto">
+        <label class="col-form-label">Variant ID</label>
+    </div>
+    <div class="col-auto">
+        <input type="number" class="form-control" name="variantId" value="@vid" min="1" />
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-primary">View</button>
+    </div>
+</form>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">Nhập Variant ID để xem tồn.</div>
+}
+else
+{
+    <table class="table table-bordered align-middle">
+        <thead>
+            <tr><th>Warehouse</th><th>On hand</th><th>Reserved</th><th>Updated</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var r in Model)
+            {
+                var label = dict.TryGetValue(r.WarehouseId, out var s) ? s : r.WarehouseId.ToString();
+                <tr>
+                    <td>@label</td>
+                    <td>@r.QtyOnHand</td>
+                    <td>@r.QtyReserved</td>
+                    <td>@r.UpdatedAt.ToLocalTime()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

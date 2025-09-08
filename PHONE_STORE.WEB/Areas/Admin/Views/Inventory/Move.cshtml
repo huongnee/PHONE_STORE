@@ -1,0 +1,62 @@
+﻿@* PHONE_STORE.WEB/Areas/Admin/Views/Inventory/Move.cshtml *@
+@model PHONE_STORE.WEB.Models.StockMoveVm
+@{
+    ViewData["Title"] = "Stock Movement";
+}
+<h1>Stock Movement</h1>
+@if (TempData["ok"] != null)
+{
+    <div class="alert alert-success">@TempData["ok"]</div>
+}
+
+<form asp-action="Move" method="post" class="row g-3">
+    <div class="col-md-3">
+        <label class="form-label">Variant ID</label>
+        <input asp-for="VariantId" class="form-control" />
+        <span asp-validation-for="VariantId" class="text-danger"></span>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Warehouse</label>
+        <select asp-for="WarehouseId" class="form-select" asp-items="Model.WarehouseOptions"></select>
+        <span asp-validation-for="WarehouseId" class="text-danger"></span>
+    </div>
+    <div class="col-md-2">
+        <label class="form-label">Type</label>
+        <select asp-for="MovementType" class="form-select">
+            <option>IN</option>
+            <option>OUT</option>
+            <option>ADJUST</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <label class="form-label">Quantity</label>
+        <input asp-for="Quantity" class="form-control" />
+        <span asp-validation-for="Quantity" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-3">
+        <label class="form-label">RefType</label>
+        <input asp-for="RefType" class="form-control" />
+    </div>
+    <div class="col-md-3">
+        <label class="form-label">RefId</label>
+        <input asp-for="RefId" class="form-control" />
+    </div>
+    <div class="col-md-3">
+        <label class="form-label">RefCode</label>
+        <input asp-for="RefCode" class="form-control" />
+    </div>
+    <div class="col-md-12">
+        <label class="form-label">Note</label>
+        <input asp-for="Note" class="form-control" />
+    </div>
+
+    <div class="col-md-12">
+        <label class="form-label">IMEI list (tuỳ chọn, mỗi dòng hoặc ngăn cách dấu phẩy)</label>
+        <textarea asp-for="ImeiCsv" rows="4" class="form-control" placeholder="3520..., 3519..., ..."></textarea>
+    </div>
+
+    <div class="col-12">
+        <button class="btn btn-primary">Save</button>
+    </div>
+</form>

@@ -1,0 +1,47 @@
+﻿@model List<PHONE_STORE.Application.Dtos.VariantDto>
+@{
+    ViewData["Title"] = "Variants";
+    var productId = (long)ViewBag.ProductId;
+}
+<h2>Variants of Product #@productId</h2>
+
+<p>
+    <a class="btn btn-primary" asp-area="Admin" asp-controller="Variants" asp-action="Create" asp-route-productId="@productId">Add Variant</a>
+    <a class="btn btn-secondary" asp-area="Admin" asp-controller="Products" asp-action="Index">Back to Products</a>
+</p>
+
+<table class="table table-bordered align-middle">
+    <thead>
+        <tr>
+            <th>SKU</th>
+            <th>Color</th>
+            <th>Storage</th>
+            <th>Barcode</th>
+            <th>Weight(g)</th>
+            <th>Active</th>
+            <th style="width:240px"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var v in Model)
+        {
+            <tr>
+                <td>@v.Sku</td>
+                <td>@v.Color</td>
+                <td>@v.StorageGb</td>
+                <td>@v.Barcode</td>
+                <td>@v.WeightGram</td>
+                <td>@(v.IsActive ? "Yes" : "No")</td>
+                <td>
+                    <a class="btn btn-sm btn-outline-primary" asp-area="Admin" asp-controller="Prices" asp-action="Index" asp-route-variantId="@v.Id">Prices</a>
+                    <a class="btn btn-sm btn-outline-primary" asp-area="Admin" asp-controller="Images" asp-action="Variant" asp-route-variantId="@v.Id">Images</a>
+                    <a class="btn btn-sm btn-secondary" asp-area="Admin" asp-controller="Variants" asp-action="Edit" asp-route-id="@v.Id" asp-route-productId="@productId">Edit</a>
+                    <form method="post" asp-area="Admin" asp-controller="Variants" asp-action="Delete" asp-route-id="@v.Id" asp-route-productId="@productId" class="d-inline">
+                        @Html.AntiForgeryToken()
+                        <button class="btn btn-sm btn-danger" onclick="return confirm('Delete?')">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

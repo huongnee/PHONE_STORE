@@ -1,0 +1,11 @@
+﻿@* PHONE_STORE.WEB/Areas/Admin/Views/Warehouses/Edit.cshtml *@
+@model PHONE_STORE.WEB.Models.WarehouseFormVm
+@{
+    ViewData["Title"] = "Edit Warehouse";
+}
+<h1>Edit warehouse</h1>
+<form asp-action="Edit" method="post">
+    <partial name="_Form" />
+    <button class="btn btn-primary">Save</button>
+    <a class="btn btn-link" asp-action="Index">Back</a>
+</form>

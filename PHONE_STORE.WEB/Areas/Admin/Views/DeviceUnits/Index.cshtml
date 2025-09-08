@@ -1,0 +1,61 @@
+﻿@model List<PHONE_STORE.Application.Dtos.DeviceUnitDto>
+@{
+    ViewData["Title"] = "Device Units";
+    var imei = (string?)ViewBag.Imei ?? "";
+    var vid = (long?)ViewBag.VariantId ?? 0;
+    var wid = (long?)ViewBag.WarehouseId ?? 0;
+}
+<h1>Device Units</h1>
+
+<form method="get" class="row g-2 mb-3">
+    <div class="col-md-4">
+        <input class="form-control" name="imei" placeholder="Tìm IMEI (1 phần hoặc đầy đủ)" value="@imei" />
+    </div>
+    <div class="col-md-2">
+        <input class="form-control" type="number" name="variantId" placeholder="Variant ID" value="@(vid == 0 ? null : vid)" />
+    </div>
+    <div class="col-md-2">
+        <input class="form-control" type="number" name="warehouseId" placeholder="Warehouse ID" value="@(wid == 0 ? null : wid)" />
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-primary w-100">Search</button>
+    </div>
+</form>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">Nhập IMEI hoặc Variant/Warehouse để tìm.</div>
+}
+else
+{
+    <table class="table table-bordered align-middle">
+        <thead>
+            <tr>
+                <th>IMEI</th>
+                <th>Variant</th>
+                <th>Status</th>
+                <th>Warehouse</th>
+                <th>Received</th>
+                <th>Sold</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var u in Model)
+            {
+                <tr>
+                    <td>@u.Imei</td>
+                    <td>@u.VariantId</td>
+                    <td>@u.Status</td>
+                    <td>@(u.WarehouseId?.ToString() ?? "-")</td>
+                    <td>@u.ReceivedAt.ToLocalTime()</td>
+                    <td>@(u.SoldAt?.ToLocalTime().ToString() ?? "-")</td>
+                    <td>
+                        <a class="btn btn-sm btn-outline-secondary"
+                           asp-area="Admin" asp-controller="DeviceUnits" asp-action="Details" asp-route-id="@u.Id">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

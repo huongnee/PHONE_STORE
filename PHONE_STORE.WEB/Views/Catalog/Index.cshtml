@@ -1,0 +1,31 @@
+﻿@model List<PHONE_STORE.WEB.Models.Shop.ProductListItemVm>
+@{
+    ViewData["Title"] = "Shop";
+    string? q = ViewBag.Q as string;
+}
+<h1 class="mb-3">Sản phẩm</h1>
+
+<form method="get" class="row g-2 mb-3">
+    <div class="col-auto">
+        <input name="q" value="@q" class="form-control" placeholder="Tìm theo tên..." />
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-primary" type="submit">Tìm</button>
+    </div>
+</form>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    @foreach (var p in Model)
+    {
+        <div class="col">
+            <div class="card h-100">
+                <img class="card-img-top" src="@(string.IsNullOrWhiteSpace(p.ImageUrl) ? "/img/noimg.png" : p.ImageUrl)" alt="@p.Name" />
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">@p.Name</h5>
+                    <p class="card-text text-muted mb-4">Giá từ <strong>@string.Format("{0:N0} ₫", p.MinPrice)</strong></p>
+                    <a class="btn btn-outline-primary mt-auto" href="/p/@p.Slug">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

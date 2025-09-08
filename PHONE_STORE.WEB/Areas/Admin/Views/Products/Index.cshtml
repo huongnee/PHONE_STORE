@@ -1,0 +1,45 @@
+﻿@model PHONE_STORE.Application.Dtos.PagedResult<PHONE_STORE.Application.Dtos.ProductListItemDto>
+@{
+    ViewData["Title"] = "Products";
+}
+<h1 class="mb-3">Products</h1>
+
+<p><a class="btn btn-primary" asp-area="Admin" asp-controller="Products" asp-action="Create">Create</a></p>
+
+<table class="table table-bordered align-middle">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Active</th>
+            <th>Variants</th>
+            <th style="width:160px"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model.Items)
+        {
+            <tr>
+                <td>@i.Name<br /><small class="text-muted">@i.Slug</small></td>
+                <td>@i.BrandName</td>
+                <td>@i.CategoryName</td>
+                <td>@(i.IsActive ? "Yes" : "No")</td>
+                <td>@i.ActiveVariantCount</td>
+                <td>
+                    <a class="btn btn-sm btn-secondary" asp-area="Admin" asp-controller="Products" asp-action="Edit" asp-route-id="@i.Id">Edit</a>
+
+                     <a class="btn btn-sm btn-outline-primary" asp-area="Admin" asp-controller="Variants" asp-action="Index" asp-route-productId="@i.Id">Variants</a>
+                     <a class="btn btn-sm btn-outline-primary" asp-area="Admin" asp-controller="Images" asp-action="Product" asp-route-productId="@i.Id">Images</a>
+                     <a class="btn btn-sm btn-outline-primary" asp-area="Admin" asp-controller="Attributes" asp-action="ProductValues" asp-route-productId="@i.Id">Attributes</a>
+
+                    <form asp-area="Admin" asp-controller="Products" asp-action="Delete" asp-route-id="@i.Id" method="post" class="d-inline">
+                        @Html.AntiForgeryToken()
+                        <button class="btn btn-sm btn-danger" onclick="return confirm('Delete?')">Delete</button>
+                    </form>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

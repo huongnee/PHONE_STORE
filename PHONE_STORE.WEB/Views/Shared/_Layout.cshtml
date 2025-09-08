@@ -13,8 +13,8 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <!-- Luôn về Client/Home -->
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PHONE_STORE.WEB</a>
+                <!-- Về trang Catalog (storefront) -->
+                <a class="navbar-brand" asp-area="" asp-controller="Catalog" asp-action="Index">PHONE_STORE</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
                         aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,29 +22,40 @@
                 </button>
 
                 <div id="mainNav" class="navbar-collapse collapse">
-                    <!-- Left: main links -->
+                    <!-- Left: links cho storefront -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Catalog" asp-action="Index">Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">
+                                Cart <span id="cartCount" class="badge bg-secondary align-text-top">0</span>
+                            </a>
                         </li>
 
-                        @* HIỆN MENU ADMIN KHI CÓ ROLE *@
+                        @* MENU ADMIN chỉ hiện khi có role *@
                         @if (User.IsInRole("ADMIN") || User.IsInRole("STAFF"))
                         {
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
                                     Admin
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Home" asp-action="Index">Dashboard</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Brands" asp-action="Index">Brands</a>
-                                    </li>
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="Home" asp-action="Index">Dashboard</a></li>
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="Brands" asp-action="Index">Brands</a></li>
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="Categories" asp-action="Index">Categories</a></li>
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="Products" asp-action="Index">Products</a></li>
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="Attributes" asp-action="Index">Attributes</a></li>
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="Warehouses" asp-action="Index">Warehouses</a></li>
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="Inventory" asp-action="ByVariant">Inventory by Variant</a></li>
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="Inventory" asp-action="ByWarehouse">Inventory by Warehouse</a></li>
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="Inventory" asp-action="Move">Stock Movement</a></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="DeviceUnits" asp-action="Index">Device Units</a></li>
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="Customers" asp-action="Index">Customers</a></li>
+                                    <li><a class="dropdown-item" asp-area="Admin" asp-controller="Orders" asp-action="Index">Orders</a></li>
+
                                 </ul>
                             </li>
                         }
@@ -60,12 +71,8 @@
                                     Xin chào, @User.Identity!.Name
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountMenu">
-                                    <li>
-                                        <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Me">Tài khoản</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="ChangePassword">Đổi mật khẩu</a>
-                                    </li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Me">Tài khoản</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="ChangePassword">Đổi mật khẩu</a></li>
                                     <li><hr class="dropdown-divider" /></li>
                                     <li>
                                         <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" class="px-3">
@@ -99,14 +106,26 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2025 - PHONE_STORE.WEB -
-            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; @DateTime.Now.Year - PHONE_STORE
         </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @* cập nhật badge giỏ hàng qua endpoint nội bộ để tránh CORS *@
+    <script>
+        (function(){
+            const b = document.getElementById('cartCount');
+            if(!b) return;
+            fetch('@Url.Action("Count", "Cart")', { credentials: 'same-origin' })
+                .then(r => r.ok ? r.json() : null)
+                .then(d => { if (d && typeof d.count === 'number') b.textContent = d.count; })
+                .catch(()=>{});
+        })();
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

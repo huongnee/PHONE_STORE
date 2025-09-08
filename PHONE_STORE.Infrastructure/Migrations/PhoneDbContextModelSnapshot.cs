@@ -22,6 +22,823 @@ namespace PHONE_STORE.Infrastructure.Migrations
 
             OracleModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Address", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("AddressType")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("NVARCHAR2(20)")
+                        .HasColumnName("ADDRESS_TYPE");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("CREATED_AT")
+                        .HasDefaultValueSql("SYSTIMESTAMP");
+
+                    b.Property<long>("CustomerId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("CUSTOMER_ID");
+
+                    b.Property<string>("District")
+                        .HasMaxLength(120)
+                        .HasColumnType("NVARCHAR2(120)")
+                        .HasColumnName("DISTRICT");
+
+                    b.Property<int>("IsDefault")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("IS_DEFAULT");
+
+                    b.Property<string>("Label")
+                        .HasMaxLength(60)
+                        .HasColumnType("NVARCHAR2(60)")
+                        .HasColumnName("LABEL");
+
+                    b.Property<string>("Line1")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("NVARCHAR2(200)")
+                        .HasColumnName("LINE1");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("NVARCHAR2(20)")
+                        .HasColumnName("PHONE");
+
+                    b.Property<string>("PostalCode")
+                        .HasMaxLength(20)
+                        .HasColumnType("NVARCHAR2(20)")
+                        .HasColumnName("POSTAL_CODE");
+
+                    b.Property<string>("Province")
+                        .HasMaxLength(120)
+                        .HasColumnType("NVARCHAR2(120)")
+                        .HasColumnName("PROVINCE");
+
+                    b.Property<string>("Recipient")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("NVARCHAR2(150)")
+                        .HasColumnName("RECIPIENT");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("UPDATED_AT");
+
+                    b.Property<string>("Ward")
+                        .HasMaxLength(120)
+                        .HasColumnType("NVARCHAR2(120)")
+                        .HasColumnName("WARD");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId", "AddressType", "IsDefault")
+                        .HasDatabaseName("IX_ADDR_DEFAULT");
+
+                    b.ToTable("ADDRESSES", "HEHE");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Brand", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("CREATED_AT")
+                        .HasDefaultValueSql("SYSTIMESTAMP");
+
+                    b.Property<int>("IsActive")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("IS_ACTIVE");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("NVARCHAR2(100)")
+                        .HasColumnName("NAME");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("NVARCHAR2(150)")
+                        .HasColumnName("SLUG");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Slug")
+                        .IsUnique()
+                        .HasDatabaseName("UX_BRANDS_SLUG");
+
+                    b.ToTable("BRANDS", "HEHE");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Cart", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("CREATED_AT")
+                        .HasDefaultValueSql("SYSTIMESTAMP");
+
+                    b.Property<long?>("CustomerId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("CUSTOMER_ID");
+
+                    b.Property<string>("SessionId")
+                        .HasMaxLength(64)
+                        .HasColumnType("NVARCHAR2(64)")
+                        .HasColumnName("SESSION_ID");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("UPDATED_AT")
+                        .HasDefaultValueSql("SYSTIMESTAMP");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId")
+                        .IsUnique()
+                        .HasDatabaseName("UQ_CARTS_CUS")
+                        .HasFilter("\"CUSTOMER_ID\" IS NOT NULL");
+
+                    b.HasIndex("SessionId")
+                        .IsUnique()
+                        .HasDatabaseName("UQ_CARTS_SESSION")
+                        .HasFilter("\"SESSION_ID\" IS NOT NULL");
+
+                    b.ToTable("CARTS", "HEHE");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.CartItem", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("AddedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("ADDED_AT")
+                        .HasDefaultValueSql("SYSTIMESTAMP");
+
+                    b.Property<long>("CartId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("CART_ID");
+
+                    b.Property<string>("Currency")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("NVARCHAR2(3)")
+                        .HasColumnName("CURRENCY");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("QUANTITY");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("UNIT_PRICE");
+
+                    b.Property<long>("VariantId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("VARIANT_ID");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CartId", "VariantId")
+                        .IsUnique()
+                        .HasDatabaseName("UQ_CARTITEM_CART_SKU");
+
+                    b.ToTable("CART_ITEMS", "HEHE");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Category", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("CREATED_AT")
+                        .HasDefaultValueSql("SYSTIMESTAMP");
+
+                    b.Property<int>("IsActive")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("IS_ACTIVE");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("NVARCHAR2(120)")
+                        .HasColumnName("NAME");
+
+                    b.Property<long?>("ParentId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("PARENT_ID");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("NVARCHAR2(150)")
+                        .HasColumnName("SLUG");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("SORT_ORDER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentId")
+                        .HasDatabaseName("IX_CATEGORIES_PARENT");
+
+                    b.HasIndex("Slug")
+                        .IsUnique()
+                        .HasDatabaseName("UX_CATEGORIES_SLUG");
+
+                    b.ToTable("CATEGORIES", "HEHE");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Customer", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("CREATED_AT")
+                        .HasDefaultValueSql("SYSTIMESTAMP");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(150)
+                        .HasColumnType("NVARCHAR2(150)")
+                        .HasColumnName("EMAIL");
+
+                    b.Property<string>("FullName")
+                        .HasMaxLength(150)
+                        .HasColumnType("NVARCHAR2(150)")
+                        .HasColumnName("FULL_NAME");
+
+                    b.Property<string>("Phone")
+                        .HasMaxLength(20)
+                        .HasColumnType("NVARCHAR2(20)")
+                        .HasColumnName("PHONE");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("UPDATED_AT");
+
+                    b.Property<long?>("UserAccountId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("USER_ACCOUNT_ID");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .HasDatabaseName("IX_CUS_EMAIL");
+
+                    b.HasIndex("Phone")
+                        .HasDatabaseName("IX_CUS_PHONE");
+
+                    b.HasIndex("UserAccountId");
+
+                    b.ToTable("CUSTOMERS", "HEHE");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.DeviceUnit", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Imei")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("NVARCHAR2(32)")
+                        .HasColumnName("IMEI");
+
+                    b.Property<DateTime>("ReceivedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("RECEIVED_AT")
+                        .HasDefaultValueSql("SYSTIMESTAMP");
+
+                    b.Property<DateTime?>("ReturnedAt")
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("RETURNED_AT");
+
+                    b.Property<string>("SerialNo")
+                        .HasMaxLength(64)
+                        .HasColumnType("NVARCHAR2(64)")
+                        .HasColumnName("SERIAL_NO");
+
+                    b.Property<DateTime?>("SoldAt")
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("SOLD_AT");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("NVARCHAR2(20)")
+                        .HasColumnName("STATUS");
+
+                    b.Property<long>("VariantId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("VARIANT_ID");
+
+                    b.Property<long?>("WarehouseId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("WAREHOUSE_ID");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Imei")
+                        .IsUnique()
+                        .HasDatabaseName("UQ_DU_IMEI");
+
+                    b.HasIndex("VariantId");
+
+                    b.HasIndex("WarehouseId");
+
+                    b.ToTable("DEVICE_UNITS", "HEHE");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Inventory", b =>
+                {
+                    b.Property<long>("VariantId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("VARIANT_ID");
+
+                    b.Property<long>("WarehouseId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("WAREHOUSE_ID");
+
+                    b.Property<int>("QtyOnHand")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("QTY_ON_HAND");
+
+                    b.Property<int>("QtyReserved")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("QTY_RESERVED");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("UPDATED_AT")
+                        .HasDefaultValueSql("SYSTIMESTAMP");
+
+                    b.HasKey("VariantId", "WarehouseId");
+
+                    b.HasIndex("WarehouseId");
+
+                    b.ToTable("INVENTORY", "HEHE");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Order", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("NVARCHAR2(32)")
+                        .HasColumnName("CODE");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("CREATED_AT")
+                        .HasDefaultValueSql("SYSTIMESTAMP");
+
+                    b.Property<long>("CustomerId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("CUSTOMER_ID");
+
+                    b.Property<decimal>("GrandTotal")
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("GRAND_TOTAL");
+
+                    b.Property<DateTime?>("PaidAt")
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("PAID_AT");
+
+                    b.Property<DateTime?>("ShippedAt")
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("SHIPPED_AT");
+
+                    b.Property<long?>("ShippingAddressId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("SHIPPING_ADDRESS_ID");
+
+                    b.Property<decimal>("ShippingFee")
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("SHIPPING_FEE");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("NVARCHAR2(20)")
+                        .HasColumnName("STATUS");
+
+                    b.Property<decimal>("Subtotal")
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("SUBTOTAL");
+
+                    b.Property<decimal>("VatAmount")
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("VAT_AMOUNT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Code")
+                        .IsUnique()
+                        .HasDatabaseName("UQ_ORDERS_CODE");
+
+                    b.ToTable("ORDERS", "HEHE");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.OrderItem", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Color")
+                        .HasMaxLength(50)
+                        .HasColumnType("NVARCHAR2(50)")
+                        .HasColumnName("COLOR");
+
+                    b.Property<decimal>("LineTotal")
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("LINE_TOTAL");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("NVARCHAR2(250)")
+                        .HasColumnName("NAME");
+
+                    b.Property<long>("OrderId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ORDER_ID");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("QUANTITY");
+
+                    b.Property<int?>("StorageGb")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("STORAGE_GB");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("UNIT_PRICE");
+
+                    b.Property<long>("VariantId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("VARIANT_ID");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("ORDER_ITEMS", "HEHE");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Product", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("BrandId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("BRAND_ID");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("CREATED_AT")
+                        .HasDefaultValueSql("SYSTIMESTAMP");
+
+                    b.Property<long?>("DefaultCategoryId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("DEFAULT_CATEGORY_ID");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("CLOB")
+                        .HasColumnName("DESCRIPTION");
+
+                    b.Property<int>("IsActive")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("IS_ACTIVE");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("NVARCHAR2(200)")
+                        .HasColumnName("NAME");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(220)
+                        .HasColumnType("NVARCHAR2(220)")
+                        .HasColumnName("SLUG");
+
+                    b.Property<string>("SpecJson")
+                        .HasColumnType("CLOB")
+                        .HasColumnName("SPEC_JSON");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BrandId")
+                        .HasDatabaseName("IX_PRODUCTS_BRAND");
+
+                    b.HasIndex("DefaultCategoryId")
+                        .HasDatabaseName("IX_PRODUCTS_CATEGORY");
+
+                    b.HasIndex("Slug")
+                        .IsUnique()
+                        .HasDatabaseName("UX_PRODUCTS_SLUG");
+
+                    b.ToTable("PRODUCTS", "HEHE");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.ProductAttribute", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("NVARCHAR2(64)")
+                        .HasColumnName("CODE");
+
+                    b.Property<string>("DataType")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("NVARCHAR2(20)")
+                        .HasColumnName("DATA_TYPE");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("NVARCHAR2(120)")
+                        .HasColumnName("NAME");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Code")
+                        .IsUnique();
+
+                    b.ToTable("PRODUCT_ATTRIBUTES", "HEHE");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.ProductAttributeValue", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("AttributeId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ATTRIBUTE_ID");
+
+                    b.Property<int?>("BoolValue")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("BOOL_VALUE");
+
+                    b.Property<decimal?>("DecValue")
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("DEC_VALUE");
+
+                    b.Property<long?>("IntValue")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("INT_VALUE");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("PRODUCT_ID");
+
+                    b.Property<string>("TextValue")
+                        .HasMaxLength(400)
+                        .HasColumnType("NVARCHAR2(400)")
+                        .HasColumnName("TEXT_VALUE");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AttributeId")
+                        .HasDatabaseName("IX_ATTRVALS_ATTR");
+
+                    b.HasIndex("ProductId")
+                        .HasDatabaseName("IX_ATTRVALS_PRODUCT");
+
+                    b.HasIndex("ProductId", "AttributeId")
+                        .IsUnique()
+                        .HasDatabaseName("UQ_ATTRVALS");
+
+                    b.ToTable("PRODUCT_ATTRIBUTE_VALUES", "HEHE");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.ProductImage", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("AltText")
+                        .HasMaxLength(200)
+                        .HasColumnType("NVARCHAR2(200)")
+                        .HasColumnName("ALT_TEXT");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("NVARCHAR2(500)")
+                        .HasColumnName("IMAGE_URL");
+
+                    b.Property<int>("IsPrimary")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("IS_PRIMARY");
+
+                    b.Property<long?>("ProductId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("PRODUCT_ID");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("SORT_ORDER");
+
+                    b.Property<long?>("VariantId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("VARIANT_ID");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId")
+                        .HasDatabaseName("IX_IMAGES_PRODUCT");
+
+                    b.HasIndex("VariantId")
+                        .HasDatabaseName("IX_IMAGES_VARIANT");
+
+                    b.ToTable("PRODUCT_IMAGES", "HEHE");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.ProductPrice", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Currency")
+                        .IsRequired()
+                        .HasMaxLength(3)
+                        .HasColumnType("NCHAR(3)")
+                        .HasColumnName("CURRENCY")
+                        .IsFixedLength();
+
+                    b.Property<DateTime?>("EndsAt")
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("ENDS_AT");
+
+                    b.Property<decimal>("ListPrice")
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("LIST_PRICE");
+
+                    b.Property<decimal?>("SalePrice")
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("SALE_PRICE");
+
+                    b.Property<DateTime>("StartsAt")
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("STARTS_AT");
+
+                    b.Property<long>("VariantId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("VARIANT_ID");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VariantId", "StartsAt", "EndsAt")
+                        .HasDatabaseName("IX_PRICES_ACTIVE");
+
+                    b.ToTable("PRODUCT_PRICES", "HEHE");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.ProductVariant", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Barcode")
+                        .HasMaxLength(64)
+                        .HasColumnType("NVARCHAR2(64)")
+                        .HasColumnName("BARCODE");
+
+                    b.Property<string>("Color")
+                        .HasMaxLength(50)
+                        .HasColumnType("NVARCHAR2(50)")
+                        .HasColumnName("COLOR");
+
+                    b.Property<int>("IsActive")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("IS_ACTIVE");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("PRODUCT_ID");
+
+                    b.Property<string>("Sku")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("NVARCHAR2(64)")
+                        .HasColumnName("SKU");
+
+                    b.Property<int?>("StorageGb")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("STORAGE_GB");
+
+                    b.Property<decimal?>("WeightGram")
+                        .HasColumnType("DECIMAL(18, 2)")
+                        .HasColumnName("WEIGHT_GRAM");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId")
+                        .HasDatabaseName("IX_VARIANTS_PRODUCT");
+
+                    b.HasIndex("Sku")
+                        .IsUnique();
+
+                    b.ToTable("PRODUCT_VARIANTS", "HEHE");
+                });
+
             modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Role", b =>
                 {
                     b.Property<long>("Id")
@@ -37,7 +854,8 @@ namespace PHONE_STORE.Infrastructure.Migrations
                         .HasColumnName("CODE");
 
                     b.Property<string>("Description")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(2000)")
+                        .HasColumnName("Description");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -47,6 +865,73 @@ namespace PHONE_STORE.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ROLES", (string)null);
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.StockMovement", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("CREATED_AT")
+                        .HasDefaultValueSql("SYSTIMESTAMP");
+
+                    b.Property<long?>("CreatedBy")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("CREATED_BY");
+
+                    b.Property<string>("MovementType")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("NVARCHAR2(10)")
+                        .HasColumnName("MOVEMENT_TYPE");
+
+                    b.Property<string>("Note")
+                        .HasMaxLength(200)
+                        .HasColumnType("NVARCHAR2(200)")
+                        .HasColumnName("NOTE");
+
+                    b.Property<int>("QtyDelta")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("QTY_DELTA");
+
+                    b.Property<string>("RefCode")
+                        .HasMaxLength(64)
+                        .HasColumnType("NVARCHAR2(64)")
+                        .HasColumnName("REF_CODE");
+
+                    b.Property<long?>("RefId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("REF_ID");
+
+                    b.Property<string>("RefType")
+                        .HasMaxLength(30)
+                        .HasColumnType("NVARCHAR2(30)")
+                        .HasColumnName("REF_TYPE");
+
+                    b.Property<long>("VariantId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("VARIANT_ID");
+
+                    b.Property<long>("WarehouseId")
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("WAREHOUSE_ID");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VariantId")
+                        .HasDatabaseName("IX_SM_VAR");
+
+                    b.HasIndex("WarehouseId")
+                        .HasDatabaseName("IX_SM_WH");
+
+                    b.ToTable("STOCK_MOVEMENTS", "HEHE");
                 });
 
             modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.UserAccount", b =>
@@ -110,6 +995,292 @@ namespace PHONE_STORE.Infrastructure.Migrations
                         .HasDatabaseName("IX_USER_ROLES_ROLE_ID");
 
                     b.ToTable("USER_ROLES", (string)null);
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Warehouse", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(19)")
+                        .HasColumnName("ID");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("AddressLine")
+                        .HasMaxLength(200)
+                        .HasColumnType("NVARCHAR2(200)")
+                        .HasColumnName("ADDRESS_LINE");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("NVARCHAR2(32)")
+                        .HasColumnName("CODE");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TIMESTAMP WITH LOCAL TIME ZONE")
+                        .HasColumnName("CREATED_AT")
+                        .HasDefaultValueSql("SYSTIMESTAMP");
+
+                    b.Property<string>("District")
+                        .HasMaxLength(120)
+                        .HasColumnType("NVARCHAR2(120)")
+                        .HasColumnName("DISTRICT");
+
+                    b.Property<int>("IsActive")
+                        .HasColumnType("NUMBER(10)")
+                        .HasColumnName("IS_ACTIVE");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(120)
+                        .HasColumnType("NVARCHAR2(120)")
+                        .HasColumnName("NAME");
+
+                    b.Property<string>("Province")
+                        .HasMaxLength(120)
+                        .HasColumnType("NVARCHAR2(120)")
+                        .HasColumnName("PROVINCE");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Code")
+                        .IsUnique()
+                        .HasDatabaseName("UQ_WAREHOUSES_CODE");
+
+                    b.ToTable("WAREHOUSES", "HEHE");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Address", b =>
+                {
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.Customer", "Customer")
+                        .WithMany("Addresses")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.CartItem", b =>
+                {
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.Cart", "Cart")
+                        .WithMany("Items")
+                        .HasForeignKey("CartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cart");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Customer", b =>
+                {
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.UserAccount", "UserAccount")
+                        .WithMany()
+                        .HasForeignKey("UserAccountId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("UserAccount");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.DeviceUnit", b =>
+                {
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.ProductVariant", "Variant")
+                        .WithMany("DeviceUnits")
+                        .HasForeignKey("VariantId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.Warehouse", "Warehouse")
+                        .WithMany("DeviceUnits")
+                        .HasForeignKey("WarehouseId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Variant");
+
+                    b.Navigation("Warehouse");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Inventory", b =>
+                {
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.ProductVariant", "Variant")
+                        .WithMany("Inventories")
+                        .HasForeignKey("VariantId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.Warehouse", "Warehouse")
+                        .WithMany("Inventories")
+                        .HasForeignKey("WarehouseId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Variant");
+
+                    b.Navigation("Warehouse");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.OrderItem", b =>
+                {
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.Order", "Order")
+                        .WithMany("Items")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Product", b =>
+                {
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.Brand", "Brand")
+                        .WithMany("Products")
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.Category", "DefaultCategory")
+                        .WithMany()
+                        .HasForeignKey("DefaultCategoryId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Brand");
+
+                    b.Navigation("DefaultCategory");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.ProductAttributeValue", b =>
+                {
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.ProductAttribute", "Attribute")
+                        .WithMany("Values")
+                        .HasForeignKey("AttributeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.Product", "Product")
+                        .WithMany("AttributeValues")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Attribute");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.ProductImage", b =>
+                {
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.Product", "Product")
+                        .WithMany("Images")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.ProductVariant", "Variant")
+                        .WithMany("Images")
+                        .HasForeignKey("VariantId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Variant");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.ProductPrice", b =>
+                {
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.ProductVariant", "Variant")
+                        .WithMany("Prices")
+                        .HasForeignKey("VariantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Variant");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.ProductVariant", b =>
+                {
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.Product", "Product")
+                        .WithMany("Variants")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.StockMovement", b =>
+                {
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.ProductVariant", "Variant")
+                        .WithMany("StockMovements")
+                        .HasForeignKey("VariantId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("PHONE_STORE.Infrastructure.Entities.Warehouse", "Warehouse")
+                        .WithMany("StockMovements")
+                        .HasForeignKey("WarehouseId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Variant");
+
+                    b.Navigation("Warehouse");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Brand", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Cart", b =>
+                {
+                    b.Navigation("Items");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Customer", b =>
+                {
+                    b.Navigation("Addresses");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Order", b =>
+                {
+                    b.Navigation("Items");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Product", b =>
+                {
+                    b.Navigation("AttributeValues");
+
+                    b.Navigation("Images");
+
+                    b.Navigation("Variants");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.ProductAttribute", b =>
+                {
+                    b.Navigation("Values");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.ProductVariant", b =>
+                {
+                    b.Navigation("DeviceUnits");
+
+                    b.Navigation("Images");
+
+                    b.Navigation("Inventories");
+
+                    b.Navigation("Prices");
+
+                    b.Navigation("StockMovements");
+                });
+
+            modelBuilder.Entity("PHONE_STORE.Infrastructure.Entities.Warehouse", b =>
+                {
+                    b.Navigation("DeviceUnits");
+
+                    b.Navigation("Inventories");
+
+                    b.Navigation("StockMovements");
                 });
 #pragma warning restore 612, 618
         }

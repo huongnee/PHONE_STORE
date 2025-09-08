@@ -1,0 +1,760 @@
+2025-09-03 09:09:25.009 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-03 09:09:25.259 +07:00 [INF] Now listening on: https://localhost:7277
+2025-09-03 09:09:25.260 +07:00 [INF] Now listening on: http://localhost:5209
+2025-09-03 09:09:25.358 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-03 09:09:25.360 +07:00 [INF] Hosting environment: Development
+2025-09-03 09:09:25.361 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-09-03 09:09:26.828 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-09-03 09:09:27.273 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 456.294ms
+2025-09-03 09:09:27.281 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-03 09:09:27.290 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-09-03 09:09:27.394 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 113.2829ms
+2025-09-03 09:09:27.652 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 362.4947ms
+2025-09-03 09:09:27.713 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-09-03 09:09:27.736 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/favicon-32x32.png - null null
+2025-09-03 09:09:27.900 +07:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-09-03 09:09:27.906 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/favicon-32x32.png - 200 628 image/png 170.5347ms
+2025-09-03 09:09:27.937 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 223.861ms
+2025-09-03 09:09:39.114 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-03 09:09:39.368 +07:00 [INF] Now listening on: https://localhost:7277
+2025-09-03 09:09:39.369 +07:00 [INF] Now listening on: http://localhost:5209
+2025-09-03 09:09:39.471 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-03 09:09:39.473 +07:00 [INF] Hosting environment: Development
+2025-09-03 09:09:39.473 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-09-03 09:09:40.216 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-09-03 09:09:40.449 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-09-03 09:09:40.450 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 241.6827ms
+2025-09-03 09:09:40.451 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-03 09:09:40.488 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 37.0614ms
+2025-09-03 09:09:40.522 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 73.093ms
+2025-09-03 09:09:40.598 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-09-03 09:09:40.660 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 61.8207ms
+2025-09-03 09:10:07.475 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/login - application/json; charset=utf-8 null
+2025-09-03 09:10:07.543 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-09-03 09:10:07.579 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LoginRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-09-03 09:10:08.987 +07:00 [WRN] The decimal property 'DecValue' on entity type 'ProductAttributeValue' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 09:10:08.988 +07:00 [WRN] The decimal property 'ListPrice' on entity type 'ProductPrice' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 09:10:09.000 +07:00 [WRN] The decimal property 'SalePrice' on entity type 'ProductPrice' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 09:10:09.001 +07:00 [WRN] The decimal property 'WeightGram' on entity type 'ProductVariant' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 09:10:10.266 +07:00 [INF] Executed DbCommand (119ms) [Parameters=[:uname_0='?' (Size = 450), :username_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID", "u"."CREATED_AT", "u"."EMAIL", "u"."PASSWORD_HASH", "u"."PHONE", "u"."STATUS"
+FROM "USER_ACCOUNTS" "u"
+WHERE (("u"."EMAIL" = :uname_0) OR ("u"."PHONE" = :username_1))
+FETCH FIRST 1 ROWS ONLY
+2025-09-03 09:10:10.872 +07:00 [INF] Executed DbCommand (51ms) [Parameters=[:userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."CODE"
+FROM "USER_ROLES" "u"
+INNER JOIN "ROLES" "r" ON "u"."ROLE_ID" = "r"."ID"
+WHERE "u"."USER_ID" = :userId_0
+2025-09-03 09:10:10.974 +07:00 [INF] Login success [81]
+2025-09-03 09:10:10.991 +07:00 [INF] Executing OkObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.AuthResponseDto'.
+2025-09-03 09:10:11.007 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API) in 3419.6279ms
+2025-09-03 09:10:11.010 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-09-03 09:10:11.019 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 3544.1ms
+2025-09-03 09:11:15.633 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - null null
+2025-09-03 09:11:15.703 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 09:11:15.711 +07:00 [INF] Route matched with {action = "Search", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.ProductListItemDto]] Search(System.String, System.Nullable`1[System.Int64], Int32, Int32, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ProductsController (PHONE_STORE.API).
+2025-09-03 09:11:15.849 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."PRODUCTS" "p"
+2025-09-03 09:11:15.913 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p0"."ID", "p0"."NAME", "p0"."SLUG", "b"."NAME", "c"."NAME", "p0"."IS_ACTIVE", (
+    SELECT COUNT(*)
+    FROM "HEHE"."PRODUCT_VARIANTS" "p1"
+    WHERE "p0"."ID" = "p1"."PRODUCT_ID")
+FROM (
+    SELECT "p"."ID", "p"."BRAND_ID", "p"."DEFAULT_CATEGORY_ID", "p"."IS_ACTIVE", "p"."NAME", "p"."SLUG"
+    FROM "HEHE"."PRODUCTS" "p"
+    ORDER BY "p"."IS_ACTIVE" DESC, "p"."NAME"
+    OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+) "p0"
+INNER JOIN "HEHE"."BRANDS" "b" ON "p0"."BRAND_ID" = "b"."ID"
+LEFT JOIN "HEHE"."CATEGORIES" "c" ON "p0"."DEFAULT_CATEGORY_ID" = "c"."ID"
+ORDER BY "p0"."IS_ACTIVE" DESC, "p0"."NAME"
+2025-09-03 09:11:15.919 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.ProductListItemDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 09:11:15.926 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API) in 212.1096ms
+2025-09-03 09:11:15.927 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 09:11:15.927 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 294.7006ms
+2025-09-03 09:11:20.690 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/products/2 - null null
+2025-09-03 09:11:20.697 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ProductsController.Get (PHONE_STORE.API)'
+2025-09-03 09:11:20.700 +07:00 [INF] Route matched with {action = "Get", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.ProductDto] Get(Int64, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ProductsController (PHONE_STORE.API).
+2025-09-03 09:11:20.741 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[:id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."ID", "p"."BRAND_ID", "p"."DEFAULT_CATEGORY_ID", "p"."NAME", "p"."SLUG", "p"."DESCRIPTION", "p"."SPEC_JSON", "p"."IS_ACTIVE"
+FROM "HEHE"."PRODUCTS" "p"
+WHERE "p"."ID" = :id_0
+FETCH FIRST 1 ROWS ONLY
+2025-09-03 09:11:20.760 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.ProductDto'.
+2025-09-03 09:11:20.773 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ProductsController.Get (PHONE_STORE.API) in 72.2967ms
+2025-09-03 09:11:20.776 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ProductsController.Get (PHONE_STORE.API)'
+2025-09-03 09:11:20.777 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/products/2 - 200 null application/json; charset=utf-8 86.9801ms
+2025-09-03 09:11:20.782 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/brands/options - null null
+2025-09-03 09:11:20.785 +07:00 [INF] Executing endpoint 'BrandsController.Options (PHONE_STORE.API)'
+2025-09-03 09:11:20.790 +07:00 [INF] Route matched with {action = "Options", controller = "Brands"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[PHONE_STORE.Application.Dtos.IdNameDto]] Options(System.Threading.CancellationToken) on controller BrandsController (PHONE_STORE.API).
+2025-09-03 09:11:20.809 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "b"."ID", "b"."NAME"
+FROM "HEHE"."BRANDS" "b"
+ORDER BY "b"."NAME"
+2025-09-03 09:11:20.813 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.IdNameDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 09:11:20.818 +07:00 [INF] Executed action BrandsController.Options (PHONE_STORE.API) in 25.5466ms
+2025-09-03 09:11:20.819 +07:00 [INF] Executed endpoint 'BrandsController.Options (PHONE_STORE.API)'
+2025-09-03 09:11:20.820 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/brands/options - 200 null application/json; charset=utf-8 38.473ms
+2025-09-03 09:11:20.829 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/categories/options?excludeId= - null null
+2025-09-03 09:11:20.830 +07:00 [INF] Executing endpoint 'CategoriesController.Options (PHONE_STORE.API)'
+2025-09-03 09:11:20.833 +07:00 [INF] Route matched with {action = "Options", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Options(System.Nullable`1[System.Int64], System.Threading.CancellationToken) on controller CategoriesController (PHONE_STORE.API).
+2025-09-03 09:11:20.848 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "c"."ID" "Id", "c"."PARENT_ID" "ParentId", "c"."NAME" "Name", "c"."SORT_ORDER" "Sort"
+FROM "HEHE"."CATEGORIES" "c"
+2025-09-03 09:11:20.858 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.CategoryOptionDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 09:11:20.861 +07:00 [INF] Executed action CategoriesController.Options (PHONE_STORE.API) in 26.2906ms
+2025-09-03 09:11:20.862 +07:00 [INF] Executed endpoint 'CategoriesController.Options (PHONE_STORE.API)'
+2025-09-03 09:11:20.863 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/categories/options?excludeId= - 200 null application/json; charset=utf-8 34.2503ms
+2025-09-03 09:11:31.481 +07:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7277/api/admin/products/2 - application/json; charset=utf-8 null
+2025-09-03 09:11:31.484 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ProductsController.Update (PHONE_STORE.API)'
+2025-09-03 09:11:31.488 +07:00 [INF] Route matched with {action = "Update", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Int64, PHONE_STORE.Application.Dtos.ProductUpdateDto, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ProductsController (PHONE_STORE.API).
+2025-09-03 09:11:31.526 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[:id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."ID", "p"."BRAND_ID", "p"."CREATED_AT", "p"."DEFAULT_CATEGORY_ID", "p"."DESCRIPTION", "p"."IS_ACTIVE", "p"."NAME", "p"."SLUG", "p"."SPEC_JSON"
+FROM "HEHE"."PRODUCTS" "p"
+WHERE "p"."ID" = :id_0
+FETCH FIRST 1 ROWS ONLY
+2025-09-03 09:11:31.577 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[:dto_BrandId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."BRANDS" "b"
+WHERE "b"."ID" = :dto_BrandId_0
+2025-09-03 09:11:31.588 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[:dto_DefaultCategoryId_Value_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."CATEGORIES" "c"
+WHERE "c"."ID" = :dto_DefaultCategoryId_Value_0
+2025-09-03 09:11:31.622 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[:ToLower_0='?' (Size = 220), :exceptId_Value_1='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."PRODUCTS" "p"
+WHERE ((LOWER("p"."SLUG") = :ToLower_0) AND ("p"."ID" <> :exceptId_Value_1))
+2025-09-03 09:11:31.761 +07:00 [INF] Executed DbCommand (17ms) [Parameters=[:p1='?' (DbType = Int64), :p0='?' (Size = 200), :cur0='?' (Direction = Output) (DbType = Object)], CommandType='"Text"', CommandTimeout='0']
+DECLARE
+
+v_RowCount INTEGER;
+
+BEGIN
+
+UPDATE "HEHE"."PRODUCTS" SET "NAME" = :p0
+WHERE "ID" = :p1;
+v_RowCount := SQL%ROWCOUNT;
+OPEN :cur0 FOR SELECT v_RowCount FROM DUAL;
+
+END;
+2025-09-03 09:11:31.814 +07:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-09-03 09:11:31.815 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ProductsController.Update (PHONE_STORE.API) in 325.5409ms
+2025-09-03 09:11:31.817 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ProductsController.Update (PHONE_STORE.API)'
+2025-09-03 09:11:31.818 +07:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7277/api/admin/products/2 - 204 null null 337.3691ms
+2025-09-03 09:11:31.825 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - null null
+2025-09-03 09:11:31.827 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 09:11:31.828 +07:00 [INF] Route matched with {action = "Search", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.ProductListItemDto]] Search(System.String, System.Nullable`1[System.Int64], Int32, Int32, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ProductsController (PHONE_STORE.API).
+2025-09-03 09:11:31.835 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."PRODUCTS" "p"
+2025-09-03 09:11:31.840 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p0"."ID", "p0"."NAME", "p0"."SLUG", "b"."NAME", "c"."NAME", "p0"."IS_ACTIVE", (
+    SELECT COUNT(*)
+    FROM "HEHE"."PRODUCT_VARIANTS" "p1"
+    WHERE "p0"."ID" = "p1"."PRODUCT_ID")
+FROM (
+    SELECT "p"."ID", "p"."BRAND_ID", "p"."DEFAULT_CATEGORY_ID", "p"."IS_ACTIVE", "p"."NAME", "p"."SLUG"
+    FROM "HEHE"."PRODUCTS" "p"
+    ORDER BY "p"."IS_ACTIVE" DESC, "p"."NAME"
+    OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+) "p0"
+INNER JOIN "HEHE"."BRANDS" "b" ON "p0"."BRAND_ID" = "b"."ID"
+LEFT JOIN "HEHE"."CATEGORIES" "c" ON "p0"."DEFAULT_CATEGORY_ID" = "c"."ID"
+ORDER BY "p0"."IS_ACTIVE" DESC, "p0"."NAME"
+2025-09-03 09:11:31.842 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.ProductListItemDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 09:11:31.842 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API) in 13.2856ms
+2025-09-03 09:11:31.843 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 09:11:31.844 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 18.5882ms
+2025-09-03 09:11:34.641 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/products/2/variants - null null
+2025-09-03 09:11:34.644 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.VariantsController.List (PHONE_STORE.API)'
+2025-09-03 09:11:34.648 +07:00 [INF] Route matched with {action = "List", controller = "Variants"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[PHONE_STORE.Application.Dtos.VariantDto]] List(Int64, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.VariantsController (PHONE_STORE.API).
+2025-09-03 09:11:34.663 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[:productId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."ID", "p"."PRODUCT_ID", "p"."SKU", "p"."COLOR", "p"."STORAGE_GB", "p"."BARCODE", "p"."WEIGHT_GRAM", "p"."IS_ACTIVE"
+FROM "HEHE"."PRODUCT_VARIANTS" "p"
+WHERE "p"."PRODUCT_ID" = :productId_0
+ORDER BY "p"."IS_ACTIVE" DESC, "p"."SKU"
+2025-09-03 09:11:34.677 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.VariantDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 09:11:34.693 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.VariantsController.List (PHONE_STORE.API) in 43.3411ms
+2025-09-03 09:11:34.696 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.VariantsController.List (PHONE_STORE.API)'
+2025-09-03 09:11:34.696 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/products/2/variants - 200 null application/json; charset=utf-8 54.9058ms
+2025-09-03 09:11:36.674 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - null null
+2025-09-03 09:11:36.676 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 09:11:36.677 +07:00 [INF] Route matched with {action = "Search", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.ProductListItemDto]] Search(System.String, System.Nullable`1[System.Int64], Int32, Int32, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ProductsController (PHONE_STORE.API).
+2025-09-03 09:11:36.681 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."PRODUCTS" "p"
+2025-09-03 09:11:36.684 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p0"."ID", "p0"."NAME", "p0"."SLUG", "b"."NAME", "c"."NAME", "p0"."IS_ACTIVE", (
+    SELECT COUNT(*)
+    FROM "HEHE"."PRODUCT_VARIANTS" "p1"
+    WHERE "p0"."ID" = "p1"."PRODUCT_ID")
+FROM (
+    SELECT "p"."ID", "p"."BRAND_ID", "p"."DEFAULT_CATEGORY_ID", "p"."IS_ACTIVE", "p"."NAME", "p"."SLUG"
+    FROM "HEHE"."PRODUCTS" "p"
+    ORDER BY "p"."IS_ACTIVE" DESC, "p"."NAME"
+    OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+) "p0"
+INNER JOIN "HEHE"."BRANDS" "b" ON "p0"."BRAND_ID" = "b"."ID"
+LEFT JOIN "HEHE"."CATEGORIES" "c" ON "p0"."DEFAULT_CATEGORY_ID" = "c"."ID"
+ORDER BY "p0"."IS_ACTIVE" DESC, "p0"."NAME"
+2025-09-03 09:11:36.687 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.ProductListItemDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 09:11:36.689 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API) in 10.4611ms
+2025-09-03 09:11:36.690 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 09:11:36.691 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 16.4046ms
+2025-09-03 10:25:07.387 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-03 10:25:07.659 +07:00 [INF] Now listening on: https://localhost:7277
+2025-09-03 10:25:07.660 +07:00 [INF] Now listening on: http://localhost:5209
+2025-09-03 10:25:07.738 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-03 10:25:07.740 +07:00 [INF] Hosting environment: Development
+2025-09-03 10:25:07.740 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-09-03 10:25:08.448 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-09-03 10:25:08.841 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 399.2325ms
+2025-09-03 10:25:09.116 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-03 10:25:09.119 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-09-03 10:25:09.126 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 10.4083ms
+2025-09-03 10:25:09.208 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 88.9365ms
+2025-09-03 10:25:09.594 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-09-03 10:25:09.663 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 76.7003ms
+2025-09-03 10:27:15.148 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/login - application/json; charset=utf-8 null
+2025-09-03 10:27:15.204 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-09-03 10:27:15.250 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LoginRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-09-03 10:27:16.619 +07:00 [WRN] The decimal property 'DecValue' on entity type 'ProductAttributeValue' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 10:27:16.620 +07:00 [WRN] The decimal property 'ListPrice' on entity type 'ProductPrice' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 10:27:16.622 +07:00 [WRN] The decimal property 'SalePrice' on entity type 'ProductPrice' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 10:27:16.625 +07:00 [WRN] The decimal property 'WeightGram' on entity type 'ProductVariant' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 10:27:17.832 +07:00 [INF] Executed DbCommand (165ms) [Parameters=[:uname_0='?' (Size = 450), :username_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID", "u"."CREATED_AT", "u"."EMAIL", "u"."PASSWORD_HASH", "u"."PHONE", "u"."STATUS"
+FROM "USER_ACCOUNTS" "u"
+WHERE (("u"."EMAIL" = :uname_0) OR ("u"."PHONE" = :username_1))
+FETCH FIRST 1 ROWS ONLY
+2025-09-03 10:27:18.587 +07:00 [INF] Executed DbCommand (29ms) [Parameters=[:userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."CODE"
+FROM "USER_ROLES" "u"
+INNER JOIN "ROLES" "r" ON "u"."ROLE_ID" = "r"."ID"
+WHERE "u"."USER_ID" = :userId_0
+2025-09-03 10:27:18.679 +07:00 [INF] Login success [81]
+2025-09-03 10:27:18.695 +07:00 [INF] Executing OkObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.AuthResponseDto'.
+2025-09-03 10:27:18.709 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API) in 3449.3412ms
+2025-09-03 10:27:18.713 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-09-03 10:27:18.724 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/login - 200 null application/json; charset=utf-8 3576.8705ms
+2025-09-03 10:27:21.688 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/warehouses - null null
+2025-09-03 10:27:21.746 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.WarehousesController.GetAll (PHONE_STORE.API)'
+2025-09-03 10:27:21.755 +07:00 [INF] Route matched with {action = "GetAll", controller = "Warehouses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PHONE_STORE.Application.Dtos.WarehouseDto]]] GetAll(System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.WarehousesController (PHONE_STORE.API).
+2025-09-03 10:27:21.860 +07:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "w"."ID", "w"."CODE", "w"."NAME", "w"."ADDRESS_LINE", "w"."DISTRICT", "w"."PROVINCE", "w"."IS_ACTIVE"
+FROM "HEHE"."WAREHOUSES" "w"
+ORDER BY "w"."CREATED_AT" DESC
+2025-09-03 10:27:21.865 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.WarehouseDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 10:27:21.868 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.WarehousesController.GetAll (PHONE_STORE.API) in 109.4303ms
+2025-09-03 10:27:21.869 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.WarehousesController.GetAll (PHONE_STORE.API)'
+2025-09-03 10:27:21.870 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/warehouses - 200 null application/json; charset=utf-8 181.9968ms
+2025-09-03 10:27:24.561 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/warehouses/2 - null null
+2025-09-03 10:27:24.567 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.WarehousesController.Get (PHONE_STORE.API)'
+2025-09-03 10:27:24.571 +07:00 [INF] Route matched with {action = "Get", controller = "Warehouses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PHONE_STORE.Application.Dtos.WarehouseDto]] Get(Int64, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.WarehousesController (PHONE_STORE.API).
+2025-09-03 10:27:24.600 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[:id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "w"."ID", "w"."CODE", "w"."NAME", "w"."ADDRESS_LINE", "w"."DISTRICT", "w"."PROVINCE", "w"."IS_ACTIVE"
+FROM "HEHE"."WAREHOUSES" "w"
+WHERE "w"."ID" = :id_0
+FETCH FIRST 1 ROWS ONLY
+2025-09-03 10:27:24.602 +07:00 [INF] Executing OkObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.WarehouseDto'.
+2025-09-03 10:27:24.602 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.WarehousesController.Get (PHONE_STORE.API) in 29.275ms
+2025-09-03 10:27:24.603 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.WarehousesController.Get (PHONE_STORE.API)'
+2025-09-03 10:27:24.604 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/warehouses/2 - 200 null application/json; charset=utf-8 43.535ms
+2025-09-03 10:27:25.625 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/warehouses - null null
+2025-09-03 10:27:25.628 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.WarehousesController.GetAll (PHONE_STORE.API)'
+2025-09-03 10:27:25.629 +07:00 [INF] Route matched with {action = "GetAll", controller = "Warehouses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[PHONE_STORE.Application.Dtos.WarehouseDto]]] GetAll(System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.WarehousesController (PHONE_STORE.API).
+2025-09-03 10:27:25.642 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "w"."ID", "w"."CODE", "w"."NAME", "w"."ADDRESS_LINE", "w"."DISTRICT", "w"."PROVINCE", "w"."IS_ACTIVE"
+FROM "HEHE"."WAREHOUSES" "w"
+ORDER BY "w"."CREATED_AT" DESC
+2025-09-03 10:27:25.644 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.WarehouseDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 10:27:25.645 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.WarehousesController.GetAll (PHONE_STORE.API) in 15.0078ms
+2025-09-03 10:27:25.646 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.WarehousesController.GetAll (PHONE_STORE.API)'
+2025-09-03 10:27:25.647 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/warehouses - 200 null application/json; charset=utf-8 21.4001ms
+2025-09-03 11:21:18.987 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-03 11:21:19.273 +07:00 [INF] Now listening on: https://localhost:7277
+2025-09-03 11:21:19.276 +07:00 [INF] Now listening on: http://localhost:5209
+2025-09-03 11:21:19.381 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-03 11:21:19.386 +07:00 [INF] Hosting environment: Development
+2025-09-03 11:21:19.387 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-09-03 11:21:19.622 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger - null null
+2025-09-03 11:21:19.890 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger - 301 0 null 281.3727ms
+2025-09-03 11:21:19.909 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-09-03 11:21:20.165 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 256.087ms
+2025-09-03 11:21:20.259 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/swagger-ui-bundle.js - null null
+2025-09-03 11:21:20.259 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/swagger-ui.css - null null
+2025-09-03 11:21:20.262 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/swagger-ui-standalone-preset.js - null null
+2025-09-03 11:21:20.386 +07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-09-03 11:21:20.387 +07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-09-03 11:21:20.393 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 130.6866ms
+2025-09-03 11:21:20.394 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/swagger-ui.css - 200 152034 text/css 139.9292ms
+2025-09-03 11:21:20.480 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-03 11:21:20.523 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 41.4703ms
+2025-09-03 11:21:20.577 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-09-03 11:21:20.578 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-09-03 11:21:20.581 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 326.8961ms
+2025-09-03 11:21:20.635 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 57.2844ms
+2025-09-03 11:21:21.308 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-09-03 11:21:21.038 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/favicon-32x32.png - null null
+2025-09-03 11:21:21.313 +07:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-09-03 11:21:21.314 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/favicon-32x32.png - 200 628 image/png 275.2414ms
+2025-09-03 11:21:21.347 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 308.395ms
+2025-09-03 11:21:43.473 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/login - application/json; charset=utf-8 null
+2025-09-03 11:21:43.519 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Login (PHONE_STORE.API)'
+2025-09-03 11:21:43.538 +07:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LoginRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-09-03 11:22:23.995 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-03 11:22:24.221 +07:00 [INF] Now listening on: https://localhost:7277
+2025-09-03 11:22:24.222 +07:00 [INF] Now listening on: http://localhost:5209
+2025-09-03 11:22:24.321 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-03 11:22:24.322 +07:00 [INF] Hosting environment: Development
+2025-09-03 11:22:24.322 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-09-03 11:22:24.810 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-09-03 11:22:25.031 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 230.8983ms
+2025-09-03 11:22:25.038 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-03 11:22:25.039 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-09-03 11:22:25.063 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 24.4451ms
+2025-09-03 11:22:25.099 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 60.643ms
+2025-09-03 11:22:25.186 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-09-03 11:22:25.253 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 66.7592ms
+2025-09-03 11:22:32.197 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - null null
+2025-09-03 11:22:32.244 +07:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (ADMIN|STAFF)
+2025-09-03 11:22:32.248 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-09-03 11:22:32.257 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - 401 0 null 60.3923ms
+2025-09-03 11:22:32.280 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/auth/refresh - application/json; charset=utf-8 null
+2025-09-03 11:22:32.286 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.AuthController.Refresh (PHONE_STORE.API)'
+2025-09-03 11:22:32.314 +07:00 [INF] Route matched with {action = "Refresh", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Refresh(RefreshRequest, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.AuthController (PHONE_STORE.API).
+2025-09-03 11:22:33.687 +07:00 [WRN] The decimal property 'DecValue' on entity type 'ProductAttributeValue' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 11:22:33.689 +07:00 [WRN] The decimal property 'ListPrice' on entity type 'ProductPrice' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 11:22:33.691 +07:00 [WRN] The decimal property 'SalePrice' on entity type 'ProductPrice' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 11:22:33.692 +07:00 [WRN] The decimal property 'WeightGram' on entity type 'ProductVariant' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 11:22:34.830 +07:00 [INF] Executed DbCommand (203ms) [Parameters=[:id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."ID" "Id", "u"."EMAIL" "Email", "u"."PHONE" "Phone", "u"."STATUS" "Status", "u"."CREATED_AT" "CreatedAt"
+FROM "USER_ACCOUNTS" "u"
+WHERE "u"."ID" = :id_0
+FETCH FIRST 1 ROWS ONLY
+2025-09-03 11:22:34.974 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[:userId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."CODE"
+FROM "USER_ROLES" "u"
+INNER JOIN "ROLES" "r" ON "u"."ROLE_ID" = "r"."ID"
+WHERE "u"."USER_ID" = :userId_0
+2025-09-03 11:22:35.025 +07:00 [INF] Refresh success: rotate RT for user 81
+2025-09-03 11:22:35.034 +07:00 [INF] Executing OkObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.AuthResponseDto'.
+2025-09-03 11:22:35.049 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.AuthController.Refresh (PHONE_STORE.API) in 2724.4249ms
+2025-09-03 11:22:35.052 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.AuthController.Refresh (PHONE_STORE.API)'
+2025-09-03 11:22:35.065 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/auth/refresh - 200 null application/json; charset=utf-8 2784.8886ms
+2025-09-03 11:22:35.068 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - null null
+2025-09-03 11:22:35.161 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 11:22:35.168 +07:00 [INF] Route matched with {action = "Search", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.ProductListItemDto]] Search(System.String, System.Nullable`1[System.Int64], Int32, Int32, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ProductsController (PHONE_STORE.API).
+2025-09-03 11:22:35.332 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."PRODUCTS" "p"
+2025-09-03 11:22:35.416 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p0"."ID", "p0"."NAME", "p0"."SLUG", "b"."NAME", "c"."NAME", "p0"."IS_ACTIVE", (
+    SELECT COUNT(*)
+    FROM "HEHE"."PRODUCT_VARIANTS" "p1"
+    WHERE "p0"."ID" = "p1"."PRODUCT_ID")
+FROM (
+    SELECT "p"."ID", "p"."BRAND_ID", "p"."DEFAULT_CATEGORY_ID", "p"."IS_ACTIVE", "p"."NAME", "p"."SLUG"
+    FROM "HEHE"."PRODUCTS" "p"
+    ORDER BY "p"."IS_ACTIVE" DESC, "p"."NAME"
+    OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+) "p0"
+INNER JOIN "HEHE"."BRANDS" "b" ON "p0"."BRAND_ID" = "b"."ID"
+LEFT JOIN "HEHE"."CATEGORIES" "c" ON "p0"."DEFAULT_CATEGORY_ID" = "c"."ID"
+ORDER BY "p0"."IS_ACTIVE" DESC, "p0"."NAME"
+2025-09-03 11:22:35.424 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.ProductListItemDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:22:35.435 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API) in 259.9687ms
+2025-09-03 11:22:35.436 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 11:22:35.438 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 369.9666ms
+2025-09-03 11:22:37.710 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/images/product/2 - null null
+2025-09-03 11:22:37.717 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API)'
+2025-09-03 11:22:37.723 +07:00 [INF] Route matched with {action = "ForProduct", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[PHONE_STORE.Application.Dtos.ImageDto]] ForProduct(Int64, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ImagesController (PHONE_STORE.API).
+2025-09-03 11:22:37.763 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[:productId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."ID", "p"."PRODUCT_ID", "p"."VARIANT_ID", "p"."IMAGE_URL", "p"."ALT_TEXT", "p"."IS_PRIMARY", "p"."SORT_ORDER"
+FROM "HEHE"."PRODUCT_IMAGES" "p"
+WHERE "p"."PRODUCT_ID" = :productId_0
+ORDER BY "p"."SORT_ORDER"
+2025-09-03 11:22:37.767 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.ImageDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:22:37.776 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API) in 49.6985ms
+2025-09-03 11:22:37.777 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API)'
+2025-09-03 11:22:37.778 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/images/product/2 - 200 null application/json; charset=utf-8 68.0383ms
+2025-09-03 11:26:05.885 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-03 11:26:06.102 +07:00 [INF] Now listening on: https://localhost:7277
+2025-09-03 11:26:06.103 +07:00 [INF] Now listening on: http://localhost:5209
+2025-09-03 11:26:06.205 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-03 11:26:06.206 +07:00 [INF] Hosting environment: Development
+2025-09-03 11:26:06.206 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-09-03 11:26:06.575 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-09-03 11:26:06.775 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 208.5838ms
+2025-09-03 11:26:06.795 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-03 11:26:06.807 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-09-03 11:26:06.807 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 11.5065ms
+2025-09-03 11:26:06.845 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.6761ms
+2025-09-03 11:26:06.944 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-09-03 11:26:06.986 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 42.6721ms
+2025-09-03 11:26:10.636 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - null null
+2025-09-03 11:26:10.718 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 11:26:10.741 +07:00 [INF] Route matched with {action = "Search", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.ProductListItemDto]] Search(System.String, System.Nullable`1[System.Int64], Int32, Int32, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ProductsController (PHONE_STORE.API).
+2025-09-03 11:26:11.389 +07:00 [WRN] The decimal property 'DecValue' on entity type 'ProductAttributeValue' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 11:26:11.391 +07:00 [WRN] The decimal property 'ListPrice' on entity type 'ProductPrice' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 11:26:11.391 +07:00 [WRN] The decimal property 'SalePrice' on entity type 'ProductPrice' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 11:26:11.392 +07:00 [WRN] The decimal property 'WeightGram' on entity type 'ProductVariant' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 11:26:12.405 +07:00 [INF] Executed DbCommand (146ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."PRODUCTS" "p"
+2025-09-03 11:26:12.705 +07:00 [INF] Executed DbCommand (57ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p0"."ID", "p0"."NAME", "p0"."SLUG", "b"."NAME", "c"."NAME", "p0"."IS_ACTIVE", (
+    SELECT COUNT(*)
+    FROM "HEHE"."PRODUCT_VARIANTS" "p1"
+    WHERE "p0"."ID" = "p1"."PRODUCT_ID")
+FROM (
+    SELECT "p"."ID", "p"."BRAND_ID", "p"."DEFAULT_CATEGORY_ID", "p"."IS_ACTIVE", "p"."NAME", "p"."SLUG"
+    FROM "HEHE"."PRODUCTS" "p"
+    ORDER BY "p"."IS_ACTIVE" DESC, "p"."NAME"
+    OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+) "p0"
+INNER JOIN "HEHE"."BRANDS" "b" ON "p0"."BRAND_ID" = "b"."ID"
+LEFT JOIN "HEHE"."CATEGORIES" "c" ON "p0"."DEFAULT_CATEGORY_ID" = "c"."ID"
+ORDER BY "p0"."IS_ACTIVE" DESC, "p0"."NAME"
+2025-09-03 11:26:12.727 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.ProductListItemDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:26:12.763 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API) in 2014.5716ms
+2025-09-03 11:26:12.765 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 11:26:12.779 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 2143.2598ms
+2025-09-03 11:26:14.343 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/images/product/2 - null null
+2025-09-03 11:26:14.351 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API)'
+2025-09-03 11:26:14.357 +07:00 [INF] Route matched with {action = "ForProduct", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[PHONE_STORE.Application.Dtos.ImageDto]] ForProduct(Int64, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ImagesController (PHONE_STORE.API).
+2025-09-03 11:26:14.458 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[:productId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."ID", "p"."PRODUCT_ID", "p"."VARIANT_ID", "p"."IMAGE_URL", "p"."ALT_TEXT", "p"."IS_PRIMARY", "p"."SORT_ORDER"
+FROM "HEHE"."PRODUCT_IMAGES" "p"
+WHERE "p"."PRODUCT_ID" = :productId_0
+ORDER BY "p"."SORT_ORDER"
+2025-09-03 11:26:14.462 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.ImageDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:26:14.468 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API) in 110.214ms
+2025-09-03 11:26:14.469 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API)'
+2025-09-03 11:26:14.470 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/images/product/2 - 200 null application/json; charset=utf-8 127.1316ms
+2025-09-03 11:32:08.103 +07:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-03 11:32:08.361 +07:00 [INF] Now listening on: https://localhost:7277
+2025-09-03 11:32:08.362 +07:00 [INF] Now listening on: http://localhost:5209
+2025-09-03 11:32:08.457 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-03 11:32:08.458 +07:00 [INF] Hosting environment: Development
+2025-09-03 11:32:08.459 +07:00 [INF] Content root path: C:\Users\Administrator\Desktop\TongHopKienThuc\CSharp\PHONE_STORE\PHONE_STORE.API
+2025-09-03 11:32:08.828 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/index.html - null null
+2025-09-03 11:32:08.982 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/index.html - 200 null text/html;charset=utf-8 163.361ms
+2025-09-03 11:32:08.996 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-03 11:32:09.003 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/_vs/browserLink - null null
+2025-09-03 11:32:09.005 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_framework/aspnetcore-browser-refresh.js - 200 13766 application/javascript; charset=utf-8 8.6392ms
+2025-09-03 11:32:09.043 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.6614ms
+2025-09-03 11:32:09.130 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - null null
+2025-09-03 11:32:09.172 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7277/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 43.003ms
+2025-09-03 11:32:13.344 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - null null
+2025-09-03 11:32:13.454 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 11:32:13.476 +07:00 [INF] Route matched with {action = "Search", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.ProductListItemDto]] Search(System.String, System.Nullable`1[System.Int64], Int32, Int32, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ProductsController (PHONE_STORE.API).
+2025-09-03 11:32:14.802 +07:00 [WRN] The decimal property 'DecValue' on entity type 'ProductAttributeValue' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 11:32:14.805 +07:00 [WRN] The decimal property 'ListPrice' on entity type 'ProductPrice' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 11:32:14.806 +07:00 [WRN] The decimal property 'SalePrice' on entity type 'ProductPrice' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 11:32:14.808 +07:00 [WRN] The decimal property 'WeightGram' on entity type 'ProductVariant' does not have a store type specified. This may lead to a precision loss if the values do not fit in the default precision and scale. Oracle recommends to explicitly specify the column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-09-03 11:32:16.486 +07:00 [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."PRODUCTS" "p"
+2025-09-03 11:32:16.813 +07:00 [INF] Executed DbCommand (69ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p0"."ID", "p0"."NAME", "p0"."SLUG", "b"."NAME", "c"."NAME", "p0"."IS_ACTIVE", (
+    SELECT COUNT(*)
+    FROM "HEHE"."PRODUCT_VARIANTS" "p1"
+    WHERE "p0"."ID" = "p1"."PRODUCT_ID")
+FROM (
+    SELECT "p"."ID", "p"."BRAND_ID", "p"."DEFAULT_CATEGORY_ID", "p"."IS_ACTIVE", "p"."NAME", "p"."SLUG"
+    FROM "HEHE"."PRODUCTS" "p"
+    ORDER BY "p"."IS_ACTIVE" DESC, "p"."NAME"
+    OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+) "p0"
+INNER JOIN "HEHE"."BRANDS" "b" ON "p0"."BRAND_ID" = "b"."ID"
+LEFT JOIN "HEHE"."CATEGORIES" "c" ON "p0"."DEFAULT_CATEGORY_ID" = "c"."ID"
+ORDER BY "p0"."IS_ACTIVE" DESC, "p0"."NAME"
+2025-09-03 11:32:16.828 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.ProductListItemDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:32:16.876 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API) in 3392.3624ms
+2025-09-03 11:32:16.879 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 11:32:16.898 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 3555.0232ms
+2025-09-03 11:32:20.701 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/images/product/2 - null null
+2025-09-03 11:32:20.708 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API)'
+2025-09-03 11:32:20.715 +07:00 [INF] Route matched with {action = "ForProduct", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[PHONE_STORE.Application.Dtos.ImageDto]] ForProduct(Int64, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ImagesController (PHONE_STORE.API).
+2025-09-03 11:32:20.821 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[:productId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."ID", "p"."PRODUCT_ID", "p"."VARIANT_ID", "p"."IMAGE_URL", "p"."ALT_TEXT", "p"."IS_PRIMARY", "p"."SORT_ORDER"
+FROM "HEHE"."PRODUCT_IMAGES" "p"
+WHERE "p"."PRODUCT_ID" = :productId_0
+ORDER BY "p"."SORT_ORDER"
+2025-09-03 11:32:20.824 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.ImageDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:32:20.832 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API) in 115.0826ms
+2025-09-03 11:32:20.833 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API)'
+2025-09-03 11:32:20.834 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/images/product/2 - 200 null application/json; charset=utf-8 133.6728ms
+2025-09-03 11:32:32.750 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:7277/api/admin/images - application/json; charset=utf-8 null
+2025-09-03 11:32:32.754 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ImagesController.Create (PHONE_STORE.API)'
+2025-09-03 11:32:32.757 +07:00 [INF] Route matched with {action = "Create", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(PHONE_STORE.Application.Dtos.ImageCreateDto, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ImagesController (PHONE_STORE.API).
+2025-09-03 11:32:32.824 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[:dto_ProductId_Value_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."PRODUCTS" "p"
+WHERE "p"."ID" = :dto_ProductId_Value_0
+2025-09-03 11:32:33.101 +07:00 [INF] Executed DbCommand (30ms) [Parameters=[:p0='?' (Size = 200), :p1='?' (Size = 500), :p2='?' (DbType = Int32), :p3='?' (DbType = Int64), :p4='?' (DbType = Int32), :p5='?' (DbType = Int64), :cur0='?' (Direction = Output) (DbType = Object)], CommandType='"Text"', CommandTimeout='0']
+DECLARE
+
+TYPE "rPRODUCT_IMAGES_0" IS RECORD
+(
+"ID" NUMBER(19)
+);
+TYPE "tPRODUCT_IMAGES_0" IS TABLE OF "rPRODUCT_IMAGES_0";
+"lPRODUCT_IMAGES_0" "tPRODUCT_IMAGES_0";
+
+BEGIN
+
+"lPRODUCT_IMAGES_0" := "tPRODUCT_IMAGES_0"();
+"lPRODUCT_IMAGES_0".extend(1);
+INSERT INTO "HEHE"."PRODUCT_IMAGES" ("ALT_TEXT", "IMAGE_URL", "IS_PRIMARY", "PRODUCT_ID", "SORT_ORDER", "VARIANT_ID")
+VALUES (:p0, :p1, :p2, :p3, :p4, :p5)
+RETURNING "ID" INTO "lPRODUCT_IMAGES_0"(1)."ID";
+OPEN :cur0 FOR SELECT "lPRODUCT_IMAGES_0"(1)."ID" FROM DUAL;
+
+END;
+2025-09-03 11:32:33.169 +07:00 [INF] Executing CreatedResult, writing value of type '<>f__AnonymousType0`2[[System.Int64, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-03 11:32:33.174 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ImagesController.Create (PHONE_STORE.API) in 415.2026ms
+2025-09-03 11:32:33.175 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ImagesController.Create (PHONE_STORE.API)'
+2025-09-03 11:32:33.176 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:7277/api/admin/images - 201 null application/json; charset=utf-8 426.5714ms
+2025-09-03 11:32:33.185 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/images/product/2 - null null
+2025-09-03 11:32:33.187 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API)'
+2025-09-03 11:32:33.188 +07:00 [INF] Route matched with {action = "ForProduct", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[PHONE_STORE.Application.Dtos.ImageDto]] ForProduct(Int64, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ImagesController (PHONE_STORE.API).
+2025-09-03 11:32:33.198 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[:productId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."ID", "p"."PRODUCT_ID", "p"."VARIANT_ID", "p"."IMAGE_URL", "p"."ALT_TEXT", "p"."IS_PRIMARY", "p"."SORT_ORDER"
+FROM "HEHE"."PRODUCT_IMAGES" "p"
+WHERE "p"."PRODUCT_ID" = :productId_0
+ORDER BY "p"."SORT_ORDER"
+2025-09-03 11:32:33.200 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.ImageDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:32:33.203 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API) in 14.9016ms
+2025-09-03 11:32:33.204 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API)'
+2025-09-03 11:32:33.205 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/images/product/2 - 200 null application/json; charset=utf-8 20.0918ms
+2025-09-03 11:32:40.946 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - null null
+2025-09-03 11:32:40.949 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 11:32:40.949 +07:00 [INF] Route matched with {action = "Search", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.ProductListItemDto]] Search(System.String, System.Nullable`1[System.Int64], Int32, Int32, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ProductsController (PHONE_STORE.API).
+2025-09-03 11:32:40.956 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."PRODUCTS" "p"
+2025-09-03 11:32:40.962 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p0"."ID", "p0"."NAME", "p0"."SLUG", "b"."NAME", "c"."NAME", "p0"."IS_ACTIVE", (
+    SELECT COUNT(*)
+    FROM "HEHE"."PRODUCT_VARIANTS" "p1"
+    WHERE "p0"."ID" = "p1"."PRODUCT_ID")
+FROM (
+    SELECT "p"."ID", "p"."BRAND_ID", "p"."DEFAULT_CATEGORY_ID", "p"."IS_ACTIVE", "p"."NAME", "p"."SLUG"
+    FROM "HEHE"."PRODUCTS" "p"
+    ORDER BY "p"."IS_ACTIVE" DESC, "p"."NAME"
+    OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+) "p0"
+INNER JOIN "HEHE"."BRANDS" "b" ON "p0"."BRAND_ID" = "b"."ID"
+LEFT JOIN "HEHE"."CATEGORIES" "c" ON "p0"."DEFAULT_CATEGORY_ID" = "c"."ID"
+ORDER BY "p0"."IS_ACTIVE" DESC, "p0"."NAME"
+2025-09-03 11:32:40.964 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.ProductListItemDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:32:40.965 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API) in 14.5552ms
+2025-09-03 11:32:40.966 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 11:32:40.966 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 20.6695ms
+2025-09-03 11:32:43.012 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/products/2 - null null
+2025-09-03 11:32:43.015 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ProductsController.Get (PHONE_STORE.API)'
+2025-09-03 11:32:43.019 +07:00 [INF] Route matched with {action = "Get", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.ProductDto] Get(Int64, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ProductsController (PHONE_STORE.API).
+2025-09-03 11:32:43.038 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[:id_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."ID", "p"."BRAND_ID", "p"."DEFAULT_CATEGORY_ID", "p"."NAME", "p"."SLUG", "p"."DESCRIPTION", "p"."SPEC_JSON", "p"."IS_ACTIVE"
+FROM "HEHE"."PRODUCTS" "p"
+WHERE "p"."ID" = :id_0
+FETCH FIRST 1 ROWS ONLY
+2025-09-03 11:32:43.053 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.ProductDto'.
+2025-09-03 11:32:43.057 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ProductsController.Get (PHONE_STORE.API) in 37.3729ms
+2025-09-03 11:32:43.058 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ProductsController.Get (PHONE_STORE.API)'
+2025-09-03 11:32:43.059 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/products/2 - 200 null application/json; charset=utf-8 46.9144ms
+2025-09-03 11:32:43.062 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/brands/options - null null
+2025-09-03 11:32:43.064 +07:00 [INF] Executing endpoint 'BrandsController.Options (PHONE_STORE.API)'
+2025-09-03 11:32:43.067 +07:00 [INF] Route matched with {action = "Options", controller = "Brands"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[PHONE_STORE.Application.Dtos.IdNameDto]] Options(System.Threading.CancellationToken) on controller BrandsController (PHONE_STORE.API).
+2025-09-03 11:32:43.081 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "b"."ID", "b"."NAME"
+FROM "HEHE"."BRANDS" "b"
+ORDER BY "b"."NAME"
+2025-09-03 11:32:43.085 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.IdNameDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:32:43.089 +07:00 [INF] Executed action BrandsController.Options (PHONE_STORE.API) in 21.4695ms
+2025-09-03 11:32:43.090 +07:00 [INF] Executed endpoint 'BrandsController.Options (PHONE_STORE.API)'
+2025-09-03 11:32:43.091 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/brands/options - 200 null application/json; charset=utf-8 29.2605ms
+2025-09-03 11:32:43.100 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/categories/options?excludeId= - null null
+2025-09-03 11:32:43.102 +07:00 [INF] Executing endpoint 'CategoriesController.Options (PHONE_STORE.API)'
+2025-09-03 11:32:43.104 +07:00 [INF] Route matched with {action = "Options", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Options(System.Nullable`1[System.Int64], System.Threading.CancellationToken) on controller CategoriesController (PHONE_STORE.API).
+2025-09-03 11:32:43.119 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "c"."ID" "Id", "c"."PARENT_ID" "ParentId", "c"."NAME" "Name", "c"."SORT_ORDER" "Sort"
+FROM "HEHE"."CATEGORIES" "c"
+2025-09-03 11:32:43.130 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.CategoryOptionDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:32:43.132 +07:00 [INF] Executed action CategoriesController.Options (PHONE_STORE.API) in 26.2399ms
+2025-09-03 11:32:43.132 +07:00 [INF] Executed endpoint 'CategoriesController.Options (PHONE_STORE.API)'
+2025-09-03 11:32:43.133 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/categories/options?excludeId= - 200 null application/json; charset=utf-8 33.2626ms
+2025-09-03 11:32:57.351 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - null null
+2025-09-03 11:32:57.354 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 11:32:57.354 +07:00 [INF] Route matched with {action = "Search", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.ProductListItemDto]] Search(System.String, System.Nullable`1[System.Int64], Int32, Int32, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ProductsController (PHONE_STORE.API).
+2025-09-03 11:32:57.363 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."PRODUCTS" "p"
+2025-09-03 11:32:57.368 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p0"."ID", "p0"."NAME", "p0"."SLUG", "b"."NAME", "c"."NAME", "p0"."IS_ACTIVE", (
+    SELECT COUNT(*)
+    FROM "HEHE"."PRODUCT_VARIANTS" "p1"
+    WHERE "p0"."ID" = "p1"."PRODUCT_ID")
+FROM (
+    SELECT "p"."ID", "p"."BRAND_ID", "p"."DEFAULT_CATEGORY_ID", "p"."IS_ACTIVE", "p"."NAME", "p"."SLUG"
+    FROM "HEHE"."PRODUCTS" "p"
+    ORDER BY "p"."IS_ACTIVE" DESC, "p"."NAME"
+    OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+) "p0"
+INNER JOIN "HEHE"."BRANDS" "b" ON "p0"."BRAND_ID" = "b"."ID"
+LEFT JOIN "HEHE"."CATEGORIES" "c" ON "p0"."DEFAULT_CATEGORY_ID" = "c"."ID"
+ORDER BY "p0"."IS_ACTIVE" DESC, "p0"."NAME"
+2025-09-03 11:32:57.369 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.ProductListItemDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:32:57.370 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API) in 14.7744ms
+2025-09-03 11:32:57.371 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 11:32:57.373 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 21.0573ms
+2025-09-03 11:33:00.666 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/images/product/2 - null null
+2025-09-03 11:33:00.668 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API)'
+2025-09-03 11:33:00.669 +07:00 [INF] Route matched with {action = "ForProduct", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[PHONE_STORE.Application.Dtos.ImageDto]] ForProduct(Int64, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ImagesController (PHONE_STORE.API).
+2025-09-03 11:33:00.674 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[:productId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."ID", "p"."PRODUCT_ID", "p"."VARIANT_ID", "p"."IMAGE_URL", "p"."ALT_TEXT", "p"."IS_PRIMARY", "p"."SORT_ORDER"
+FROM "HEHE"."PRODUCT_IMAGES" "p"
+WHERE "p"."PRODUCT_ID" = :productId_0
+ORDER BY "p"."SORT_ORDER"
+2025-09-03 11:33:00.676 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.ImageDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:33:00.677 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API) in 7.62ms
+2025-09-03 11:33:00.678 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API)'
+2025-09-03 11:33:00.679 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/images/product/2 - 200 null application/json; charset=utf-8 12.878ms
+2025-09-03 11:33:50.284 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/attributes - null null
+2025-09-03 11:33:50.286 +07:00 [INF] Executing endpoint 'AttributesController.List (PHONE_STORE.API)'
+2025-09-03 11:33:50.290 +07:00 [INF] Route matched with {action = "List", controller = "Attributes"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[PHONE_STORE.Application.Dtos.AttributeDto]] List(System.Threading.CancellationToken) on controller AttributesController (PHONE_STORE.API).
+2025-09-03 11:33:50.307 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."ID", "p"."CODE", "p"."NAME", "p"."DATA_TYPE"
+FROM "HEHE"."PRODUCT_ATTRIBUTES" "p"
+ORDER BY "p"."NAME"
+2025-09-03 11:33:50.309 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.AttributeDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:33:50.311 +07:00 [INF] Executed action AttributesController.List (PHONE_STORE.API) in 19.6296ms
+2025-09-03 11:33:50.312 +07:00 [INF] Executed endpoint 'AttributesController.List (PHONE_STORE.API)'
+2025-09-03 11:33:50.313 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/attributes - 200 null application/json; charset=utf-8 29.1303ms
+2025-09-03 11:33:53.301 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - null null
+2025-09-03 11:33:53.303 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 11:33:53.304 +07:00 [INF] Route matched with {action = "Search", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.ProductListItemDto]] Search(System.String, System.Nullable`1[System.Int64], Int32, Int32, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ProductsController (PHONE_STORE.API).
+2025-09-03 11:33:53.309 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."PRODUCTS" "p"
+2025-09-03 11:33:53.314 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p0"."ID", "p0"."NAME", "p0"."SLUG", "b"."NAME", "c"."NAME", "p0"."IS_ACTIVE", (
+    SELECT COUNT(*)
+    FROM "HEHE"."PRODUCT_VARIANTS" "p1"
+    WHERE "p0"."ID" = "p1"."PRODUCT_ID")
+FROM (
+    SELECT "p"."ID", "p"."BRAND_ID", "p"."DEFAULT_CATEGORY_ID", "p"."IS_ACTIVE", "p"."NAME", "p"."SLUG"
+    FROM "HEHE"."PRODUCTS" "p"
+    ORDER BY "p"."IS_ACTIVE" DESC, "p"."NAME"
+    OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+) "p0"
+INNER JOIN "HEHE"."BRANDS" "b" ON "p0"."BRAND_ID" = "b"."ID"
+LEFT JOIN "HEHE"."CATEGORIES" "c" ON "p0"."DEFAULT_CATEGORY_ID" = "c"."ID"
+ORDER BY "p0"."IS_ACTIVE" DESC, "p0"."NAME"
+2025-09-03 11:33:53.315 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.ProductListItemDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:33:53.316 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API) in 10.5947ms
+2025-09-03 11:33:53.317 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 11:33:53.317 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 16.6948ms
+2025-09-03 11:33:59.626 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/images/product/3 - null null
+2025-09-03 11:33:59.628 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API)'
+2025-09-03 11:33:59.629 +07:00 [INF] Route matched with {action = "ForProduct", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[PHONE_STORE.Application.Dtos.ImageDto]] ForProduct(Int64, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ImagesController (PHONE_STORE.API).
+2025-09-03 11:33:59.639 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[:productId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."ID", "p"."PRODUCT_ID", "p"."VARIANT_ID", "p"."IMAGE_URL", "p"."ALT_TEXT", "p"."IS_PRIMARY", "p"."SORT_ORDER"
+FROM "HEHE"."PRODUCT_IMAGES" "p"
+WHERE "p"."PRODUCT_ID" = :productId_0
+ORDER BY "p"."SORT_ORDER"
+2025-09-03 11:33:59.641 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.ImageDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:33:59.641 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API) in 10.8555ms
+2025-09-03 11:33:59.642 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API)'
+2025-09-03 11:33:59.643 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/images/product/3 - 200 null application/json; charset=utf-8 16.8935ms
+2025-09-03 11:34:10.072 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - null null
+2025-09-03 11:34:10.074 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 11:34:10.075 +07:00 [INF] Route matched with {action = "Search", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.ProductListItemDto]] Search(System.String, System.Nullable`1[System.Int64], Int32, Int32, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ProductsController (PHONE_STORE.API).
+2025-09-03 11:34:10.084 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."PRODUCTS" "p"
+2025-09-03 11:34:10.091 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p0"."ID", "p0"."NAME", "p0"."SLUG", "b"."NAME", "c"."NAME", "p0"."IS_ACTIVE", (
+    SELECT COUNT(*)
+    FROM "HEHE"."PRODUCT_VARIANTS" "p1"
+    WHERE "p0"."ID" = "p1"."PRODUCT_ID")
+FROM (
+    SELECT "p"."ID", "p"."BRAND_ID", "p"."DEFAULT_CATEGORY_ID", "p"."IS_ACTIVE", "p"."NAME", "p"."SLUG"
+    FROM "HEHE"."PRODUCTS" "p"
+    ORDER BY "p"."IS_ACTIVE" DESC, "p"."NAME"
+    OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+) "p0"
+INNER JOIN "HEHE"."BRANDS" "b" ON "p0"."BRAND_ID" = "b"."ID"
+LEFT JOIN "HEHE"."CATEGORIES" "c" ON "p0"."DEFAULT_CATEGORY_ID" = "c"."ID"
+ORDER BY "p0"."IS_ACTIVE" DESC, "p0"."NAME"
+2025-09-03 11:34:10.093 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.ProductListItemDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:34:10.094 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API) in 17.2485ms
+2025-09-03 11:34:10.094 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 11:34:10.095 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 22.8498ms
+2025-09-03 11:34:13.277 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/images/product/2 - null null
+2025-09-03 11:34:13.280 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API)'
+2025-09-03 11:34:13.280 +07:00 [INF] Route matched with {action = "ForProduct", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[PHONE_STORE.Application.Dtos.ImageDto]] ForProduct(Int64, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ImagesController (PHONE_STORE.API).
+2025-09-03 11:34:13.288 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[:productId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."ID", "p"."PRODUCT_ID", "p"."VARIANT_ID", "p"."IMAGE_URL", "p"."ALT_TEXT", "p"."IS_PRIMARY", "p"."SORT_ORDER"
+FROM "HEHE"."PRODUCT_IMAGES" "p"
+WHERE "p"."PRODUCT_ID" = :productId_0
+ORDER BY "p"."SORT_ORDER"
+2025-09-03 11:34:13.290 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.ImageDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:34:13.291 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API) in 8.8887ms
+2025-09-03 11:34:13.292 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ImagesController.ForProduct (PHONE_STORE.API)'
+2025-09-03 11:34:13.292 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/images/product/2 - 200 null application/json; charset=utf-8 15.2566ms
+2025-09-03 11:36:06.618 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - null null
+2025-09-03 11:36:06.620 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 11:36:06.621 +07:00 [INF] Route matched with {action = "Search", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[PHONE_STORE.Application.Dtos.PagedResult`1[PHONE_STORE.Application.Dtos.ProductListItemDto]] Search(System.String, System.Nullable`1[System.Int64], Int32, Int32, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ProductsController (PHONE_STORE.API).
+2025-09-03 11:36:06.627 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT COUNT(*)
+FROM "HEHE"."PRODUCTS" "p"
+2025-09-03 11:36:06.636 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[:p_0='?' (DbType = Int32), :p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p0"."ID", "p0"."NAME", "p0"."SLUG", "b"."NAME", "c"."NAME", "p0"."IS_ACTIVE", (
+    SELECT COUNT(*)
+    FROM "HEHE"."PRODUCT_VARIANTS" "p1"
+    WHERE "p0"."ID" = "p1"."PRODUCT_ID")
+FROM (
+    SELECT "p"."ID", "p"."BRAND_ID", "p"."DEFAULT_CATEGORY_ID", "p"."IS_ACTIVE", "p"."NAME", "p"."SLUG"
+    FROM "HEHE"."PRODUCTS" "p"
+    ORDER BY "p"."IS_ACTIVE" DESC, "p"."NAME"
+    OFFSET :p_0 ROWS FETCH NEXT :p_1 ROWS ONLY
+) "p0"
+INNER JOIN "HEHE"."BRANDS" "b" ON "p0"."BRAND_ID" = "b"."ID"
+LEFT JOIN "HEHE"."CATEGORIES" "c" ON "p0"."DEFAULT_CATEGORY_ID" = "c"."ID"
+ORDER BY "p0"."IS_ACTIVE" DESC, "p0"."NAME"
+2025-09-03 11:36:06.638 +07:00 [INF] Executing ObjectResult, writing value of type 'PHONE_STORE.Application.Dtos.PagedResult`1[[PHONE_STORE.Application.Dtos.ProductListItemDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:36:06.639 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API) in 16.732ms
+2025-09-03 11:36:06.639 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ProductsController.Search (PHONE_STORE.API)'
+2025-09-03 11:36:06.640 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/products?q=&brandId=&page=1&pageSize=20 - 200 null application/json; charset=utf-8 22.2006ms
+2025-09-03 11:36:08.701 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/products/2/variants - null null
+2025-09-03 11:36:08.704 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.VariantsController.List (PHONE_STORE.API)'
+2025-09-03 11:36:08.709 +07:00 [INF] Route matched with {action = "List", controller = "Variants"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[PHONE_STORE.Application.Dtos.VariantDto]] List(Int64, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.VariantsController (PHONE_STORE.API).
+2025-09-03 11:36:08.726 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[:productId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."ID", "p"."PRODUCT_ID", "p"."SKU", "p"."COLOR", "p"."STORAGE_GB", "p"."BARCODE", "p"."WEIGHT_GRAM", "p"."IS_ACTIVE"
+FROM "HEHE"."PRODUCT_VARIANTS" "p"
+WHERE "p"."PRODUCT_ID" = :productId_0
+ORDER BY "p"."IS_ACTIVE" DESC, "p"."SKU"
+2025-09-03 11:36:08.739 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.VariantDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:36:08.751 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.VariantsController.List (PHONE_STORE.API) in 41.2972ms
+2025-09-03 11:36:08.753 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.VariantsController.List (PHONE_STORE.API)'
+2025-09-03 11:36:08.755 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/products/2/variants - 200 null application/json; charset=utf-8 54.0904ms
+2025-09-03 11:36:10.710 +07:00 [INF] Request starting HTTP/1.1 GET https://localhost:7277/api/admin/images/variant/3 - null null
+2025-09-03 11:36:10.712 +07:00 [INF] Executing endpoint 'PHONE_STORE.API.Controllers.ImagesController.ForVariant (PHONE_STORE.API)'
+2025-09-03 11:36:10.716 +07:00 [INF] Route matched with {action = "ForVariant", controller = "Images"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.List`1[PHONE_STORE.Application.Dtos.ImageDto]] ForVariant(Int64, System.Threading.CancellationToken) on controller PHONE_STORE.API.Controllers.ImagesController (PHONE_STORE.API).
+2025-09-03 11:36:10.725 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[:variantId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."ID", "p"."PRODUCT_ID", "p"."VARIANT_ID", "p"."IMAGE_URL", "p"."ALT_TEXT", "p"."IS_PRIMARY", "p"."SORT_ORDER"
+FROM "HEHE"."PRODUCT_IMAGES" "p"
+WHERE "p"."VARIANT_ID" = :variantId_0
+ORDER BY "p"."SORT_ORDER"
+2025-09-03 11:36:10.727 +07:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PHONE_STORE.Application.Dtos.ImageDto, PHONE_STORE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-03 11:36:10.728 +07:00 [INF] Executed action PHONE_STORE.API.Controllers.ImagesController.ForVariant (PHONE_STORE.API) in 11.5214ms
+2025-09-03 11:36:10.729 +07:00 [INF] Executed endpoint 'PHONE_STORE.API.Controllers.ImagesController.ForVariant (PHONE_STORE.API)'
+2025-09-03 11:36:10.729 +07:00 [INF] Request finished HTTP/1.1 GET https://localhost:7277/api/admin/images/variant/3 - 200 null application/json; charset=utf-8 19.2718ms

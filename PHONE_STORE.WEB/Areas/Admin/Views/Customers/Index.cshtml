@@ -1,0 +1,38 @@
+﻿@model List<PHONE_STORE.Application.Dtos.CustomerDto>
+@{
+    ViewData["Title"] = "Customers";
+    var q = (string?)ViewBag.Q ?? "";
+}
+<h1>Customers</h1>
+
+<form class="row g-2 mb-3" method="get">
+    <div class="col-auto">
+        <input name="q" class="form-control" placeholder="Tên/Email/Phone" value="@q" />
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-primary">Search</button>
+    </div>
+    <div class="col-auto">
+        <a class="btn btn-success" asp-action="Create">Create</a>
+    </div>
+</form>
+
+<table class="table table-bordered align-middle">
+    <thead>
+        <tr><th>Name</th><th>Email</th><th>Phone</th><th style="width:160px"></th></tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.FullName</td>
+                <td>@c.Email</td>
+                <td>@c.Phone</td>
+                <td>
+                    <a class="btn btn-sm btn-outline-secondary" asp-action="Edit" asp-route-id="@c.Id">Edit</a>
+                    <a class="btn btn-sm btn-outline-primary" asp-action="Addresses" asp-route-id="@c.Id">Addresses</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,19 @@
+﻿@model PHONE_STORE.WEB.Models.VariantFormVm
+<div class="mb-3">
+    <label asp-for="Sku" class="form-label"></label>
+    <input asp-for="Sku" class="form-control" />
+    <span asp-validation-for="Sku" class="text-danger"></span>
+</div>
+<div class="row">
+    <div class="col-md-4 mb-3"><label asp-for="Color" class="form-label"></label><input asp-for="Color" class="form-control" /></div>
+    <div class="col-md-4 mb-3"><label asp-for="StorageGb" class="form-label">Storage (GB)</label><input asp-for="StorageGb" class="form-control" /></div>
+    <div class="col-md-4 mb-3"><label asp-for="Barcode" class="form-label"></label><input asp-for="Barcode" class="form-control" /></div>
+</div>
+<div class="row">
+    <div class="col-md-4 mb-3"><label asp-for="WeightGram" class="form-label">Weight (g)</label><input asp-for="WeightGram" class="form-control" /></div>
+    <div class="col-md-4 mb-3 form-check"><input asp-for="IsActive" class="form-check-input" /> <label asp-for="IsActive" class="form-check-label">Active</label></div>
+</div>
+<div>
+    <button class="btn btn-primary">Save</button>
+    <a class="btn btn-secondary" asp-area="Admin" asp-controller="Variants" asp-action="Index" asp-route-productId="@Model.ProductId">Back</a>
+</div>

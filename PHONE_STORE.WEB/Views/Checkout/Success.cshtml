@@ -1,0 +1,10 @@
+﻿@model long
+@{
+    ViewData["Title"] = "Đặt hàng thành công";
+}
+<div class="text-center py-5">
+    <h1 class="text-success">Cảm ơn bạn!</h1>
+    <p>Đơn hàng của bạn đã được tạo thành công.</p>
+    <p>Mã đơn (ID): <strong>@Model</strong></p>
+    <a class="btn btn-primary" href="@Url.Action("Index", "Catalog")">Tiếp tục mua sắm</a>
+</div>

@@ -1,0 +1,44 @@
+﻿@model PHONE_STORE.WEB.Models.ProductFormVm
+<div class="mb-3">
+    <label asp-for="Name" class="form-label"></label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <label asp-for="BrandId" class="form-label">Brand</label>
+        <select asp-for="BrandId" class="form-select" asp-items="Model.BrandOptions"></select>
+        <span asp-validation-for="BrandId" class="text-danger"></span>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label asp-for="DefaultCategoryId" class="form-label">Category (optional)</label>
+        <select asp-for="DefaultCategoryId" class="form-select" asp-items="Model.CategoryOptions"></select>
+    </div>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Slug" class="form-label"></label>
+    <input asp-for="Slug" class="form-control" />
+    <div class="form-text">Để trống = tự tạo từ Name.</div>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Description" class="form-label"></label>
+    <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+</div>
+
+<div class="mb-3">
+    <label asp-for="SpecJson" class="form-label">Spec (JSON)</label>
+    <textarea asp-for="SpecJson" class="form-control" rows="4"></textarea>
+</div>
+
+<div class="form-check mb-3">
+    <input asp-for="IsActive" class="form-check-input" />
+    <label asp-for="IsActive" class="form-check-label">Active</label>
+</div>
+
+<div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-area="Admin" asp-controller="Products" asp-action="Index" class="btn btn-secondary">Back</a>
+</div>

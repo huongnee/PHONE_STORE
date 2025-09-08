@@ -4,6 +4,7 @@ using PHONE_STORE.Application.Dtos;
 using PHONE_STORE.Application.Interfaces;
 using PHONE_STORE.Infrastructure.Data;
 using PHONE_STORE.Infrastructure.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace PHONE_STORE.Infrastructure.Repositories;
 

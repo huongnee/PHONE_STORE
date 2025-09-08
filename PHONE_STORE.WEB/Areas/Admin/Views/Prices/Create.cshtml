@@ -1,0 +1,14 @@
+﻿@model PHONE_STORE.WEB.Models.PriceFormVm
+@{
+    ViewData["Title"] = "Create price"; var productId = (long)ViewBag.ProductId;
+}
+<h2>Create Price</h2>
+<form method="post" asp-area="Admin" asp-controller="Prices" asp-action="Create" asp-route-productId="@productId">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="VariantId" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    @await Html.PartialAsync("_Form", Model)
+    <a class="btn btn-secondary"
+       asp-area="Admin" asp-controller="Prices" asp-action="Index"
+       asp-route-variantId="@Model.VariantId" asp-route-productId="@productId">Back</a>
+</form>
